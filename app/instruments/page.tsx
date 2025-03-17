@@ -1,8 +1,19 @@
-import { createClient } from '@/utils/supabase/server';
+"use client";
 
-export default async function Instruments() {
-  const supabase = await createClient();
-  const { data: instruments } = await supabase.from("instruments").select();
+import dynamic from "next/dynamic";
 
-  return <pre>{JSON.stringify(instruments, null, 2)}</pre>
+const LazyMap = dynamic(() => import("@/components/maps/Map"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
+
+export default function Home() {
+  return (
+    <>
+    <main>
+      <LazyMap />
+    </main>
+    </>
+    
+  );
 }
