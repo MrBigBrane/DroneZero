@@ -1,8 +1,16 @@
-import { createClient } from '@/utils/supabase/server';
+import dynamic from 'next/dynamic'
+import { useMemo } from 'react'
 
-export default async function Instruments() {
-  const supabase = await createClient();
-  const { data: instruments } = await supabase.from("instruments").select();
+export default function MyPage() {
+  const Map = useMemo(() => dynamic(
+    () => import('@/components/maps/Map'),
+    { 
+      loading: () => <p>A map is loading</p>,
+      ssr: false
+    }
+  ), [])
 
-  return <pre>{JSON.stringify(instruments, null, 2)}</pre>
+  return <div>
+    <Map />
+  </div>
 }
