@@ -1,16 +1,16 @@
-import dynamic from 'next/dynamic'
-import { useMemo } from 'react'
+"use client";
 
-export default function MyPage() {
-  const Map = useMemo(() => dynamic(
-    () => import('@/components/maps/Map'),
-    { 
-      loading: () => <p>A map is loading</p>,
-      ssr: false
-    }
-  ), [])
+import dynamic from "next/dynamic";
 
-  return <div>
-    <Map />
-  </div>
+const LazyMap = dynamic(() => import("@/components/maps/Map"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
+
+export default function Home() {
+  return (
+    <main>
+      <LazyMap />
+    </main>
+  );
 }
