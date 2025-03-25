@@ -1,26 +1,22 @@
 "use client";
 
-// IMPORTANT: the order matters!
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-defaulticon-compatibility";
 
-import { Circle, CircleMarker, MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
-
+import { Circle, MapContainer, Polyline, TileLayer, Tooltip, useMap } from "react-leaflet";
 import FileButton from "../buttons/FileButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function Map() {
-  const [file, setFile] = useState(null);
-  const [data, setData] = useState([]);
+export default function Map({ data }) {
 
-  const position = [37.2708243, -122.0169312]
+  const defaultPosition = [37.2708243, -122.0169312];
 
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
       <MapContainer
-        center={position}
-        zoom={11}
+        center={defaultPosition}
+        zoom={10}
         scrollWheelZoom={true}
         style={{ width: "100%", height: "100%" }}
       >
@@ -28,54 +24,39 @@ export default function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* <Marker position={position}>
-          <Popup>
-            This Marker icon is displayed correctly with <i>leaflet-defaulticon-compatibility</i>.
-          </Popup>
-        </Marker> */}
+        
+        {/* Update center and zoom dynamically */}
+        <MapUpdater data={data} />
+
         {data.map((item, index) => {
-          let color;
-          if (item.co2_ppm > 1500) {
-            color = "red";
-          }
-          else if (item.co2_ppm > 1000) {
-            color = "orange";
-          }
-          else {
-            color = "green";
-          }
+          let color = item.co2_ppm > 1500 ? "red" : item.co2_ppm > 1000 ? "orange" : "green";
           return (
-            <Circle
-              key={index}
-              center={[item.latitude, item.longitude]}
-              pathOptions={{ color: color }}
-              radius={1}
-            >
+            <Circle key={index} center={[item.latitude, item.longitude]} pathOptions={{ color }} radius={2}>
               <Tooltip>
                 Time: {item.time} <br />
                 CO2: {item.co2_ppm}
                 <br />
-                
                 Altitude: {item.altitude}
               </Tooltip>
             </Circle>
-          );})}
-      </MapContainer>
+          );
+        })}
 
-      <FileButton setData={setData} setFile={setFile} />
-      {file && <p>File uploaded: {file.name}</p>}
-      {data.length > 0 && (
-        <pre
-          style={{
-            textAlign: "left",
-            marginTop: "10px",
-            maxHeight: "200px",
-            overflowY: "auto",
-          }}
-        >
-          {JSON.stringify(data, null, 2)}
-        </pre>
-      )}
+        <Polyline positions={data.map((item) => [item.latitude, item.longitude])} />
+      </MapContainer>
     </div>
   );
+}
+
+function MapUpdater({ data }) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (data.length > 0) {
+      const newCenter = [data[0].latitude, data[0].longitude];
+      map.setView(newCenter, 20);
+    }
+  }, [data, map]);
+
+  return null;
 }
