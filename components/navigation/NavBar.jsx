@@ -16,10 +16,10 @@ import Co2Icon from '@mui/icons-material/Co2';
 import { useState } from 'react';
 import Link from 'next/link';
 
-const pages = ['Map View', 'Dev'];
+const pages = ['Map View', 'Previous Logs', 'About Us', 'Dev'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-export default function NavBar() {
+export default function NavBar({ menu, ...props }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -39,134 +39,117 @@ export default function NavBar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Co2Icon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            DroneZero
-          </Typography>
+    <AppBar position="fixed" {...props}>
+      <Toolbar>
+        {menu}
+        <Co2Icon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          DroneZero
+        </Typography>
 
-          {/* Small Screen Navbar */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Co2Icon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
+        {/* Small Screen Navbar */}
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
           >
-            DroneZero
-          </Typography>
-
-          {/* Large Screen Navbar */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{ display: { xs: "block", md: "none" } }}
+          >
             {pages.map((page) => (
-              <Button
-                key={page}
-                // onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                <Link
-                  href={page === "Map View" ? "/mapview" : "/dev"}
-                  key={page}
-                  style={{ marginRight: "10px" }}
-                >
-                  {page}
-                </Link>
-              </Button>
+              <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+              </MenuItem>
             ))}
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+          </Menu>
+        </Box>
+        <Co2Icon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+        <Typography
+          variant="h5"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
+          sx={{
+            mr: 2,
+            display: { xs: "flex", md: "none" },
+            flexGrow: 1,
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          DroneZero
+        </Typography>
+
+        {/* Large Screen Navbar */}
+        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          {pages.map((page) => (
+            <Button
+              key={page}
+              // onClick={handleCloseNavMenu}
+              sx={{ color: "white", display: "block" }}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: "center" }}>
-                    {setting}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
+              <Link
+                href={
+                  page === "Map View"
+                    ? "/mapview"
+                    : page === "About Us"
+                      ? "/aboutus"
+                      : page === "Dev"
+                        ? "/dev"
+                        : "/previouslogs"
+                }
+                key={page}
+                style={{ marginRight: "10px" }}
+              >
+                {page}
+              </Link>
+            </Button>
+          ))}
+        </Box>
+        <Button size="sm" variant="outline">
+          <Link href="/sign-in">Sign in</Link>
+        </Button>
+        <Button size="sm" variant="outline">
+          <Link href="/sign-up">Sign up</Link>
+        </Button>
+      </Toolbar>
+      {/* </Container> */}
     </AppBar>
   );
 }
