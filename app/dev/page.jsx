@@ -1,5 +1,5 @@
 import FileButton from "@/components/buttons/FileButton";
-import MapDrawer from "../../components/navigation/MapDrawer2";
+import MapDrawer from "../../components/navigation/MapDrawer";
 
 export default function DevPage() {
     return (

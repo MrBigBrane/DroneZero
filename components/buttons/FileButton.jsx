@@ -18,7 +18,7 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 
-export default function FileButton({ setFile, setData }) {
+export default function FileButton({ data, setFile, setData }) {
 //   const [file, setFile] = useState(null);
 //   const [data, setData] = useState([]); // Store extracted CSV data
 
@@ -50,8 +50,8 @@ export default function FileButton({ setFile, setData }) {
             altitude: parseFloat(row["Altitude (m)"]),
           }));
 
-          setData(extractedData);
-          console.log("Extracted Data:", extractedData);
+          setData([...data, { data: extractedData }]);
+          console.log("Extracted Data:", { data: extractedData });
         },
       });
     };

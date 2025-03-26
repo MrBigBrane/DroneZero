@@ -1,29 +1,27 @@
 'use server';
 
 import { createClient } from "@/utils/supabase/server";
-import LazyMap from "@/components/maps/LazyLoadingMap";
+import MapDrawer from "../../components/navigation/MapDrawer";
 
-export default async function MapView({ searchParams }) {
-  const supabase = await createClient()
+export default async function MapView() {
+  const supabase = await createClient();
 
-  let datum = [];
-  let id = await searchParams
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
-
-  if(id.id) {
     const { data, error } = await supabase
       .from("co2_data")
       .select("*")
-      .eq("id", id.id)
+      .eq("user", user.id)
+      .order("created_at", { ascending: false });
 
-    datum = data[0].data
-  }
 
 
 
   return (
     <>
-      <LazyMap data={datum}/>
+      <MapDrawer prevData={data} />
     </>
   )
 
