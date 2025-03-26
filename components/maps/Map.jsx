@@ -5,8 +5,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 
 import { Circle, MapContainer, Polyline, TileLayer, Tooltip, useMap } from "react-leaflet";
-import FileButton from "../buttons/FileButton";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function Map({ data }) {
 
@@ -24,25 +23,47 @@ export default function Map({ data }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        
-        {/* Update center and zoom dynamically */}
-        <MapUpdater data={data} />
 
+        {/* Update center and zoom dynamically */}
+        <MapUpdater data={data.length > 0 ? data[data.length - 1].data : []} />
+
+        {data.map((datapiece, index) =>
+          datapiece.data.map((item, index) => {
+            console.log(item);
+            let color =
+              item.co2_ppm > 1500
+                ? "red"
+                : item.co2_ppm > 1000
+                  ? "orange"
+                  : "green";
+            return (
+              <Circle
+                key={index}
+                center={[item.latitude, item.longitude]}
+                pathOptions={{ color }}
+                radius={2}
+              >
+                <Tooltip>
+                  Time: {item.time} <br />
+                  CO2: {item.co2_ppm}
+                  <br />
+                  Altitude: {item.altitude}
+                </Tooltip>
+              </Circle>
+            );
+          })
+        )}
         {data.map((item, index) => {
-          let color = item.co2_ppm > 1500 ? "red" : item.co2_ppm > 1000 ? "orange" : "green";
           return (
-            <Circle key={index} center={[item.latitude, item.longitude]} pathOptions={{ color }} radius={2}>
-              <Tooltip>
-                Time: {item.time} <br />
-                CO2: {item.co2_ppm}
-                <br />
-                Altitude: {item.altitude}
-              </Tooltip>
-            </Circle>
+            <Polyline
+              key={index}
+              positions={item.data.map((item) => [
+                item.latitude,
+                item.longitude,
+              ])}
+            />
           );
         })}
-
-        <Polyline positions={data.map((item) => [item.latitude, item.longitude])} />
       </MapContainer>
     </div>
   );
