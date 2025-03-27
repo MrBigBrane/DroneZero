@@ -17,7 +17,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useState } from 'react';
 import FileButton from '../buttons/FileButton';
 import LazyLoadingMap from '../maps/LazyLoadingMap';
-import { Tooltip, Button, Typography } from '@mui/material';
+import { Tooltip, Button, Typography, Snackbar, Alert } from '@mui/material';
 import MapIcon from '@mui/icons-material/Map';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 import FlightIcon from '@mui/icons-material/Flight';
@@ -25,6 +25,7 @@ import NavBar from './NavBar';
 import savecsv from '@/serveractions/save/savecsv';
 import PreviousLogs from '@/components/buttons/PreviousLogs';
 import DropFileButton from '../buttons/DropFileButton';
+import SaveModal from '../buttons/SaveModal';
 
 const drawerWidth = 240;
 
@@ -109,10 +110,12 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MapDrawer({ prevData }) {
 
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [tab, setTab] = useState(0);
   const [data, setData] = useState([]);
+  const [uploadData, setUploadData] = useState([]);
   const [file, setFile] = useState(null);
+  const [saved, setSaved] = useState(false);
 
   console.log(data)
 
@@ -245,29 +248,14 @@ export default function MapDrawer({ prevData }) {
           <Box sx={{ margin: 1, minWidth: 150, maxWidth: 150 }}>
             {tab === 0 ? (
               <div>
-                <FileButton setData={setData} setFile={setFile} data={data} />
-                <DropFileButton setData={setData} setFile={setFile} data={data} />
-                {file && <p>File uploaded: {file.name}</p>}
-                {data.length > 0 && (
-                  <pre
-                    style={{
-                      textAlign: "left",
-                      marginTop: "10px",
-                      maxHeight: "200px",
-                      overflowY: "auto",
-                    }}
-                  >
-                    {JSON.stringify(data, null, 2)}
-                  </pre>
-                )}
-                {data.length > 0 && (
-                  <Button
-                    variant="contained"
-                    style={{ margin: "10px" }}
-                    onClick={() => savecsv(data, file.name)}
-                  >
-                    Save
-                  </Button>
+                <DropFileButton
+                  setData={setData}
+                  setFile={setFile}
+                  uploadData={uploadData}
+                  setUploadData={setUploadData}
+                />
+                {uploadData?.data?.length > 0 && (
+                  <SaveModal data={uploadData.data} file={file} setSaved={setSaved} />
                 )}
               </div>
             ) : tab === 1 ? (
@@ -346,6 +334,16 @@ export default function MapDrawer({ prevData }) {
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1 }}>
+        <Snackbar open={saved} autoHideDuration={6000}>
+          <Alert
+            // onClose={handleClose}
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+          >
+            Saved successfully!
+          </Alert>
+        </Snackbar>
         <LazyLoadingMap data={data} />
       </Box>
     </Box>

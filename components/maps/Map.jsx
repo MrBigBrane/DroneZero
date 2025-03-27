@@ -29,7 +29,7 @@ export default function Map({ data }) {
 
         {data.map((datapiece, index) =>
           datapiece.data.map((item, index) => {
-            console.log(item);
+            // console.log(item);
             let color =
               item.co2_ppm > 1500
                 ? "red"
