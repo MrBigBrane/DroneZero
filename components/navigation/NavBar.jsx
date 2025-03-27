@@ -16,8 +16,7 @@ import Co2Icon from '@mui/icons-material/Co2';
 import { useState } from 'react';
 import Link from 'next/link';
 
-const pages = ['Map View', 'Previous Logs', 'About Us', 'Dev'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Map View', 'About Us', 'Dev'];
 
 export default function NavBar({ menu, ...props }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -130,9 +129,7 @@ export default function NavBar({ menu, ...props }) {
                     ? "/mapview"
                     : page === "About Us"
                       ? "/aboutus"
-                      : page === "Dev"
-                        ? "/dev"
-                        : "/previouslogs"
+                      : "/dev"
                 }
                 key={page}
                 style={{ marginRight: "10px" }}
