@@ -2,6 +2,7 @@
 
 import { createClient } from "@/utils/supabase/server";
 import MapDrawer from "../../components/navigation/MapDrawer";
+import { signOutAction } from "../actions";
 
 export default async function MapView() {
   const supabase = await createClient();
@@ -16,13 +17,14 @@ export default async function MapView() {
       .eq("user", user.id)
       .order("created_at", { ascending: false });
 
-
+      
+    
 
 
   return (
     <>
-      <MapDrawer prevData={data} />
+      <MapDrawer prevData={data} signOut={signOutAction} user={user.id} />
     </>
-  )
+  );
 
 }

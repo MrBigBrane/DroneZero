@@ -1,3 +1,5 @@
+
+
 import DeployButton from "@/components/deploy-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import HeaderAuth from "@/components/header-auth";
@@ -8,6 +10,8 @@ import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
 import NavBar from '@/components/navigation/NavBar'
+import { signOutAction } from "./actions";
+import { createClient } from "@/utils/supabase/server";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -24,13 +28,19 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   return (
     <html lang="en" className={geistSans.className} suppressHydrationWarning>
       <body suppressHydrationWarning>
       
       <div className="flex flex-col items-center">
-        <NavBar/>
+        <NavBar user={user} signOut={signOutAction}/>
         {children}
       </div>
       
