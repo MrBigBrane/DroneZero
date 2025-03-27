@@ -16,26 +16,21 @@ import Co2Icon from '@mui/icons-material/Co2';
 import { useState } from 'react';
 import Link from 'next/link';
 
-const pages = ['Map View', 'About Us', 'Dev'];
 
-export default function NavBar({ menu, ...props }) {
+const pages = ["Map View", "About Us", "Dev"];
+
+export default function NavBar({ menu, signOut, user, ...props }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  console.log(user)
 
   return (
     <AppBar position="fixed" {...props}>
@@ -117,34 +112,70 @@ export default function NavBar({ menu, ...props }) {
 
         {/* Large Screen Navbar */}
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-          {pages.map((page) => (
-            <Button
-              key={page}
-              // onClick={handleCloseNavMenu}
-              sx={{ color: "white", display: "block" }}
-            >
-              <Link
-                href={
-                  page === "Map View"
-                    ? "/mapview"
-                    : page === "About Us"
-                      ? "/aboutus"
-                      : "/dev"
-                }
-                key={page}
-                style={{ marginRight: "10px" }}
-              >
-                {page}
-              </Link>
-            </Button>
-          ))}
+          {pages.map((page) => {
+            if(!user && page === "About Us") {
+              return (
+                <Button
+                  key={page}
+                  // onClick={handleCloseNavMenu}
+                  sx={{ color: "white", display: "block" }}
+                >
+                  <Link
+                    href={
+                      page === "Map View"
+                        ? "/mapview"
+                        : page === "About Us"
+                          ? "/aboutus"
+                          : "/dev"
+                    }
+                    key={page}
+                    style={{ marginRight: "10px" }}
+                  >
+                    {page}
+                  </Link>
+                </Button>
+              );
+            }
+            else if(user){
+              return (
+                <Button
+                  key={page}
+                  // onClick={handleCloseNavMenu}
+                  sx={{ color: "white", display: "block" }}
+                >
+                  <Link
+                    href={
+                      page === "Map View"
+                        ? "/mapview"
+                        : page === "About Us"
+                          ? "/aboutus"
+                          : "/dev"
+                    }
+                    key={page}
+                    style={{ marginRight: "10px" }}
+                  >
+                    {page}
+                  </Link>
+                </Button>
+              );
+            }
+            
+          })}
         </Box>
-        <Button size="sm" variant="outline">
-          <Link href="/sign-in">Sign in</Link>
-        </Button>
-        <Button size="sm" variant="outline">
-          <Link href="/sign-up">Sign up</Link>
-        </Button>
+        {!user ? (
+          <>
+            <Button size="sm" variant="outline">
+              <Link href="/sign-in">Sign in</Link>
+            </Button>
+            <Button size="sm" variant="outline">
+              <Link href="/sign-up">Sign up</Link>
+            </Button>
+          </>
+        ) : (
+          <Button size="sm" variant="outline" onClick={signOut}>
+            Logout
+          </Button>
+        )}
       </Toolbar>
       {/* </Container> */}
     </AppBar>

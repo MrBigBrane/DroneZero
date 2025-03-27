@@ -107,7 +107,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function MapDrawer({ prevData }) {
+export default function MapDrawer({ prevData, signOut, user }) {
 
   const theme = useTheme();
   const [open, setOpen] = useState(true);
@@ -159,6 +159,8 @@ export default function MapDrawer({ prevData }) {
       <CssBaseline />
       <AppBar
         position="fixed"
+        signOut={signOut}
+        user={user}
         menu={
           <Tooltip title="Map Menu" placement="bottom">
             <IconButton
