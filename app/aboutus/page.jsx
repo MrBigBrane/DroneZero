@@ -1,7 +1,8 @@
-import { Avatar, Box, Grid, IconButton, Paper, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Grid, Grid2, IconButton, Paper, Stack, Typography } from "@mui/material";
 
 // import varun from '../../assets/varun.png'
 // import ryan from '../../assets/ryan.png'
+import kirby from '../images/kirby.jpg'
 
 import Image from "next/image";
 
@@ -33,7 +34,7 @@ export default function AboutUs() {
                 variant="body2"
                 style={{ textAlign: "center", marginBottom: 10 }}
               >
-                Software Developer
+                Project Member
               </Typography>
               <Typography variant="subtitle1" style={{ textAlign: "center" }}>
                 Varun is an eccentric student at Saratoga High School located in
@@ -86,7 +87,7 @@ export default function AboutUs() {
                 variant="body2"
                 style={{ textAlign: "center", marginBottom: 10 }}
               >
-                Software Developer
+                Project Lead
               </Typography>
               <Typography variant="subtitle1" style={{ textAlign: "center" }}>
                 Ryan is another eccentric student at Saratoga High School
@@ -104,6 +105,57 @@ export default function AboutUs() {
                 <Box>
                   <a
                     href="https://www.facebook.com/profile.php?id=100080897269560"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-blue-500"
+                  >
+                    <FacebookIcon style={{ marginRight: 5 }} />
+                    Facebook
+                  </a>
+                </Box>
+              </Box>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3} width={"100%"}>
+            <Paper style={{ padding: 16, textAlign: "center", margin: "auto" }}>
+              <IconButton>
+                <Avatar sx={{ width: 200, height: 200 }}>
+                  <Image  src = {kirby} alt={"Kirby Fung"} layout="fill" />
+                </Avatar>
+              </IconButton>
+              <Typography variant="h5" style={{ textAlign: "center" }}>
+                <b>Kirby</b>
+              </Typography>
+              <Typography
+                variant="body2"
+                style={{ textAlign: "center", marginBottom: 10 }}
+              >
+                Project Member
+              </Typography>
+              
+              <Typography variant="subtitle1" style={{ textAlign: "center" }}>
+                Kirby is a student at Saratoga High School. In his free time,
+                Kirby likes to play water polo, basketball, and woodwork.
+              </Typography>
+              <Box
+                marginTop={2}
+                display={"flex"}
+                justifyContent={"space-evenly"}
+              >
+                <Box>
+                  <a
+                    href="https://www.instagram.com/varunth0ta/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-customPurple"
+                  >
+                    <InstagramIcon style={{ marginRight: 5 }} />
+                    Instagram
+                  </a>
+                </Box>
+                <Box>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100068137131995"
                     target="_blank"
                     rel="noreferrer"
                     className="text-blue-500"
