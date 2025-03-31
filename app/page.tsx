@@ -1,18 +1,24 @@
-import Hero from "@/components/hero";
-import ConnectSupabaseSteps from "@/components/tutorial/connect-supabase-steps";
-import SignUpUserSteps from "@/components/tutorial/sign-up-user-steps";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
+import video_player from "@/components/video/video";
 
 export default async function Home() {
   return (
     <>
-      <Hero />
       <Button href="/sign-in">Sign in</Button>
-      <main className="flex-1 flex flex-col gap-6 px-4">
-        <h2 className="font-medium text-xl mb-4">Next steps</h2>
-        {hasEnvVars ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-      </main>
+      <Typography 
+        variant="h4"
+        sx={{mt: 4}}
+      >
+        Purpose
+      </Typography>
+      <Typography 
+        variant="body1"
+      >
+        According to a 2022 Clean Air Fund survey, about one-third of 119 countries could not establish 
+        CO2 monitoring networks due to financial and technical expertise restrictions. Here at DroneZero 
+        our purpose is to create a cost effective way and precise way of monitoring CO2 levels in those
+         119 countries and more.
+      </Typography>
     </>
   );
 }
