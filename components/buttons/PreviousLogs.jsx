@@ -7,10 +7,13 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
-import { Box, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
+import EditDeleteButton from './EditDeleteButton';
 
-export default function PreviousLogs({ data, check, setCheck }) {
+
+export default function PreviousLogs({ totalData, data, setData, setSaved }) {
   const [open, setOpen] = useState(false);
+  const [fullData, setFullData] = useState(totalData);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -31,38 +34,17 @@ export default function PreviousLogs({ data, check, setCheck }) {
       >
         <DialogTitle>Select Previous Logs to Display</DialogTitle>
         <DialogContent>
-          <Box sx={{ maxHeight: "50vh", overflowY: "scroll" }}>
-            {data.length > 0 && data.map((item, index) => (
-              <Box key={index} sx={{ display: "flex", alignItems: "center" }}>
-                <Checkbox checked={check.includes(item)} onChange={() => {
-                  if (check.includes(item)) {
-                    setCheck(check.filter((i) => i !== item));
-                  } else {
-                    setCheck([...check, item]);
-                  }
-                }} />
-                <Typography>
-                  {item.filename}
-                </Typography>
-              </Box>
-            ))}
+          <Box sx={{ maxHeight: "50vh", overflowY: "scroll", width: "100%" }}>
+            {fullData.length > 0 &&
+              fullData.map((item, index) => (
+                <Box key={item.id} sx={{ width: "100%" }}>
+                  <EditDeleteButton item={item} data={data} setData={setData} setSaved={setSaved} setFullData={setFullData}/>
+                </Box>
+              ))}
           </Box>
-          {/* <TextField
-            autoFocus
-            required
-            margin="dense"
-            id="name"
-            name="email"
-            label="Email Address"
-            type="email"
-            fullWidth
-            variant="standard"
-          /> */}
-
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Subscribe</Button>
+          <Button onClick={handleClose}>Exit</Button>
         </DialogActions>
       </Dialog>
     </>
