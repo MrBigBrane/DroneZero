@@ -1,5 +1,5 @@
 import { Button, Typography } from "@mui/material";
-import video_player from "@/components/video/video";
+import Video from "../components/video/Video";
 
 export default async function Home() {
   return (
@@ -19,6 +19,7 @@ export default async function Home() {
         our purpose is to create a cost effective way and precise way of monitoring CO2 levels in those
          119 countries and more.
       </Typography>
+      <Video />
     </>
   );
 }
