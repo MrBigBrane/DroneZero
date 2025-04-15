@@ -76,7 +76,7 @@ const styles = {
   },
 };
 
-export default function CSVReader({ setFile, setData, uploadData, setUploadData, setTotalData }) {
+export default function CSVReader({ setFile, setData, uploadData, setUploadData }) {
   const { CSVReader } = useCSVReader();
   const [zoneHover, setZoneHover] = useState(false);
   const [removeHoverColor, setRemoveHoverColor] = useState(
@@ -111,8 +111,8 @@ export default function CSVReader({ setFile, setData, uploadData, setUploadData,
               return obj;
             });
             console.log(file)
-          setData((prevData) => [...prevData, { data: extractedData, filename: file.name }]);
-          setUploadData({ data: extractedData, filename: file.name });
+          setData((prevData) => [...prevData, { data: extractedData }]);
+          setUploadData({ data: extractedData });
           setFile(file);
         }
       }}
