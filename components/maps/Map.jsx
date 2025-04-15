@@ -10,7 +10,6 @@ import { useEffect } from "react";
 export default function Map({ data }) {
 
   const defaultPosition = [37.2708243, -122.0169312];
-  const colorArray = ["red", "orange", "green", "blue", "purple", "black"];
 
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
@@ -62,7 +61,6 @@ export default function Map({ data }) {
                 item.latitude,
                 item.longitude,
               ])}
-              color={colorArray[index % colorArray.length]}
             />
           );
         })}

@@ -24,4 +24,7 @@ export default async function savecsv(csvdata, filename) {
     if (error) {
         console.log(error)
     }
+    else {
+        console.log(data)
+    }
 }
