@@ -17,7 +17,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 
-const pages = ["Map View", "About Us", "Dev"];
+const pages = ["Map View", "About Us"];
 
 export default function NavBar({ menu, signOut, user, ...props }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -111,7 +111,7 @@ export default function NavBar({ menu, signOut, user, ...props }) {
         {/* Large Screen Navbar */}
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {pages.map((page) => {
-            if(!user && page === "About Us") {
+            if(!user && page === "About Us" || !user && page === "Map View") {
               return (
                 <Button
                   key={page}

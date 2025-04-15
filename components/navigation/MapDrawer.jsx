@@ -117,7 +117,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
   const [file, setFile] = useState(null);
   const [saved, setSaved] = useState(false);
 
-  // console.log(data)
+  const tabs = user ? ["New Map", "Flight Stats", "Previous Logs"] : ["New Map", "Flight Stats"];
 
   function average(arr) {
     if (arr.length === 0) {
@@ -195,7 +195,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
         <Box sx={{ flex: 1, flexDirection: "row", display: "flex" }}>
           <Box>
             <List>
-              {["New Map", "Flight Stats", "Previous Logs"].map(
+              {tabs.map(
                 (text, index) => (
                   <ListItem key={text} disablePadding sx={{ display: "block" }}>
                     <Tooltip title={text} placement="right">
@@ -256,7 +256,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
                   uploadData={uploadData}
                   setUploadData={setUploadData}
                 />
-                {uploadData?.data?.length > 0 && (
+                {user && uploadData?.data?.length > 0 && (
                   <SaveModal
                     data={uploadData.data}
                     file={file}
