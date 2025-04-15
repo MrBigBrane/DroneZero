@@ -35,7 +35,7 @@ const openedMixin = (theme) => ({
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
   }),
-  overflowX: 'scroll',
+  overflowX: 'hidden',
 });
 
 const closedMixin = (theme) => ({
@@ -117,7 +117,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
   const [file, setFile] = useState(null);
   const [saved, setSaved] = useState(false);
 
-  // console.log(data)
+  console.log(data)
 
   function average(arr) {
     if (arr.length === 0) {
@@ -129,7 +129,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
   function countGreaterThan(arr, value1, value2) {
     let count = 0;
     for (let i = 0; i < arr.length; i++) {
-      if (arr[i] < value2 && arr[i] > value1) {
+      if (arr[i].co2_ppm < value2 && arr[i].co2_ppm > value1) {
         count++;
       }
     }
@@ -257,20 +257,16 @@ export default function MapDrawer({ prevData, signOut, user }) {
                   setUploadData={setUploadData}
                 />
                 {uploadData?.data?.length > 0 && (
-                  <SaveModal
-                    data={uploadData.data}
-                    file={file}
-                    setSaved={setSaved}
-                  />
+                  <SaveModal data={uploadData.data} file={file} setSaved={setSaved} />
                 )}
               </div>
             ) : tab === 1 ? (
               <div>
-                <p style={{ textAlign: "center" }}><b>Flight Stats</b></p>
+                <p>Flight Stats</p>
                 <br />
                 {data.length > 0 ? (
                   data.map((item, index) => (
-                    <div key={index} style={{ border: "1px solid black", borderRadius: "10px", padding: 5, marginBottom: 10 }}>
+                    <div key={index}>
                       <Typography variant="h6">
                         <b>{item.filename}</b>
                       </Typography>
@@ -296,7 +292,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
                       <p>
                         <b>Risk Assessment:</b>
                       </p>
-                      <p style={{ color: "red" }}>
+                      <p>
                         High Risk:{" "}
                         {countGreaterThan(
                           item.data.map((item) => item.co2_ppm),
@@ -305,7 +301,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
                         )}{" "}
                         pts
                       </p>
-                      <p style={{ color: "orange" }}>
+                      <p>
                         Medium Risk:{" "}
                         {countGreaterThan(
                           item.data.map((item) => item.co2_ppm),
@@ -314,7 +310,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
                         )}{" "}
                         pts
                       </p>
-                      <p style={{ color: "green" }}>
+                      <p>
                         Low Risk:{" "}
                         {countGreaterThan(
                           item.data.map((item) => item.co2_ppm),
@@ -325,26 +321,6 @@ export default function MapDrawer({ prevData, signOut, user }) {
                       </p>
                       <p>Total: {item.data.length} pts</p>
                       <br />
-                      <p>
-                        <b>Altitude Stats:</b>
-                        <br />
-                      </p>
-                      <p>
-                        Avg:{" "}
-                        {Math.round(
-                          average(item.data.map((item) => item.altitude))
-                        )}{" "}
-                        ft
-                      </p>
-                      <p>
-                        Max:{" "}
-                        {Math.max(...item.data.map((item) => item.altitude))} ft
-                      </p>
-                      <p>
-                        Min:{" "}
-                        {Math.min(...item.data.map((item) => item.altitude))} ft
-                      </p>
-                      <br />
                     </div>
                   ))
                 ) : (
@@ -354,33 +330,20 @@ export default function MapDrawer({ prevData, signOut, user }) {
                 )}
               </div>
             ) : (
-              <PreviousLogs
-                totalData={prevData}
-                data={data}
-                setData={setData}
-                setSaved={setSaved}
-              />
+              <PreviousLogs data={prevData} check={data} setCheck={setData} />
             )}
           </Box>
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1 }}>
-        <Snackbar open={saved === true} autoHideDuration={6000}>
+        <Snackbar open={saved} autoHideDuration={6000}>
           <Alert
+            // onClose={handleClose}
             severity="success"
             variant="filled"
             sx={{ width: "100%" }}
           >
             Saved successfully!
-          </Alert>
-        </Snackbar>
-        <Snackbar open={saved === 2} autoHideDuration={6000}>
-          <Alert
-            severity="success"
-            variant="filled"
-            sx={{ width: "100%" }}
-          >
-            Deleted successfully!
           </Alert>
         </Snackbar>
         <LazyLoadingMap data={data} />
