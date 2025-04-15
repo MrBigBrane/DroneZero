@@ -1,13 +1,5 @@
 
-
-import DeployButton from "@/components/deploy-button";
-import { EnvVarWarning } from "@/components/env-var-warning";
-import HeaderAuth from "@/components/header-auth";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { Geist } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import Link from "next/link";
 import "./globals.css";
 import NavBar from '@/components/navigation/NavBar'
 import { signOutAction } from "./actions";
