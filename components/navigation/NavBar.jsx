@@ -30,8 +30,6 @@ export default function NavBar({ menu, signOut, user, ...props }) {
     setAnchorElNav(null);
   };
 
-  console.log(user)
-
   return (
     <AppBar position="fixed" {...props}>
       <Toolbar>
