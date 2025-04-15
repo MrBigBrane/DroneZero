@@ -1,11 +1,19 @@
-import FileButton from "@/components/buttons/FileButton";
-import MapDrawer from "../../components/navigation/MapDrawer";
+import { signOutAction } from "../actions";
 
-export default function DevPage() {
+import MapDrawer from "../../components/navigation/MapDrawer";
+import { createClient } from "@/utils/supabase/server";
+
+export default async function DevPage() {
+    const supabase = await createClient();
+
+    const {
+        data: { user },
+    } = await supabase.auth.getUser();
+
     return (
         <>
             {/* <h1>Dev Page</h1> */}
-            <MapDrawer />
+            <MapDrawer prevData={[]} signOut={signOutAction} user={user.id} />
         </>
     );
 }
