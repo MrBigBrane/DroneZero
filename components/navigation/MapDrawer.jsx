@@ -255,6 +255,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
                   setFile={setFile}
                   uploadData={uploadData}
                   setUploadData={setUploadData}
+                  file={file}
                 />
                 {user && uploadData?.data?.length > 0 && (
                   <SaveModal
