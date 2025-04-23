@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 import MapDrawer from "../../components/navigation/MapDrawer";
 import { signOutAction } from "../actions";
 
-export default async function MapView() {
+export default async function MapView({ searchParams }) {
   const supabase = await createClient();
 
   const {
@@ -18,7 +18,7 @@ export default async function MapView() {
 
   return (
     <>
-      <MapDrawer prevData={data} signOut={signOutAction} user={user?.id} />
+      <MapDrawer prevData={data} signOut={signOutAction} user={user?.id} tutorial={searchParams?.tutorial}/>
     </>
   );
 }
