@@ -1,12 +1,16 @@
+'use client'
+
 import { Box, Divider, Stack, Grid, Button, Typography } from "@mui/material";
 import Video from "../components/video/Video";
+import { redirect } from "next/navigation";
+import Link from "next/link";
+import { ArrowRight } from "@mui/icons-material";
 
-export default async function Home() {
+export default function Home({ searchParams }) {
   return (
     <>
-      <Button href="/sign-in">Sign in</Button>
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2} sx={{mt: 10}}>
+        <Grid container spacing={2} sx={{mt: 15}}>
           <Grid size={10}>
             <Stack spacing={2} sx={{maxWidth: 600}}>
               <Typography 
@@ -25,6 +29,7 @@ export default async function Home() {
                 119 countries and more.
               </Typography>
               <Divider variant="middle" flexItem sx={{width: "90%"}} />
+              <a href="/mapview?tutorial=true">Map Tutorial <ArrowRight size={16} /></a>
             </Stack>
           </Grid>
           <Grid size={8}>
