@@ -526,8 +526,18 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
             setForward(false);
             }
           }
+          if (nextStepIndex === 7) {
+            if (forward) {
+              setOpened((prev) => !prev);
+              setForward(false);
+            }
+          }
           if(nextStepIndex === 8){
-            setOpened((prev) => !prev);
+            if(!forward){
+              setOpened((prev) => !prev);
+              setForward(true);
+            }
+            
           }
           await new Promise((resolve) =>
             setTimeout(() => {
