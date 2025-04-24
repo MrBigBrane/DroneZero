@@ -14,7 +14,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import FileButton from '../buttons/FileButton';
 import LazyLoadingMap from '../maps/LazyLoadingMap';
 import { Tooltip, Button, Typography, Snackbar, Alert } from '@mui/material';
@@ -435,17 +435,20 @@ const defaultFile = [
 ];
 
 export default function MapDrawer({ prevData, signOut, user, tutorial }) {
+  const stepsRef = useRef(null);
 
   const theme = useTheme();
   const [open, setOpen] = useState(true);
   const [tab, setTab] = useState(0);
-  const [data, setData] = useState(tutorial ? [{data: defaultFile, filename: 'test.csv'}] : []);
-  const [uploadData, setUploadData] = useState(tutorial ? {data: defaultFile, filename: 'test.csv'} : null);
-  const [file, setFile] = useState(tutorial ? {name: 'test.csv', size: 3782} : null);
+  const [data, setData] = useState([]);
+  const [uploadData, setUploadData] = useState(null);
+  const [file, setFile] = useState(null);
   const [saved, setSaved] = useState(false);
   const [tutorialStart, setTutorialStart] = useState(tutorial);
+  const [opened, setOpened] = useState(false);
+  const [forward, setForward] = useState(true);
 
-  const tabs = user ? ["New Map", "Flight Stats", "Previous Logs"] : ["New Map", "Flight Stats"];
+  const tabs = ["New Map", "Flight Stats", "Previous Logs"]
 
   function average(arr) {
     if (arr.length === 0) {
@@ -485,33 +488,57 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
   return (
     <Box sx={{ display: "flex" }}>
       <Steps
+        ref={stepsRef}
         enabled={tutorialStart}
         initialStep={0}
         steps={[
-          {
-            element: ".map",
-            intro: "Map step",
-          },
-          {
-            element: ".csvbutton",
-            intro: "Csv step",
-          },
-          {
-            element: ".flightstats",
-            intro: "Flightstats step",
-          },
-          {
-            element: ".flightstats2",
-            intro: "Flightstats2 step",
-          }
+          { element: ".map", intro: "Map step" },
+          { element: ".drawer", intro: "Drawer step" },
+          { element: ".csvbutton", intro: "Csv step" },
+          { element: ".upload", intro: "Upload step" },
+          { element: ".flightstats", intro: "Flightstats step" },
+          { element: ".previouslogs", intro: "Previouslogs step" },
+          { element: ".previouslogs2", intro: "Previouslogs2 step" },
+          { element: ".previouslogs3", intro: "Previouslogs3 step" },
+          { element: ".mappoint", intro: "Mappoint step" },
+          { element: ".end", intro: "Finish step" },
         ]}
-        onBeforeChange={(nextStepIndex) => {
-          if (nextStepIndex === 2) {
-            setTab(1)
+        onBeforeChange={async (nextStepIndex) => {
+          if (nextStepIndex === 3) {
+            setTab(0);
+            setUploadData({ data: defaultFile, filename: "test.csv" });
+            setFile({ name: "test.csv", size: 3782 });
+            setData([{ data: defaultFile, filename: "test.csv" }]);
           }
+          if (nextStepIndex === 4) {
+            setTab(1);
+          }
+          if (nextStepIndex === 5) {
+            setTab(2);
+            if(!forward){
+            setOpened((prev) => !prev);
+            setForward(true);
+            }
+          }
+          if (nextStepIndex === 6) {
+            if(forward){
+            setOpened((prev) => !prev);
+            setForward(false);
+            }
+          }
+          if(nextStepIndex === 8){
+            setOpened((prev) => !prev);
+          }
+          await new Promise((resolve) =>
+            setTimeout(() => {
+              stepsRef.current.updateStepElement(nextStepIndex);
+              resolve(true);
+            }, 500)
+          );
         }}
         onExit={() => setTutorialStart(false)}
       />
+
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -550,7 +577,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
         <Divider />
         <Box sx={{ flex: 1, flexDirection: "row", display: "flex" }}>
           <Box>
-            <List>
+            <List className="drawer">
               {tabs.map((text, index) => (
                 <ListItem key={text} disablePadding sx={{ display: "block" }}>
                   <Tooltip title={text} placement="right">
@@ -720,13 +747,40 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                   </p>
                 )}
               </div>
+            ) : tutorial || user ? (
+              <div className={"previouslogs"}>
+                <PreviousLogs
+                  totalData={
+                    tutorial
+                      ? prevData?.length > 0
+                        ? [
+                            {
+                              data: defaultFile,
+                              filename: "test.csv",
+                              id: "2dad2f07-993e-4619-9004-aa98a47da249",
+                              created_at: '2025-03-27 18:21:36.615369+00',
+                            },
+                            ...prevData,
+                          ]
+                        : [
+                            {
+                              data: defaultFile,
+                              filename: "test.csv",
+                              id: "2dad2f07-993e-4619-9004-aa98a47da249",
+                              created_at: '2025-03-27 18:21:36.615369+00',
+                            },
+                          ]
+                      : prevData
+                  }
+                  data={data}
+                  setData={setData}
+                  setSaved={setSaved}
+                  open={opened}
+                  setOpen={setOpened}
+                />
+              </div>
             ) : (
-              <PreviousLogs
-                totalData={prevData}
-                data={data}
-                setData={setData}
-                setSaved={setSaved}
-              />
+              <Typography variant="h6">Log In to View Previous Logs</Typography>
             )}
           </Box>
         </Box>

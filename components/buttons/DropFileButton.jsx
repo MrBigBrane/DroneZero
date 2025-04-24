@@ -136,7 +136,7 @@ export default function CSVReader({ setFile, file, setData, uploadData, setUploa
           className={className}
         >
           {file ? (
-            <div style={styles.file}>
+            <div style={styles.file} className="upload">
               <div style={styles.info}>
                 <span style={styles.size}>
                   {formatFileSize(file.size)}

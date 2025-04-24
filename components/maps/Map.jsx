@@ -11,6 +11,7 @@ export default function Map({ data }) {
 
   const defaultPosition = [37.2708243, -122.0169312];
   const colorArray = ["red", "orange", "green", "blue", "purple", "black"];
+  let first = true;
 
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
@@ -37,8 +38,11 @@ export default function Map({ data }) {
                 : item.co2_ppm > 1000
                   ? "orange"
                   : "green";
+            if (first) {
+              first = false;
             return (
               <Circle
+                className={"mappoint"}
                 key={index}
                 center={[item.latitude, item.longitude]}
                 pathOptions={{ color }}
@@ -52,7 +56,23 @@ export default function Map({ data }) {
                 </Tooltip>
               </Circle>
             );
-          })
+            }
+            else {
+              return (
+                <Circle
+                  key={index}
+                  center={[item.latitude, item.longitude]}
+                  pathOptions={{ color }}
+                  radius={2}
+                >
+                  <Tooltip>
+                    Time: {item.time} <br />
+                    CO2: {item.co2_ppm}
+                    <br />
+                    Altitude: {item.altitude}
+                  </Tooltip>
+                </Circle>
+              );}})
         )}
         {data.map((item, index) => {
           return (
