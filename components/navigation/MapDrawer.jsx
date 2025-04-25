@@ -271,7 +271,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
                 <br />
                 {data.length > 0 ? (
                   data.map((item, index) => (
-                    <div key={index} style={{ border: "1px solid black", borderRadius: "10px", padding: 5, marginBottom: 10 }}>
+                    <Box key={index} style={{ border: "1px solid black", borderRadius: "10px", padding: 5, marginBottom: 10 }}>
                       <Typography variant="h6">
                         <b>{item.filename}</b>
                       </Typography>
@@ -346,7 +346,7 @@ export default function MapDrawer({ prevData, signOut, user }) {
                         {Math.min(...item.data.map((item) => item.altitude))} ft
                       </p>
                       <br />
-                    </div>
+                    </Box>
                   ))
                 ) : (
                   <p>
