@@ -515,15 +515,15 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
           }
           if (nextStepIndex === 5) {
             setTab(2);
-            if(!forward){
-            setOpened((prev) => !prev);
-            setForward(true);
+            if (!forward) {
+              setOpened((prev) => !prev);
+              setForward(true);
             }
           }
           if (nextStepIndex === 6) {
-            if(forward){
-            setOpened((prev) => !prev);
-            setForward(false);
+            if (forward) {
+              setOpened((prev) => !prev);
+              setForward(false);
             }
           }
           if (nextStepIndex === 7) {
@@ -532,12 +532,11 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
               setForward(false);
             }
           }
-          if(nextStepIndex === 8){
-            if(!forward){
+          if (nextStepIndex === 8) {
+            if (!forward) {
               setOpened((prev) => !prev);
               setForward(true);
             }
-            
           }
           await new Promise((resolve) =>
             setTimeout(() => {
@@ -665,8 +664,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                 <br />
                 {data.length > 0 ? (
                   data.map((item, index) => (
-                    <Box key={index} style={{ border: "1px solid black", borderRadius: "10px", padding: 5, marginBottom: 10 }}>
-                    <div
+                    <Box
                       key={index}
                       style={{
                         border: "1px solid black",
@@ -674,82 +672,96 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                         padding: 5,
                         marginBottom: 10,
                       }}
-                      className="flightstats2"
                     >
-                      <Typography variant="h6">
-                        <b>{item.filename}</b>
-                      </Typography>
-                      <p>
-                        <b>CO2 Stats:</b>
-                      </p>
-                      <p>
-                        Avg:{" "}
-                        {Math.round(
-                          average(item.data.map((item) => item.co2_ppm))
-                        )}{" "}
-                        ppm
-                      </p>
-                      <p>
-                        Max:{" "}
-                        {Math.max(...item.data.map((item) => item.co2_ppm))} ppm
-                      </p>
-                      <p>
-                        Min:{" "}
-                        {Math.min(...item.data.map((item) => item.co2_ppm))} ppm
-                      </p>
-                      <br />
-                      <p>
-                        <b>Risk Assessment:</b>
-                      </p>
-                      <p style={{ color: "red" }}>
-                        High Risk:{" "}
-                        {countGreaterThan(
-                          item.data.map((item) => item.co2_ppm),
-                          1500,
-                          10000
-                        )}{" "}
-                        pts
-                      </p>
-                      <p style={{ color: "orange" }}>
-                        Medium Risk:{" "}
-                        {countGreaterThan(
-                          item.data.map((item) => item.co2_ppm),
-                          1000,
-                          1500
-                        )}{" "}
-                        pts
-                      </p>
-                      <p style={{ color: "green" }}>
-                        Low Risk:{" "}
-                        {countGreaterThan(
-                          item.data.map((item) => item.co2_ppm),
-                          0,
-                          1000
-                        )}{" "}
-                        pts
-                      </p>
-                      <p>Total: {item.data.length} pts</p>
-                      <br />
-                      <p>
-                        <b>Altitude Stats:</b>
+                      <div
+                        key={index}
+                        style={{
+                          border: "1px solid black",
+                          borderRadius: "10px",
+                          padding: 5,
+                          marginBottom: 10,
+                        }}
+                        className="flightstats2"
+                      >
+                        <Typography variant="h6">
+                          <b>{item.filename}</b>
+                        </Typography>
+                        <p>
+                          <b>CO2 Stats:</b>
+                        </p>
+                        <p>
+                          Avg:{" "}
+                          {Math.round(
+                            average(item.data.map((item) => item.co2_ppm))
+                          )}{" "}
+                          ppm
+                        </p>
+                        <p>
+                          Max:{" "}
+                          {Math.max(...item.data.map((item) => item.co2_ppm))}{" "}
+                          ppm
+                        </p>
+                        <p>
+                          Min:{" "}
+                          {Math.min(...item.data.map((item) => item.co2_ppm))}{" "}
+                          ppm
+                        </p>
                         <br />
-                      </p>
-                      <p>
-                        Avg:{" "}
-                        {Math.round(
-                          average(item.data.map((item) => item.altitude))
-                        )}{" "}
-                        ft
-                      </p>
-                      <p>
-                        Max:{" "}
-                        {Math.max(...item.data.map((item) => item.altitude))} ft
-                      </p>
-                      <p>
-                        Min:{" "}
-                        {Math.min(...item.data.map((item) => item.altitude))} ft
-                      </p>
-                      <br />
+                        <p>
+                          <b>Risk Assessment:</b>
+                        </p>
+                        <p style={{ color: "red" }}>
+                          High Risk:{" "}
+                          {countGreaterThan(
+                            item.data.map((item) => item.co2_ppm),
+                            1500,
+                            10000
+                          )}{" "}
+                          pts
+                        </p>
+                        <p style={{ color: "orange" }}>
+                          Medium Risk:{" "}
+                          {countGreaterThan(
+                            item.data.map((item) => item.co2_ppm),
+                            1000,
+                            1500
+                          )}{" "}
+                          pts
+                        </p>
+                        <p style={{ color: "green" }}>
+                          Low Risk:{" "}
+                          {countGreaterThan(
+                            item.data.map((item) => item.co2_ppm),
+                            0,
+                            1000
+                          )}{" "}
+                          pts
+                        </p>
+                        <p>Total: {item.data.length} pts</p>
+                        <br />
+                        <p>
+                          <b>Altitude Stats:</b>
+                          <br />
+                        </p>
+                        <p>
+                          Avg:{" "}
+                          {Math.round(
+                            average(item.data.map((item) => item.altitude))
+                          )}{" "}
+                          ft
+                        </p>
+                        <p>
+                          Max:{" "}
+                          {Math.max(...item.data.map((item) => item.altitude))}{" "}
+                          ft
+                        </p>
+                        <p>
+                          Min:{" "}
+                          {Math.min(...item.data.map((item) => item.altitude))}{" "}
+                          ft
+                        </p>
+                        <br />
+                      </div>
                     </Box>
                   ))
                 ) : (
@@ -769,7 +781,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                               data: defaultFile,
                               filename: "test.csv",
                               id: "2dad2f07-993e-4619-9004-aa98a47da249",
-                              created_at: '2025-03-27 18:21:36.615369+00',
+                              created_at: "2025-03-27 18:21:36.615369+00",
                             },
                             ...prevData,
                           ]
@@ -778,7 +790,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                               data: defaultFile,
                               filename: "test.csv",
                               id: "2dad2f07-993e-4619-9004-aa98a47da249",
-                              created_at: '2025-03-27 18:21:36.615369+00',
+                              created_at: "2025-03-27 18:21:36.615369+00",
                             },
                           ]
                       : prevData
