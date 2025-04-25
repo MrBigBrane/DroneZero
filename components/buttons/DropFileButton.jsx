@@ -76,7 +76,7 @@ const styles = {
   },
 };
 
-export default function CSVReader({ setFile, file, setData, uploadData, setUploadData }) {
+export default function CSVReader({ setFile, file, setData, uploadData, setUploadData, className }) {
   const { CSVReader } = useCSVReader();
   const [zoneHover, setZoneHover] = useState(false);
   const [removeHoverColor, setRemoveHoverColor] = useState(
@@ -133,9 +133,10 @@ export default function CSVReader({ setFile, file, setData, uploadData, setUploa
           }}
           onMouseEnter={() => setZoneHover(true)}
           onMouseLeave={() => setZoneHover(false)}
+          className={className}
         >
           {file ? (
-            <div style={styles.file}>
+            <div style={styles.file} className="upload">
               <div style={styles.info}>
                 <span style={styles.size}>
                   {formatFileSize(file.size)}

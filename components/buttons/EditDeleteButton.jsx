@@ -57,7 +57,8 @@ export default function EditDeleteButton({ data, setData, item, setSaved, setFul
       </Box>
       {!deleting && !editing && (
         <Box>
-          <IconButton
+          <div className='previouslogs3'>
+            <IconButton
             onClick={() => {
               setEditing(true);
             }}
@@ -71,6 +72,8 @@ export default function EditDeleteButton({ data, setData, item, setSaved, setFul
           >
             <DeleteIcon />
           </IconButton>
+          </div>
+          
         </Box>
       )}
       {deleting && (

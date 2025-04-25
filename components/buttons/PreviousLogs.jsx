@@ -11,8 +11,7 @@ import { Box, IconButton, Typography } from '@mui/material';
 import EditDeleteButton from './EditDeleteButton';
 
 
-export default function PreviousLogs({ totalData, data, setData, setSaved }) {
-  const [open, setOpen] = useState(false);
+export default function PreviousLogs({ totalData, data, setData, setSaved, className, open, setOpen }) {
   const [fullData, setFullData] = useState(totalData);
 
   const handleClickOpen = () => {
@@ -25,14 +24,16 @@ export default function PreviousLogs({ totalData, data, setData, setSaved }) {
 
   return (
     <>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={handleClickOpen} className={className}>
         Previous Logs
       </Button>
       <Dialog
         open={open}
         onClose={handleClose}
+        
       >
-        <DialogTitle>Select Previous Logs to Display</DialogTitle>
+        <div className='previouslogs2'> 
+          <DialogTitle >Select Previous Logs to Display</DialogTitle>
         <DialogContent>
           <Box sx={{ maxHeight: "50vh", overflowY: "scroll", width: "100%" }}>
             {fullData.length > 0 &&
@@ -46,6 +47,8 @@ export default function PreviousLogs({ totalData, data, setData, setSaved }) {
         <DialogActions>
           <Button onClick={handleClose}>Exit</Button>
         </DialogActions>
+        </div>
+        
       </Dialog>
     </>
   );

@@ -7,7 +7,7 @@ const LazyMap = dynamic(() => import("@/components/maps/Map"), {
   loading: () => <p>Loading...</p>,
 });
 
-export default function LazyLoadingMap({ data }) {
+export default function LazyLoadingMap({ data, className }) {
 
   return (
     <>
