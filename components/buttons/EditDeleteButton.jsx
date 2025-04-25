@@ -24,7 +24,10 @@ export default function EditDeleteButton({ data, setData, item, setSaved, setFul
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center" }}>
+        
         <Checkbox
+          className= 'previouslogs4'
+          
           checked={data.some((i) => i.id == item.id)}
           onChange={() => {
             if (data.some((i) => i.id == item.id)) {
