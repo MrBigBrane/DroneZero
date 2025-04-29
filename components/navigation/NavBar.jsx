@@ -17,7 +17,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 
-const pages = ["Map View", "About Us", "Dev"];
+const pages = ["Map View", "About Us"];
 
 export default function NavBar({ menu, signOut, user, ...props }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -124,7 +124,7 @@ export default function NavBar({ menu, signOut, user, ...props }) {
                         ? "/mapview"
                         : page === "About Us"
                           ? "/aboutus"
-                          : "/dev"
+                            : "/dev"
                     }
                     key={page}
                     style={{ marginRight: "10px" }}
@@ -147,7 +147,7 @@ export default function NavBar({ menu, signOut, user, ...props }) {
                         ? "/mapview"
                         : page === "About Us"
                           ? "/aboutus"
-                          : "/dev"
+                            : "/dev"
                     }
                     key={page}
                     style={{ marginRight: "10px" }}

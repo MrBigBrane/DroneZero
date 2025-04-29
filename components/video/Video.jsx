@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function video_player() {
     return (
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/p40MTH3xJ54?si=VJRl2V7iAF5ihAJV" allowFullScreen></iframe>
+        <iframe width={"100%"} height={400} style={{ justifyContent: "center",  marginTop: 20, marginBottom: 20}} src="https://www.youtube.com/embed/p40MTH3xJ54?si=VJRl2V7iAF5ihAJV" allowFullScreen></iframe>
     );
 
 }
