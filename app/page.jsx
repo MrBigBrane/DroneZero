@@ -66,7 +66,7 @@ export default function Home({ searchParams }) {
           <Button
             variant="outlined"
             size="large"
-            href="/"
+            href="/dronetutorial"
             endIcon={<ArrowRight />}
           >
             Drone Tutorial
