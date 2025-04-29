@@ -493,21 +493,21 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
         enabled={tutorialStart}
         initialStep={0}
         steps={[
-          { element: ".map", intro: "Welcome to the Map View. Here you can visualize the data collected by the drone." },
-          { element: ".drawer", intro: "This toolbar allows you to navigate between New Map, Flight Stats, and Previous Logs." },
-          { element: ".csvbutton", intro: "This is where you upload the CSV file. Make sure your CSV file has five columns labeled Time,	CO2 Measurement (PPM),	Longitude (degrees E),	Latitude (degrees N),	and Altitude (m)." },
-          { element: ".upload", intro: "After uploading a CSV, it will be displayed here and the map will automatically zoom in on the data." },
-          { element: ".save", intro: "The save button allows you to save the csv into the Previous Logs tab. You will need to reload the page after saving the CSV to see it in Previous Logs."},
-          { element: ".flightstats", intro: "The Flight Stats tab summarizes the data on the CSV." },
-          { element: ".previouslogs", intro: "Clicking on the Previous Logs button allows you to view previous logs that were saved." },
-          { element: ".previouslogs2", intro: "Here is the popup that displays the saved CSV files." },
-          { element: ".previouslogs3", intro: "You can rename and delete files using these buttons." },
-          { element: ".previouslogs4", intro: "You can select multiple files here to be displayed on the map at the same time."},
-          { element: ".mappoint", intro: "Hovering over data points allows you to see their stats. The points are also color coded according to their CO2 level." },
+          { element: ".map", intro: "Welcome to the Map View. Here you can visualize the data collected by the drone." }, // 0
+          { element: ".drawer", intro: "This toolbar allows you to navigate between New Map, Flight Stats, and Previous Logs." }, // 1
+          { element: ".csvbutton", intro: "This is where you upload the CSV file. Make sure your CSV file has five columns labeled Time,	CO2 Measurement (PPM),	Longitude (degrees E),	Latitude (degrees N),	and Altitude (m)." }, // 2
+          { element: ".upload", intro: "After uploading a CSV, it will be displayed here and the map will automatically zoom in on the data." }, // 3
+          { element: ".save", intro: "The save button allows you to save the csv into the Previous Logs tab. You will need to reload the page after saving the CSV to see it in Previous Logs."}, // 4
+          { element: ".flightstats", intro: "The Flight Stats tab summarizes the data on the CSV." }, // 5
+          { element: ".previouslogs", intro: "Clicking on the Previous Logs button allows you to view previous logs that were saved." }, // 6
+          { element: ".previouslogs2", intro: "Here is the popup that displays the saved CSV files." }, // 7
+          { element: ".previouslogs3", intro: "You can rename and delete files using these buttons." }, // 8
+          { element: ".previouslogs4", intro: "You can select multiple files here to be displayed on the map at the same time."}, // 9
+          { element: ".mappoint", intro: "Hovering over data points allows you to see their stats. The points are also color coded according to their CO2 level." }, // 10
           { element: ".end", intro: "This is the end of the map tutorial." },
         ]}
         onBeforeChange={async (nextStepIndex) => {
-          if (nextStepIndex === 3) {
+          if (nextStepIndex === 3 || nextStepIndex === 4) {
             setTab(0);
             setUploadData({ data: defaultFile, filename: "test.csv" });
             setFile({ name: "test.csv", size: 3782 });
@@ -518,23 +518,23 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
           }
           if (nextStepIndex === 6) {
             setTab(2);
-            if(!forward){
-            setOpened((prev) => !prev);
-            setForward(true);
+            if (!forward) {
+              setOpened((prev) => !prev);
+              setForward(true);
             }
           }
-          if (nextStepIndex === 7) {
+          if (nextStepIndex === 7 || nextStepIndex === 9) {
             if(forward){
             setOpened((prev) => !prev);
             setForward(false);
             }
           }
-          if (nextStepIndex === 8) {
-            if (forward) {
-              setOpened((prev) => !prev);
-              setForward(false);
-            }
-          }
+          // if (nextStepIndex === 8) {
+          //   if (forward) {
+          //     setOpened((prev) => !prev);
+          //     setForward(false);
+          //   }
+          // }
           if(nextStepIndex === 10){
             if(!forward){
               setOpened((prev) => !prev);
