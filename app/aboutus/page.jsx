@@ -2,13 +2,12 @@ import { Avatar, Box, Grid, Grid2, IconButton, Paper, Stack, Typography } from "
 
 // import varun from '../../assets/varun.png'
 // import ryan from '../../assets/ryan.png'
-import kirby from '../images/kirby.jpg'
+import kirby from '../images/Kirby2.jpg'
 
 import Image from "next/image";
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
-
 export default function AboutUs() {
     return (
       <>
@@ -27,16 +26,16 @@ export default function AboutUs() {
                   <Image  alt={"Varun Thota"} layout="fill" />
                 </Avatar>
               </IconButton>
-              <Typography variant="h5" style={{ textAlign: "center" }}>
+              <Typography variant="h5" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
                 <b>Varun Thota</b>
               </Typography>
               <Typography
                 variant="body2"
-                style={{ textAlign: "center", marginBottom: 10 }}
+                style={{ textAlign: "center", marginBottom: 10 , fontFamily: "'Lora', serif"}}
               >
                 Project Member
               </Typography>
-              <Typography variant="subtitle1" style={{ textAlign: "center" }}>
+              <Typography variant="subtitle1" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
                 Varun is an eccentric student at Saratoga High School located in
                 Saratoga, California. In addition to developing the NRIVA
                 Diabetes Prevention Program website, Varun enjoys exercise,
@@ -55,8 +54,8 @@ export default function AboutUs() {
                     rel="noreferrer"
                     className="text-customPurple"
                   >
-                    <InstagramIcon style={{ marginRight: 5 }} />
-                    Instagram
+                    <InstagramIcon style={{ marginRight: 5, color : "fuchsia"}} />
+                    <span style={{ color: 'fuchsia' }}>Instagram</span>
                   </a>
                 </Box>
                 <Box>
@@ -66,8 +65,8 @@ export default function AboutUs() {
                     rel="noreferrer"
                     className="text-blue-500"
                   >
-                    <FacebookIcon style={{ marginRight: 5 }} />
-                    Facebook
+                    <FacebookIcon style={{ marginRight: 5, color: 'DodgerBlue'}} />
+                    <span style={{ color: 'DodgerBlue' }}>Facebook</span>
                   </a>
                 </Box>
               </Box>
@@ -80,16 +79,16 @@ export default function AboutUs() {
                   <Image  alt={"Ryan Modafe"} layout="fill" />
                 </Avatar>
               </IconButton>
-              <Typography variant="h5" style={{ textAlign: "center" }}>
+              <Typography variant="h5" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
                 <b>Ryan Modafe</b>
               </Typography>
               <Typography
                 variant="body2"
-                style={{ textAlign: "center", marginBottom: 10 }}
+                style={{ textAlign: "center", marginBottom: 10 , fontFamily: "'Lora', serif"}}
               >
                 Project Lead
               </Typography>
-              <Typography variant="subtitle1" style={{ textAlign: "center" }}>
+              <Typography variant="subtitle1" style={{ textAlign: "center", fontFamily: "'Lora', serif" }}>
                 Ryan is another eccentric student at Saratoga High School
                 located in Saratoga, California. He fully developed the backend
                 of the NRIVA Diabetes Prevention Program website and greatly
@@ -109,8 +108,8 @@ export default function AboutUs() {
                     rel="noreferrer"
                     className="text-blue-500"
                   >
-                    <FacebookIcon style={{ marginRight: 5 }} />
-                    Facebook
+                    <FacebookIcon style={{ marginRight: 5, color: 'DodgerBlue'}} />
+                    <span style={{ color: 'DodgerBlue' }}>Facebook</span>
                   </a>
                 </Box>
               </Box>
@@ -123,18 +122,18 @@ export default function AboutUs() {
                   <Image  src = {kirby} alt={"Kirby Fung"} layout="fill" />
                 </Avatar>
               </IconButton>
-              <Typography variant="h5" style={{ textAlign: "center" }}>
-                <b>Kirby</b>
+              <Typography variant="h5" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
+                <b>Kirby Fung</b>
               </Typography>
               <Typography
                 variant="body2"
-                style={{ textAlign: "center", marginBottom: 10 }}
+                style={{ textAlign: "center", marginBottom: 10 , fontFamily: "'Lora', serif"}}
               >
                 Project Member
               </Typography>
               
-              <Typography variant="subtitle1" style={{ textAlign: "center" }}>
-                Kirby is a student at Saratoga High School. In his free time,
+              <Typography variant="subtitle1" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
+                Kirby is a student at Saratoga High School. During the introductory phase, he conducted research on determining the right hardware parts for the drone and ensuring that the parts would function together and are reliable. When building the drone, he CAD designed the drone legs and helped with soldering the connections between the drone parts. For the software, he helped with coding the raspberry pi to record CO2 measurements. In his free time,
                 Kirby likes to play water polo, basketball, and woodwork.
               </Typography>
               <Box
@@ -144,24 +143,13 @@ export default function AboutUs() {
               >
                 <Box>
                   <a
-                    href="https://www.instagram.com/varunth0ta/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-customPurple"
-                  >
-                    <InstagramIcon style={{ marginRight: 5 }} />
-                    Instagram
-                  </a>
-                </Box>
-                <Box>
-                  <a
                     href="https://www.facebook.com/profile.php?id=100068137131995"
                     target="_blank"
                     rel="noreferrer"
                     className="text-blue-500"
                   >
-                    <FacebookIcon style={{ marginRight: 5 }} />
-                    Facebook
+                    <FacebookIcon style={{ marginRight: 5, color: 'DodgerBlue'}} />
+                    <span style={{ color: 'DodgerBlue' }}>Facebook</span>
                   </a>
                 </Box>
               </Box>
