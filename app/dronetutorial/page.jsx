@@ -59,7 +59,7 @@ export default function DroneTutorial() {
                                                 </Stack>
                                             </Container>
                                         </Stack>
-                                        <Container maxWidth="100%" sx={{ justifyContent: 'center', display: 'block', marginLeft: 2 }}>
+                                        <Container maxWidth="100%" sx={{ justifyContent: 'center', alignContent: 'center', display: 'block' }}>
                                             <Image 
                                                 src= {DroneZeroWebsite} 
                                                 width= "auto" 
