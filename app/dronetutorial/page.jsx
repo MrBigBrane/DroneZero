@@ -6,9 +6,9 @@ import Data from '../images/Data.png'
 export default function DroneTutorial() {
     return (
         <>
-            <Box sx={{ display: 'flex', marginTop: '10vh', width: '120vh', bgcolor: '#a82525' }}>
+            <Box sx={{ display: 'flex', marginTop: '10vh', width: '120vh' }}>
                 <Container maxWidth="100%">
-                    <Paper sx={{ padding: 4, margin: 'auto', maxWidth: '100%' }}>
+                    <Paper elevation={3} sx={{ padding: 4, margin: 'auto', maxWidth: '100%' }}>
                         <Typography variant="h4" gutterBottom>
                             Drone Tutorial
                         </Typography>
@@ -20,7 +20,7 @@ export default function DroneTutorial() {
                                     Autonomous Data Collection
                                 </Typography>
                             </Stack>
-                            <Container maxWidth="100%" sx={{ display: 'flex', marginLeft: 2 }}>
+                            <Container maxWidth="100%" sx={{ justifyContent: 'center', display: 'flex', marginLeft: 2 }}>
                                 <Stack spacing={2}>
                                     <Stack direction="row" spacing={1}>
                                         <MemoryIcon />
@@ -48,7 +48,7 @@ export default function DroneTutorial() {
                                                     Set the drone to AUTO mode with drone switch B
                                                 </Typography>
                                             </Stack>
-                                            <Container maxWidth="100%" sx={{ marginLeft: 2, display: 'flex' }}>
+                                            <Container maxWidth="100%" sx={{ marginLeft: 'auto', display: 'flex' }}>
                                                 <Stack spacing={2}>
                                                     <Stack direction="row" spacing={1}>
                                                         <MemoryIcon />
@@ -59,12 +59,16 @@ export default function DroneTutorial() {
                                                 </Stack>
                                             </Container>
                                         </Stack>
-                                        <Image 
-                                            src= {DroneZeroWebsite} 
-                                            width={400} 
-                                            height={400} 
-                                            alt="Transmitter" 
-                                        />
+                                        <Container maxWidth="100%" sx={{ justifyContent: 'center', display: 'block', marginLeft: 2 }}>
+                                            <Image 
+                                                src= {DroneZeroWebsite} 
+                                                width= "auto" 
+                                                height= "auto" 
+                                                alt="Transmitter" 
+                                                objectFit="contain"
+                                                //style={{ float: 'right', aspectRatio: 'auto', size : 'auto' }}
+                                            />
+                                        </Container>
                                     </Stack>
                                 </Stack>
                             </Container>
