@@ -50,8 +50,11 @@ export default function Home({ searchParams }) {
         >
           According to a 2022 Clean Air Fund survey, about one-third of 119
           countries could not establish CO2 monitoring networks due to financial
-          and technical expertise restrictions. Here at DroneZero our purpose is
-          to create a cost effective way and precise way of monitoring CO2
+          and technical expertise restrictions. With the growing concern of climate change, 
+          and the increasing efforts of decreasing global emissions the need for 
+          viable solutions become more important than ever. Here at DroneZero we worked 
+          to create one of those solutions reality developing a 
+          more cost effective way and precise way of monitoring CO2
           levels in those 119 countries and more.
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 6 }}>
