@@ -3,6 +3,7 @@ import { Avatar, Box, Grid, Grid2, IconButton, Paper, Stack, Typography } from "
 // import varun from '../../assets/varun.png'
 // import ryan from '../../assets/ryan.png'
 import kirby from '../images/Kirby2.jpg'
+import ryan from '../images/ryan.png'
 
 import Image from "next/image";
 
@@ -76,7 +77,7 @@ export default function AboutUs() {
             <Paper style={{ padding: 16, textAlign: "center", margin: "auto" }}>
               <IconButton>
                 <Avatar sx={{ width: 200, height: 200 }}>
-                  <Image  alt={"Ryan Modafe"} layout="fill" />
+                  <Image src={ryan} alt={"Ryan Modafe"} layout="fill" />
                 </Avatar>
               </IconButton>
               <Typography variant="h5" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
@@ -89,10 +90,9 @@ export default function AboutUs() {
                 Project Lead
               </Typography>
               <Typography variant="subtitle1" style={{ textAlign: "center", fontFamily: "'Lora', serif" }}>
-                Ryan is another eccentric student at Saratoga High School
-                located in Saratoga, California. He fully developed the backend
-                of the NRIVA Diabetes Prevention Program website and greatly
-                enjoys programming with React.js and Next.js. In his free time,
+                Ryan is another eccentric student at Saratoga High School. He mainly worked on getting the project "off the ground," 
+                setting up the software of the drone and diving deep into ArduPilot's firmware. He also developed the CO2 collection script used for the drone
+                and the visualization of the data on this website. In his free time,
                 Ryan likes to learn more about coding, play piano, learn
                 physics, and watch movies.
               </Typography>
