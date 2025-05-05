@@ -90,7 +90,7 @@ export default function AboutUs() {
                 Project Lead
               </Typography>
               <Typography variant="subtitle1" style={{ textAlign: "center", fontFamily: "'Lora', serif" }}>
-                Ryan is another eccentric student at Saratoga High School. He mainly worked on getting the project "off the ground," 
+                Ryan is a student at Saratoga High School. He mainly worked on getting the project "off the ground," 
                 setting up the software of the drone and diving deep into ArduPilot's firmware. He also developed the CO2 collection script used for the drone
                 and the visualization of the data on this website. In his free time,
                 Ryan likes to learn more about coding, play piano, learn
