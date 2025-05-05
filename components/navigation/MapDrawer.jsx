@@ -800,7 +800,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                 />
               </div>
             ) : (
-              <Typography variant="h6">Log In to View Previous Logs</Typography>
+              <Typography variant="h6">Log In to View <br />Previous Logs</Typography>
             )}
           </Box>
         </Box>

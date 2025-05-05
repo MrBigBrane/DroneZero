@@ -15,35 +15,57 @@ export default function AboutUs() {
       <>
         <Typography
           variant="h4"
-          style={{ textAlign: "center", marginBottom: 20, marginTop: 20 }}
+          style={{
+            textAlign: "center",
+            marginBottom: 20,
+            marginTop: 80,
+            fontFamily: "'Lora', serif",
+          }}
         >
           About Us
         </Typography>
 
-        <Grid container justifyContent="center" spacing={4} width={"100%"}>
+        <Grid
+          container
+          justifyContent="center"
+          spacing={4}
+          width={"100%"}
+          marginBottom={4}
+        >
           <Grid item xs={12} md={6} lg={3} width={"100%"}>
             <Paper style={{ padding: 16, textAlign: "center", margin: "auto" }}>
               <IconButton>
                 <Avatar sx={{ width: 200, height: 200 }}>
-                  <Image  src={Varun} alt={"Varun Thota"} layout="fill" />
+                  <Image src={Varun} alt={"Varun Thota"} layout="fill" />
                 </Avatar>
               </IconButton>
-              <Typography variant="h5" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
+              <Typography
+                variant="h5"
+                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+              >
                 <b>Varun Thota</b>
               </Typography>
               <Typography
                 variant="body2"
-                style={{ textAlign: "center", marginBottom: 10 , fontFamily: "'Lora', serif"}}
+                style={{
+                  textAlign: "center",
+                  marginBottom: 10,
+                  fontFamily: "'Lora', serif",
+                }}
               >
                 Project Member
               </Typography>
-              <Typography variant="subtitle1" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
-                Varun is an excellent high school student at Saratoga High School located in
-                Saratoga, California. He mainly worked on constructing and configuring the 
-                drone with Ryan and developing the software used to collect actually CO2 
-                concentration data from our sensor.He additionally helped with the development 
-                on both this website and Flight Log collection script. In his free time, Varun 
-                likes to watch anime, play video games, and workout.
+              <Typography
+                variant="subtitle1"
+                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+              >
+                Varun is an excellent high school student at Saratoga High
+                School located in Saratoga, California. He mainly worked on
+                constructing and configuring the drone with Ryan and developing
+                the software used to collect actually CO2 concentration data
+                from our sensor.He additionally helped with the development on
+                both this website and Flight Log collection script. In his free
+                time, Varun likes to watch anime, play video games, and workout.
               </Typography>
               <Box
                 marginTop={2}
@@ -57,8 +79,10 @@ export default function AboutUs() {
                     rel="noreferrer"
                     className="text-customPurple"
                   >
-                    <InstagramIcon style={{ marginRight: 5, color : "fuchsia"}} />
-                    <span style={{ color: 'fuchsia' }}>Instagram</span>
+                    <InstagramIcon
+                      style={{ marginRight: 5, color: "fuchsia" }}
+                    />
+                    <span style={{ color: "fuchsia" }}>Instagram</span>
                   </a>
                 </Box>
                 <Box>
@@ -68,8 +92,10 @@ export default function AboutUs() {
                     rel="noreferrer"
                     className="text-blue-500"
                   >
-                    <FacebookIcon style={{ marginRight: 5, color: 'DodgerBlue'}} />
-                    <span style={{ color: 'DodgerBlue' }}>Facebook</span>
+                    <FacebookIcon
+                      style={{ marginRight: 5, color: "DodgerBlue" }}
+                    />
+                    <span style={{ color: "DodgerBlue" }}>Facebook</span>
                   </a>
                 </Box>
               </Box>
@@ -82,23 +108,35 @@ export default function AboutUs() {
                   <Image src={ryan} alt={"Ryan Modafe"} layout="fill" />
                 </Avatar>
               </IconButton>
-              <Typography variant="h5" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
+              <Typography
+                variant="h5"
+                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+              >
                 <b>Ryan Modafe</b>
               </Typography>
               <Typography
                 variant="body2"
-                style={{ textAlign: "center", marginBottom: 10 , fontFamily: "'Lora', serif"}}
+                style={{
+                  textAlign: "center",
+                  marginBottom: 10,
+                  fontFamily: "'Lora', serif",
+                }}
               >
                 Project Lead
               </Typography>
-              <Typography variant="subtitle1" style={{ textAlign: "center", fontFamily: "'Lora', serif" }}>
-                Ryan is a student at Saratoga High School. He mainly worked on 
-                getting the project "off the ground," setting up the software of 
-                the drone and diving deep into ArduPilot's firmware. He also developed 
-                the flight log collection script used for the drone and the 
-                visualization of the data on this website. In his free time,
-                Ryan likes to learn more about coding, play piano, learn
-                physics, and watch movies.
+              <Typography
+                variant="subtitle1"
+                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+              >
+                Ryan is a student at Saratoga High School. He mainly worked on
+                getting the project "off the ground," setting up the software of
+                the drone and diving deep into ArduPilot's firmware, building a
+                custom version at one point. He also set up the Raspberry Pi
+                2W, using the lite OS, developed the arming check and GPS data
+                collection scripts used for the drone, and created the
+                visualization used for CO2 data on this website. In his free
+                time, Ryan likes to learn more about deep learning, play piano,
+                and watch movies.
               </Typography>
               <Box
                 marginTop={2}
@@ -112,8 +150,10 @@ export default function AboutUs() {
                     rel="noreferrer"
                     className="text-blue-500"
                   >
-                    <FacebookIcon style={{ marginRight: 5, color: 'DodgerBlue'}} />
-                    <span style={{ color: 'DodgerBlue' }}>Facebook</span>
+                    <FacebookIcon
+                      style={{ marginRight: 5, color: "DodgerBlue" }}
+                    />
+                    <span style={{ color: "DodgerBlue" }}>Facebook</span>
                   </a>
                 </Box>
               </Box>
@@ -123,22 +163,39 @@ export default function AboutUs() {
             <Paper style={{ padding: 16, textAlign: "center", margin: "auto" }}>
               <IconButton>
                 <Avatar sx={{ width: 200, height: 200 }}>
-                  <Image  src = {kirby} alt={"Kirby Fung"} layout="fill" />
+                  <Image src={kirby} alt={"Kirby Fung"} layout="fill" />
                 </Avatar>
               </IconButton>
-              <Typography variant="h5" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
+              <Typography
+                variant="h5"
+                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+              >
                 <b>Kirby Fung</b>
               </Typography>
               <Typography
                 variant="body2"
-                style={{ textAlign: "center", marginBottom: 10 , fontFamily: "'Lora', serif"}}
+                style={{
+                  textAlign: "center",
+                  marginBottom: 10,
+                  fontFamily: "'Lora', serif",
+                }}
               >
                 Project Member
               </Typography>
-              
-              <Typography variant="subtitle1" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
-                Kirby is a student at Saratoga High School. During the introductory phase, he conducted research on determining the right hardware parts for the drone and ensuring that the parts would function together and are reliable. When building the drone, he CAD designed the drone legs and helped with soldering the connections between the drone parts. For the software, he helped with coding the raspberry pi to record CO2 measurements. In his free time,
-                Kirby likes to play water polo, basketball, and woodwork.
+
+              <Typography
+                variant="subtitle1"
+                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+              >
+                Kirby is a student at Saratoga High School. During the
+                introductory phase, he conducted research on determining the
+                right hardware parts for the drone and ensuring that the parts
+                would function together and be reliable. When building the
+                drone, he CAD designed the drone legs and helped with soldering
+                the connections between the drone parts. For the software, he
+                helped with coding the raspberry pi to record CO2 measurements.
+                In his free time, Kirby likes to play water polo, basketball,
+                and woodwork.
               </Typography>
               <Box
                 marginTop={2}
@@ -152,8 +209,10 @@ export default function AboutUs() {
                     rel="noreferrer"
                     className="text-blue-500"
                   >
-                    <FacebookIcon style={{ marginRight: 5, color: 'DodgerBlue'}} />
-                    <span style={{ color: 'DodgerBlue' }}>Facebook</span>
+                    <FacebookIcon
+                      style={{ marginRight: 5, color: "DodgerBlue" }}
+                    />
+                    <span style={{ color: "DodgerBlue" }}>Facebook</span>
                   </a>
                 </Box>
               </Box>
