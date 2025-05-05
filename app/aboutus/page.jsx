@@ -4,6 +4,7 @@ import { Avatar, Box, Grid, Grid2, IconButton, Paper, Stack, Typography } from "
 // import ryan from '../../assets/ryan.png'
 import kirby from '../images/Kirby2.jpg'
 import ryan from '../images/ryan.png'
+import Varun from '../images/Varun.png'
 
 import Image from "next/image";
 
@@ -24,7 +25,7 @@ export default function AboutUs() {
             <Paper style={{ padding: 16, textAlign: "center", margin: "auto" }}>
               <IconButton>
                 <Avatar sx={{ width: 200, height: 200 }}>
-                  <Image  alt={"Varun Thota"} layout="fill" />
+                  <Image  src={Varun} alt={"Varun Thota"} layout="fill" />
                 </Avatar>
               </IconButton>
               <Typography variant="h5" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
@@ -37,11 +38,12 @@ export default function AboutUs() {
                 Project Member
               </Typography>
               <Typography variant="subtitle1" style={{ textAlign: "center" , fontFamily: "'Lora', serif"}}>
-                Varun is an eccentric student at Saratoga High School located in
-                Saratoga, California. In addition to developing the NRIVA
-                Diabetes Prevention Program website, Varun enjoys exercise,
-                engineering, and video games Varun's social media accounts
-                include Instagram and Facebook.
+                Varun is an excellent high school student at Saratoga High School located in
+                Saratoga, California. He mainly worked on constructing and configuring the 
+                drone with Ryan and developing the software used to collect actually CO2 
+                concentration data from our sensor.He additionally helped with the development 
+                on both this website and Flight Log collection script. In his free time, Varun 
+                likes to watch anime, play video games, and workout.
               </Typography>
               <Box
                 marginTop={2}
@@ -91,7 +93,7 @@ export default function AboutUs() {
               </Typography>
               <Typography variant="subtitle1" style={{ textAlign: "center", fontFamily: "'Lora', serif" }}>
                 Ryan is another eccentric student at Saratoga High School. He mainly worked on getting the project "off the ground," 
-                setting up the software of the drone and diving deep into ArduPilot's firmware. He also developed the CO2 collection script used for the drone
+                setting up the software of the drone and diving deep into ArduPilot's firmware. He also developed the Flight Log collection script used for the drone
                 and the visualization of the data on this website. In his free time,
                 Ryan likes to learn more about coding, play piano, learn
                 physics, and watch movies.

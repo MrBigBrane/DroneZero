@@ -8,6 +8,7 @@ import { ArrowRight } from "@mui/icons-material";
 import Image from "next/image";
 
 import cost from "../app/images/cost.png";
+import accessibility from "../app/images/accessibility.jpeg";
 
 export default function Home({ searchParams }) {
   return (
@@ -48,14 +49,12 @@ export default function Home({ searchParams }) {
             fontFamily: "monospace",
           }}
         >
-          According to a 2022 Clean Air Fund survey, about one-third of 119
-          countries could not establish CO2 monitoring networks due to financial
-          and technical expertise restrictions. With the growing concern of climate change, 
-          and the increasing efforts of decreasing global emissions the need for 
-          viable solutions become more important than ever. Here at DroneZero we worked 
-          to create one of those solutions reality developing a 
-          more cost effective way and precise way of monitoring CO2
-          levels in those 119 countries and more.
+          With the growing concern of climate change, and the increasing efforts of 
+          decreasing global emissions, the need for viable solutions have become 
+          more important than ever. Here at DroneZero we are aiming to provide for that 
+          exact solution tackling the problems of both user accessibilty in a 
+          cost-effective product. Our drone collects data through an drone 
+          that you then could out put to your personal computer to then analyze. 
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 6 }}>
           <Button
@@ -127,7 +126,7 @@ export default function Home({ searchParams }) {
         </Box>
             <Divider variant="inset" style={{ marginTop: 50, marginBottom: 50, width: "90%" }}/>
         <Box sx={{ display: "flex", justifyContent: "space-around", alignContent: "center", alignItems: "center", marginBottom: 10 }}>
-          <Image src={cost} alt="Cost" width={400} height={400} style={{ borderRadius: 20}}/>
+          <Image src={accessibility} alt="Accessibility" width={400} height={400} style={{ borderRadius: 20}}/>
           <Box >
             <Typography
             variant="h5"
