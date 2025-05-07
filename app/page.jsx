@@ -8,7 +8,7 @@ import { ArrowRight } from "@mui/icons-material";
 import Image from "next/image";
 
 import cost from "../app/images/cost.png";
-import accessibility from "../app/images/accessibility.jpeg";
+import accessibility from "../app/images/accessibility.jpg";
 
 export default function Home({ searchParams }) {
   return (
@@ -50,11 +50,11 @@ export default function Home({ searchParams }) {
           }}
         >
           With the growing concern of climate change, and the increasing efforts of 
-          decreasing global emissions, the need for viable solutions have become 
+          lowering global emissions, the need for viable solutions have become 
           more important than ever. Here at DroneZero we are aiming to provide for that 
-          exact solution tackling the problems of both user accessibilty in a 
-          cost-effective product. Our drone collects data through an drone 
-          that you then could out put to your personal computer to then analyze. 
+          exact solution tackling the problems of both user accessibilty and cost in 
+          an effective way. Our drone collects data through a sensor 
+          that you then could out put to your personal computer for easy analyzation. 
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 6 }}>
           <Button

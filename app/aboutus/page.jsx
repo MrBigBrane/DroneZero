@@ -61,10 +61,10 @@ export default function AboutUs() {
               >
                 Varun is an excellent high school student at Saratoga High
                 School located in Saratoga, California. He mainly worked on
-                constructing and configuring the drone with Ryan and developing
+                constructing and configuring the drone with Ryan, as well as developing
                 the software used to collect actually CO2 concentration data
-                from our sensor.He additionally helped with the development on
-                both this website and Flight Log collection script. In his free
+                from our sensor. He additionally helped with the development on
+                both this website and flight log collection script. In his free
                 time, Varun likes to watch anime, play video games, and workout.
               </Typography>
               <Box
