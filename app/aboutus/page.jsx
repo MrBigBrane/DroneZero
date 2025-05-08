@@ -19,10 +19,10 @@ export default function AboutUs() {
             textAlign: "center",
             marginBottom: 20,
             marginTop: 80,
-            fontFamily: "'Lora', serif",
+            fontFamily: "monospace",
           }}
         >
-          About Us
+          <b>About Us</b>
         </Typography>
 
         <Grid
@@ -41,7 +41,7 @@ export default function AboutUs() {
               </IconButton>
               <Typography
                 variant="h5"
-                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+                style={{ textAlign: "center", fontFamily: "monospace"}}
               >
                 <b>Varun Thota</b>
               </Typography>
@@ -50,14 +50,14 @@ export default function AboutUs() {
                 style={{
                   textAlign: "center",
                   marginBottom: 10,
-                  fontFamily: "'Lora', serif",
+                  fontFamily: "monospace",
                 }}
               >
                 Project Member
               </Typography>
               <Typography
                 variant="subtitle1"
-                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+                style={{ textAlign: "center", fontFamily: "monospace"}}
               >
                 Varun is an excellent high school student at Saratoga High
                 School located in Saratoga, California. He mainly worked on
@@ -110,7 +110,7 @@ export default function AboutUs() {
               </IconButton>
               <Typography
                 variant="h5"
-                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+                style={{ textAlign: "center", fontFamily: "monospace"}}
               >
                 <b>Ryan Modafe</b>
               </Typography>
@@ -119,14 +119,14 @@ export default function AboutUs() {
                 style={{
                   textAlign: "center",
                   marginBottom: 10,
-                  fontFamily: "'Lora', serif",
+                  fontFamily: "monospace",
                 }}
               >
                 Project Lead
               </Typography>
               <Typography
                 variant="subtitle1"
-                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+                style={{ textAlign: "center", fontFamily: "monospace"}}
               >
                 Ryan is a student at Saratoga High School. He mainly worked on
                 getting the project "off the ground," setting up the software of
@@ -168,7 +168,7 @@ export default function AboutUs() {
               </IconButton>
               <Typography
                 variant="h5"
-                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+                style={{ textAlign: "center", fontFamily: "monospace"}}
               >
                 <b>Kirby Fung</b>
               </Typography>
@@ -177,7 +177,7 @@ export default function AboutUs() {
                 style={{
                   textAlign: "center",
                   marginBottom: 10,
-                  fontFamily: "'Lora', serif",
+                  fontFamily: "monospace",
                 }}
               >
                 Project Member
@@ -185,7 +185,7 @@ export default function AboutUs() {
 
               <Typography
                 variant="subtitle1"
-                style={{ textAlign: "center", fontFamily: "'Lora', serif" }}
+                style={{ textAlign: "center", fontFamily: "monospace"}}
               >
                 Kirby is a student at Saratoga High School. During the
                 introductory phase, he conducted research on determining the
