@@ -51,10 +51,10 @@ export default function Home({ searchParams }) {
         >
           With the growing concern of climate change, and the increasing efforts of 
           lowering global emissions, the need for viable solutions have become 
-          more important than ever. Here at DroneZero we are aiming to provide for that 
-          exact solution tackling the problems of both user accessibilty and cost in 
-          an effective way. Our drone collects data through a sensor 
-          that you then could out put to your personal computer for easy analyzation. 
+          more important than ever. Here at DroneZero we are aiming to provide for 
+          one of those solutions tackling the problems of both user accessibilty and cost in 
+          an effective way as well. Our drone collects data through a sensor 
+          that you then could output to your personal computer for easy analyzation. 
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 6 }}>
           <Button
