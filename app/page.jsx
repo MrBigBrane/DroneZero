@@ -49,12 +49,12 @@ export default function Home({ searchParams }) {
             fontFamily: "monospace",
           }}
         >
-          With the growing concern of climate change, and the increasing efforts of 
-          lowering global emissions, the need for viable solutions have become 
-          more important than ever. Here at DroneZero we are aiming to provide for 
+          With the growing concern of climate change, the increasing demand for viable solutions in order to
+          lowering global emissions have become 
+          more important than ever. Here at DroneZero we are aiming to provide 
           one of those solutions tackling the problems of both user accessibilty and cost in 
           an effective way as well. Our drone collects data through a sensor 
-          that you then could output to your personal computer for easy analyzation. 
+          that you then could output to your personal computer for easy analysis. 
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 6 }}>
           <Button

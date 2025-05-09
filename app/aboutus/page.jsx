@@ -63,8 +63,8 @@ export default function AboutUs() {
                 School located in Saratoga, California. He mainly worked on
                 constructing and configuring the drone with Ryan, as well as developing
                 the software used to collect CO2 concentration data
-                from our sensor. He additionally helped with the development on
-                both this website and flight log collection script. In his free
+                from the adafruit sensor. He additionally helped with the development of
+                both this website and GPS data collection script. In his free
                 time, Varun likes to watch anime, play video games, and workout.
               </Typography>
               <Box
