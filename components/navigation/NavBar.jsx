@@ -17,7 +17,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 
-const pages = ["Map View", "About Us"];
+const pages = ["Map View", "Our Process", "About Us"];
 
 export default function NavBar({ menu, signOut, user, ...props }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -83,7 +83,17 @@ export default function NavBar({ menu, signOut, user, ...props }) {
           >
             {pages.map((page) => (
               <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                <Link
+                  href={
+                    page === "Map View"
+                      ? "/mapview"
+                      : page === "About Us"
+                        ? "/aboutus"
+                        : "/process"
+                  }
+                >
+                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                </Link>
               </MenuItem>
             ))}
           </Menu>
@@ -93,7 +103,7 @@ export default function NavBar({ menu, signOut, user, ...props }) {
           variant="h5"
           noWrap
           component="a"
-          href="#app-bar-with-responsive-menu"
+          href="/"
           sx={{
             mr: 2,
             display: { xs: "flex", md: "none" },
@@ -111,7 +121,6 @@ export default function NavBar({ menu, signOut, user, ...props }) {
         {/* Large Screen Navbar */}
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {pages.map((page) => {
-            if(!user && page === "About Us" || !user && page === "Map View" || !user && page === "Dev") {
               return (
                 <Button
                   key={page}
@@ -124,7 +133,7 @@ export default function NavBar({ menu, signOut, user, ...props }) {
                         ? "/mapview"
                         : page === "About Us"
                           ? "/aboutus"
-                            : "/dev"
+                          : "/process"
                     }
                     key={page}
                     style={{ marginRight: "10px" }}
@@ -133,31 +142,6 @@ export default function NavBar({ menu, signOut, user, ...props }) {
                   </Link>
                 </Button>
               );
-            }
-            else if(user){
-              return (
-                <Button
-                  key={page}
-                  // onClick={handleCloseNavMenu}
-                  sx={{ color: "white", display: "block" }}
-                >
-                  <Link
-                    href={
-                      page === "Map View"
-                        ? "/mapview"
-                        : page === "About Us"
-                          ? "/aboutus"
-                            : "/dev"
-                    }
-                    key={page}
-                    style={{ marginRight: "10px" }}
-                  >
-                    {page}
-                  </Link>
-                </Button>
-              );
-            }
-            
           })}
         </Box>
         {!user ? (
