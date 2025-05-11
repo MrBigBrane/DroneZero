@@ -41,7 +41,7 @@ export default function AboutUs() {
               </IconButton>
               <Typography
                 variant="h5"
-                style={{ textAlign: "center", fontFamily: "monospace"}}
+                style={{ textAlign: "center", fontFamily: "monospace" }}
               >
                 <b>Varun Thota</b>
               </Typography>
@@ -57,15 +57,16 @@ export default function AboutUs() {
               </Typography>
               <Typography
                 variant="subtitle1"
-                style={{ textAlign: "center", fontFamily: "monospace"}}
+                style={{ textAlign: "center", fontFamily: "monospace" }}
               >
                 Varun is an excellent high school student at Saratoga High
                 School located in Saratoga, California. He mainly worked on
-                constructing and configuring the drone with Ryan, as well as developing
-                the software used to collect CO2 concentration data
-                from the adafruit sensor. He additionally helped with the development of
-                both this website and GPS data collection script. In his free
-                time, Varun likes to watch anime, play video games, and workout.
+                constructing and configuring the drone with Ryan, as well as
+                developing the software used to collect CO2 concentration data
+                from the adafruit sensor. He additionally helped with the
+                development of both this website and GPS data collection script.
+                In his free time, Varun likes to watch anime, play video games,
+                and workout.
               </Typography>
               <Box
                 marginTop={2}
@@ -110,7 +111,7 @@ export default function AboutUs() {
               </IconButton>
               <Typography
                 variant="h5"
-                style={{ textAlign: "center", fontFamily: "monospace"}}
+                style={{ textAlign: "center", fontFamily: "monospace" }}
               >
                 <b>Ryan Modafe</b>
               </Typography>
@@ -126,13 +127,13 @@ export default function AboutUs() {
               </Typography>
               <Typography
                 variant="subtitle1"
-                style={{ textAlign: "center", fontFamily: "monospace"}}
+                style={{ textAlign: "center", fontFamily: "monospace" }}
               >
                 Ryan is a student at Saratoga High School. He mainly worked on
-                getting the project "off the ground," setting up the software of
-                the drone and diving deep into ArduPilot's firmware, building a
-                custom version at one point. He also set up the Raspberry Pi
-                2W, using the lite OS, developed the arming check and GPS data
+                getting the project "off the ground," setting up the drone's
+                software and diving deep into ArduPilot's firmware, building a
+                custom version at one point. He also set up the Raspberry Pi 2W,
+                using the RPI lite OS, developed the arming check and GPS data
                 collection scripts used for the drone, and created the
                 visualization used for CO2 data on this website. In his free
                 time, Ryan likes to learn more about deep learning, play piano,
@@ -168,7 +169,7 @@ export default function AboutUs() {
               </IconButton>
               <Typography
                 variant="h5"
-                style={{ textAlign: "center", fontFamily: "monospace"}}
+                style={{ textAlign: "center", fontFamily: "monospace" }}
               >
                 <b>Kirby Fung</b>
               </Typography>
@@ -185,7 +186,7 @@ export default function AboutUs() {
 
               <Typography
                 variant="subtitle1"
-                style={{ textAlign: "center", fontFamily: "monospace"}}
+                style={{ textAlign: "center", fontFamily: "monospace" }}
               >
                 Kirby is a student at Saratoga High School. During the
                 introductory phase, he conducted research on determining the
