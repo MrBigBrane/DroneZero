@@ -384,7 +384,7 @@ export default function ProcessPage() {
           padding={2}
           borderRadius={2}
         >
-          <b>Software Algorithm:</b> Code developed to collect and log both CO2 data and Geospatial data vital to ensure the mission of our product.
+          <b>Software Algorithm:</b> Code developed to collect and log both CO2 data and geospatial data which is vital to the success of the project.
         </Typography>
         <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
           <Grid2 size={{ md: 12 }} >
