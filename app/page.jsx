@@ -10,6 +10,7 @@ import Image from "next/image";
 import cost from "../app/images/cost.png";
 import accessibility from "../app/images/accessibility.jpg";
 
+
 export default function Home({ searchParams }) {
   return (
     <Grid2
@@ -111,14 +112,18 @@ export default function Home({ searchParams }) {
               fontFamily: "monospace",
             }}
           >
-            Drones are a cost effective way to monitor CO2 levels. They are also
-            a cost effective way to monitor other pollutants. They are also a
-            cost effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants.
+            Problem: The cost of CO2 monitoring systems is too high (over 250M USD for one satellite) and technological challenges with creating CO2 monitoring systems have caused underdeveloped countries to forgo CO2 monitoring systems. According to a 2022 Clean Air Fund survey, about one-third of 119 countries could not establish CO2 monitoring networks due to financial and technical expertise restrictions.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              mb: 4,
+              maxWidth: 600,
+              // textAlign: "center",
+              fontFamily: "monospace",
+            }}
+          >
+            Our solution: To lower the cost of CO2 monitoring systems, we created a low-cost drone that can monitor CO2. This drone is easy to operate and provides accurate data at low cost and a fleet of these drones can be used in place of the satellite CO2 monitoring systems.
           </Typography>
         
           </Box>
@@ -147,16 +152,21 @@ export default function Home({ searchParams }) {
               fontFamily: "monospace",
             }}
           >
-            Drones are a cost effective way to monitor CO2 levels. They are also
-            a cost effective way to monitor other pollutants. They are also a
-            cost effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants. They are also a cost
-            effective way to monitor other pollutants.
+            Problem: Current CO2 monitoring systems use satellites which require technical expertise which many countries do not have. Furthermore, satellites have low resolution when monitoring CO2 and cannot monitor at exact times of the day due to their orbit pattern.
           </Typography>
-        
+          <Typography
+            variant="body1"
+            sx={{
+              mb: 4,
+              maxWidth: 600,
+              // textAlign: "center",
+              fontFamily: "monospace",
+            }}
+          >
+            Our solution: A drone system will solve these issues as it doesn’t require as much technical expertise to operate and can monitor at any time with an easy and efficient retrieval of the data.
+
+          </Typography>
+          
           </Box>
           
         </Box>
