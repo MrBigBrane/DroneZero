@@ -50,11 +50,11 @@ export default function Home({ searchParams }) {
           }}
         >
           With the growing concern of climate change, the increasing demand for viable solutions in order to
-          lowering global emissions have become 
+          lower global emissions has become 
           more important than ever. Here at DroneZero we are aiming to provide 
-          one of those solutions tackling the problems of both user accessibilty and cost in 
-          an effective way as well. Our drone collects data through a sensor 
-          that you then could output to your personal computer for easy analysis. 
+          one of those solutions tackling the problems of both public accessibility and cost in 
+          an effective way. Our drone collects data through a sensor 
+          that you could then output to your personal computer for easy analysis. 
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 6 }}>
           <Button
@@ -90,7 +90,7 @@ export default function Home({ searchParams }) {
         >
           Why DroneZero
         </Typography>
-        <Box sx={{ display: "flex", justifyContent: "space-around", alignContent: "center", alignItems: "center" }}>
+        <Box sx={{ display: "flex", justifyContent: "space-around", alignContent: "center", alignItems: "center", width : "90%", margin: "auto" }}>
           <Box >
             <Typography
             variant="h5"
@@ -126,7 +126,7 @@ export default function Home({ searchParams }) {
         </Box>
             <Divider variant="inset" style={{ marginTop: 50, marginBottom: 50, width: "90%" }}/>
         <Box sx={{ display: "flex", justifyContent: "space-around", alignContent: "center", alignItems: "center", marginBottom: 10 }}>
-          <Image src={accessibility} alt="Accessibility" width={400} height={400} style={{ borderRadius: 20}}/>
+          <Image src={accessibility} alt="Accessibility" width={400} height={400} style={{ borderRadius: 20, marginRight: 20}}/>
           <Box >
             <Typography
             variant="h5"

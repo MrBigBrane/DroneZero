@@ -13,6 +13,7 @@ import pid from "../images/pid.jpg"
 import hoveroscillation from "../images/hoveroscillation.png"
 import barometerissue from "../images/barometerissue.png"
 import gpsaltitude from "../images/gpsaltitude.webp"
+import RPICard from "../../components/ui/RPICard";
 
 export default function ProcessPage() {
   return (
@@ -270,6 +271,27 @@ export default function ProcessPage() {
           margin={5}
           marginTop={10}
         >
+          3. Building the Drone
+        </Typography>
+        <Typography
+          variant="h6"
+          textAlign={"center"}
+          fontFamily={"monospace"}
+          margin={5}
+          border={1}
+          padding={2}
+          borderRadius={2}
+        >
+          <b>Component Placement:</b> In order to have an effective build, it is
+          important to place the components in a way that optimizes wiring.
+        </Typography>
+        <Typography
+          variant="h4"
+          textAlign={"left"}
+          fontFamily={"monospace"}
+          margin={5}
+          marginTop={10}
+        >
           4. Flight Issues
         </Typography>
         <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
@@ -343,6 +365,38 @@ export default function ProcessPage() {
               image2={gpsaltitude}
             />
           </Grid2>
+        </Grid2>
+        <Typography
+          variant="h4"
+          textAlign={"left"}
+          fontFamily={"monospace"}
+          margin={5}
+          marginTop={10}
+        >
+          5. RPI
+        </Typography>
+        <Typography
+          variant="h6"
+          textAlign={"center"}
+          fontFamily={"monospace"}
+          margin={5}
+          border={1}
+          padding={2}
+          borderRadius={2}
+        >
+          <b>Software Algorithm:</b> Code developed to collect and log both CO2 data and Geospatial data vital to ensure the mission of our product.
+        </Typography>
+        <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
+          <Grid2 size={{ md: 12 }} >
+            <RPICard
+              title={"Raspberry Pi"}
+              description={`
+            In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
+            `}
+              image="/images/code1.jpg"
+            />
+          </Grid2>
+          
         </Grid2>
       </Box>
     </Grid2>
