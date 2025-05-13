@@ -655,7 +655,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
               </div>
             ) : tab === 1 ? (
               <div className="flightstats">
-                <p style={{ textAlign: "center" }}>
+                <p style={{ textAlign: "center", fontFamily: "monospace"}}>
                   <b>Flight Stats</b>
                 </p>
                 <br />
@@ -680,34 +680,34 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                         }}
                         className="flightstats2"
                       >
-                        <Typography variant="h6">
+                        <Typography variant="h6" style={{ fontFamily: "monospace"}}>
                           <b>{item.filename}</b>
                         </Typography>
-                        <p>
+                        <p style={{ fontFamily: "monospace"}}>
                           <b>CO2 Stats:</b>
                         </p>
-                        <p>
+                        <p style={{ fontFamily: "monospace"}}>
                           Avg:{" "}
                           {Math.round(
                             average(item.data.map((item) => item.co2_ppm))
                           )}{" "}
                           ppm
                         </p>
-                        <p>
+                        <p style={{ fontFamily: "monospace"}}>
                           Max:{" "}
                           {Math.max(...item.data.map((item) => item.co2_ppm))}{" "}
                           ppm
                         </p>
-                        <p>
+                        <p style={{ fontFamily: "monospace"}}>
                           Min:{" "}
                           {Math.min(...item.data.map((item) => item.co2_ppm))}{" "}
                           ppm
                         </p>
                         <br />
-                        <p>
+                        <p style={{ fontFamily: "monospace"}}>
                           <b>Risk Assessment:</b>
                         </p>
-                        <p style={{ color: "red" }}>
+                        <p style={{ color: "red", fontFamily: "monospace"}}>
                           High Risk:{" "}
                           {countGreaterThan(
                             item.data.map((item) => item.co2_ppm),
@@ -716,7 +716,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                           )}{" "}
                           pts
                         </p>
-                        <p style={{ color: "orange" }}>
+                        <p style={{ color: "orange", fontFamily: "monospace" }}>
                           Medium Risk:{" "}
                           {countGreaterThan(
                             item.data.map((item) => item.co2_ppm),
@@ -725,7 +725,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                           )}{" "}
                           pts
                         </p>
-                        <p style={{ color: "green" }}>
+                        <p style={{ color: "green", fontFamily: "monospace" }}>
                           Low Risk:{" "}
                           {countGreaterThan(
                             item.data.map((item) => item.co2_ppm),
@@ -734,25 +734,25 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                           )}{" "}
                           pts
                         </p>
-                        <p>Total: {item.data.length} pts</p>
+                        <p style={{fontFamily: "monospace" }}>Total: {item.data.length} pts</p>
                         <br />
-                        <p>
+                        <p style={{fontFamily: "monospace" }}>
                           <b>Altitude Stats:</b>
                           <br />
                         </p>
-                        <p>
+                        <p style={{fontFamily: "monospace" }}>
                           Avg:{" "}
                           {Math.round(
                             average(item.data.map((item) => item.altitude))
                           )}{" "}
                           ft
                         </p>
-                        <p>
+                        <p style={{fontFamily: "monospace" }}>
                           Max:{" "}
                           {Math.max(...item.data.map((item) => item.altitude))}{" "}
                           ft
                         </p>
-                        <p>
+                        <p style={{fontFamily: "monospace" }}>
                           Min:{" "}
                           {Math.min(...item.data.map((item) => item.altitude))}{" "}
                           ft
@@ -762,7 +762,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                     </Box>
                   ))
                 ) : (
-                  <p>
+                  <p style={{fontFamily: "monospace" }}>
                     Upload Data for Flight <br /> Stats
                   </p>
                 )}
@@ -800,19 +800,19 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                 />
               </div>
             ) : (
-              <Typography variant="h6">Log In to View <br />Previous Logs</Typography>
+              <Typography variant="h6" style={{fontFamily: "monospace" }}>Log In to View <br />Previous Logs</Typography>
             )}
           </Box>
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1 }}>
         <Snackbar open={saved === true} autoHideDuration={6000}>
-          <Alert severity="success" variant="filled" sx={{ width: "100%" }}>
+          <Alert severity="success" variant="filled" sx={{ width: "100%" }} style={{fontFamily: "monospace" }}>
             Saved successfully!
           </Alert>
         </Snackbar>
         <Snackbar open={saved === 2} autoHideDuration={6000}>
-          <Alert severity="success" variant="filled" sx={{ width: "100%" }}>
+          <Alert severity="success" variant="filled" sx={{ width: "100%" }} style={{fontFamily: "monospace" }}>
             Deleted successfully!
           </Alert>
         </Snackbar>
