@@ -130,7 +130,7 @@ export default function Home({ searchParams }) {
           <Image src={cost} alt="Cost" width={400} height={400} style={{ borderRadius: 20}}/>
         </Box>
             <Divider variant="inset" style={{ marginTop: 50, marginBottom: 50, width: "90%" }}/>
-        <Box sx={{ display: "flex", justifyContent: "space-around", alignContent: "center", alignItems: "center", marginBottom: 10 }}>
+        <Box sx={{ display: "flex", justifyContent: "space-around", alignContent: "center", alignItems: "center", marginBottom: 10, width : "90%", margin: "auto" }}>
           <Image src={accessibility} alt="Accessibility" width={400} height={400} style={{ borderRadius: 20, marginRight: 20}}/>
           <Box >
             <Typography
