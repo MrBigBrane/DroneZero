@@ -379,9 +379,15 @@ export default function ProcessPage() {
               title2={"GPS + Alternate Barometer"}
               description2={
                 <>
-                  The barometer onboard the flight controller was not working properly, but, because the GPS included a barometer, the next course of action was to try and use that barometer.
-                  Unfortunately, the process of using the GPS barometer was not as simple as the process of using the onboard barometer. The GPS barometer was not being detected by the ArduPilot software
-                  and thus, to the flight controller it was as if it didn't exist. To read more about the process of detecting the GPS barometer, click{" "}
+                  The barometer onboard the flight controller was not working
+                  properly, but, because the GPS included a barometer, the next
+                  course of action was to try and use that barometer.
+                  Unfortunately, the process of using the GPS barometer was not
+                  as simple as the process of using the onboard barometer. The
+                  GPS barometer was not being detected by the ArduPilot software
+                  and thus, to the flight controller it was as if it didn't
+                  exist. To read more about the process of detecting the GPS
+                  barometer, click{" "}
                   <a
                     href="https://discuss.ardupilot.org/t/unable-to-connect-to-external-dps310-barometer/131125"
                     target="_blank"
@@ -389,10 +395,15 @@ export default function ProcessPage() {
                     style={{ color: "blue" }}
                   >
                     here
-                  </a>.
-                  The flight controller was suffering a lack of memory space due to the various extraneous features present in the stable version of ArduPilot. By removing any features unnecessary
-                  to our project, the custom firmware was able to detect the GPS barometer and function properly. Ultimately, a GPS altitude-control method was used as the main method of altitude control, but 
-                  due to the possibility of having a loss of signal, the GPS barometer was assigned as a failsafe.
+                  </a>
+                  . The flight controller was suffering a lack of memory space
+                  due to the various extraneous features present in the stable
+                  version of ArduPilot. By removing any features unnecessary to
+                  our project, the custom firmware was able to detect the GPS
+                  barometer and function properly. Ultimately, a GPS
+                  altitude-control method was used as the main method of
+                  altitude control, but due to the possibility of having a loss
+                  of signal, the GPS barometer was assigned as a failsafe.
                 </>
               }
               image2={gpsaltitude}
@@ -440,6 +451,87 @@ export default function ProcessPage() {
         >
           6. Website Visualization
         </Typography>
+        <Grid2 container spacing={2} alignItems={"stretch"} marginBottom={5}>
+          <Grid2 size={{ sm: 12, md: 4, lg: 4 }}>
+            <ProcessCard
+              title={"Next.js"}
+              description={
+                <>
+                  <Typography variant="body1" fontFamily={"monospace"}>
+                    <b>React.js Framework: </b>Next.js builds on React.js, an
+                    HTML + JavaScript language, and includes various
+                    optimizations that simplify and improve the coding and user
+                    experience.
+                  </Typography>
+                  <br />
+                  <Typography variant="body1" fontFamily={"monospace"}>
+                    <b>Frontend: </b>As a frontend development point, Next.js
+                    supports native React.js features and provides quick routing
+                    features that enhance usability of the website.
+                  </Typography>
+                  <br />
+                  <Typography variant="body1" fontFamily={"monospace"}>
+                    <b>Backend: </b>Next.js uniquely supports a seamless backend
+                    integration with SSR and pre-fetching of data.
+                  </Typography>
+                </>
+              }
+              image="/images/nextjs.webp"
+            />
+          </Grid2>
+          <Grid2 size={{ sm: 12, md: 4, lg: 4 }}>
+            <ProcessCard
+              title={"Leaflet.js"}
+              description={
+                <>
+                  <Typography variant="body1" fontFamily={"monospace"}>
+                    <b>Maps API: </b>Leaflet.js, a React.js package, uses
+                    OpenStreetView’s maps API for integration with websites.
+                  </Typography>
+                  <br />
+                  <Typography variant="body1" fontFamily={"monospace"}>
+                    <b>Geospatial Data: </b>Once a user uploads the .csv file,
+                    Leaflet uses the GPS coordinates of each CO2 datapoint to
+                    plot the flight path of the drone. Leaflet also allows color coding of
+                    CO2 points based on the bracket of risk associated with the
+                    CO2 concentration.
+                  </Typography>
+                  <br />
+                  <Typography variant="body1" fontFamily={"monospace"}>
+                    <b>Flight Comparison: </b>Users can upload multiple maps to
+                    be compared at the same time.
+                  </Typography>
+                </>
+              }
+              image="/images/leafletjs.jpg"
+            />
+          </Grid2>
+          <Grid2 size={{ sm: 12, md: 4, lg: 4 }}>
+            <ProcessCard
+              title={"Supabase"}
+              description={
+                <>
+                  <Typography variant="body1" fontFamily={"monospace"}>
+                    <b>Database: </b> Supabase is a free to use PostgreSQL database hosted
+                    remotely, allowing for synchronization across devices.
+                  </Typography>
+                  <br />
+                  <Typography variant="body1" fontFamily={"monospace"}>
+                    <b>Data Prep: </b>The frontend application converts the csv file
+                    to a javascript object, stored in the .json format.
+                  </Typography>
+                  <br />
+                  <Typography variant="body1" fontFamily={"monospace"}>
+                    <b>Saving Data: </b>The user saves data, sending an asynchronous
+                    request to the supabase API, storing data and binding it to
+                    the user.
+                  </Typography>
+                </>
+              }
+              image="/images/supabase.webp"
+            />
+          </Grid2>
+        </Grid2>
       </Box>
     </Grid2>
   );

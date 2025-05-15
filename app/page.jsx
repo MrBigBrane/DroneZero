@@ -22,7 +22,7 @@ export default function Home({ searchParams }) {
         justifyContent: "center",
         justifyItems: "center",
         alignContent: "center",
-        marginTop: 8
+        marginTop: 8,
         // flexDirection: "column",
       }}
     >
@@ -45,17 +45,27 @@ export default function Home({ searchParams }) {
           sx={{
             mt: 2,
             mb: 4,
-            // maxWidth: 1200,
-            textAlign: "center",
+            textAlign: "left",
             fontFamily: "monospace",
+            fontSize: 20,
           }}
         >
-          With the growing concern of climate change, the increasing demand for viable solutions in order to
-          lower global emissions has become 
-          more important than ever. Here at DroneZero we are aiming to provide 
-          one of those solutions tackling the problems of both public accessibility and cost in 
-          an effective way. Our drone collects data through a sensor 
-          that you could then output to your personal computer for easy analysis. 
+          <b>Our Mission</b>: Each year there is a rise in CO₂ emissions
+          globally and the seemingly distant worry of climate change becomes
+          increasingly real. To effectively tackle this issue, we must first
+          understand where emissions are coming from. <br />
+          <br />
+          Our product, DroneZero, collects precise CO₂ measurements in both
+          rural and urban areas, providing users access to real-time, relevant
+          data. Once a monitoring session is complete, the data is exported as a
+          CSV file for further geospatial analysis in our user-friendly map
+          visualization, offering immediate insights into CO₂ emissions on a
+          local scale. <br />
+          <br />
+          <b>
+            But DroneZero is more than just a tool - it's a step towards regaining
+            control over our planet.
+          </b>
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 6 }}>
           <Button
@@ -78,7 +88,7 @@ export default function Home({ searchParams }) {
 
         <Divider variant="middle" style={{ marginTop: 50, marginBottom: 50 }} />
       </Grid2>
-      <Grid2 item sx={{ justifyContent: "center", width: "100%", }}>
+      <Grid2 item sx={{ justifyContent: "center", width: "100%" }}>
         <Typography
           variant="h4"
           sx={{
@@ -91,84 +101,130 @@ export default function Home({ searchParams }) {
         >
           Why DroneZero
         </Typography>
-        <Box sx={{ display: "flex", justifyContent: "space-around", alignContent: "center", alignItems: "center", width : "90%", margin: "auto" }}>
-          <Box >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignContent: "center",
+            alignItems: "center",
+            width: "90%",
+            margin: "auto",
+          }}
+        >
+          <Box>
             <Typography
-            variant="h5"
-            sx={{
-              mb: 4,
-              fontFamily: "monospace",
-              fontWeight: 700,
-            }}
-          >
-            1. Cost
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              mb: 4,
-              maxWidth: 600,
-              // textAlign: "center",
-              fontFamily: "monospace",
-            }}
-          >
-            Problem: The cost of CO2 monitoring systems is too high (over 250M USD for one satellite) and technological challenges with creating CO2 monitoring systems have caused underdeveloped countries to forgo CO2 monitoring systems. According to a 2022 Clean Air Fund survey, about one-third of 119 countries could not establish CO2 monitoring networks due to financial and technical expertise restrictions.
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              mb: 4,
-              maxWidth: 600,
-              // textAlign: "center",
-              fontFamily: "monospace",
-            }}
-          >
-            Our solution: To lower the cost of CO2 monitoring systems, we created a low-cost drone that can monitor CO2. This drone is easy to operate and provides accurate data at low cost and a fleet of these drones can be used in place of the satellite CO2 monitoring systems.
-          </Typography>
-        
+              variant="h5"
+              sx={{
+                mb: 4,
+                fontFamily: "monospace",
+                fontWeight: 700,
+              }}
+            >
+              1. Cost
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                mb: 4,
+                maxWidth: 600,
+                // textAlign: "center",
+                fontFamily: "monospace",
+              }}
+            >
+              Problem: The cost of CO2 monitoring systems is too high (over 250M
+              USD for one satellite) and technological challenges with creating
+              CO2 monitoring systems have caused underdeveloped countries to
+              forgo CO2 monitoring systems. According to a 2022 Clean Air Fund
+              survey, about one-third of 119 countries could not establish CO2
+              monitoring networks due to financial and technical expertise
+              restrictions.
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                mb: 4,
+                maxWidth: 600,
+                // textAlign: "center",
+                fontFamily: "monospace",
+              }}
+            >
+              Our solution: To lower the cost of CO2 monitoring systems, we
+              created a low-cost drone that can monitor CO2. This drone is easy
+              to operate and provides accurate data at low cost and a fleet of
+              these drones can be used in place of the satellite CO2 monitoring
+              systems.
+            </Typography>
           </Box>
-          <Image src={cost} alt="Cost" width={400} height={400} style={{ borderRadius: 20}}/>
+          <Image
+            src={cost}
+            alt="Cost"
+            width={400}
+            height={400}
+            style={{ borderRadius: 20 }}
+          />
         </Box>
-            <Divider variant="inset" style={{ marginTop: 50, marginBottom: 50, width: "90%" }}/>
-        <Box sx={{ display: "flex", justifyContent: "space-around", alignContent: "center", alignItems: "center", marginBottom: 10, width : "90%", margin: "auto" }}>
-          <Image src={accessibility} alt="Accessibility" width={400} height={400} style={{ borderRadius: 20, marginRight: 20}}/>
-          <Box >
+        <Divider
+          variant="inset"
+          style={{ marginTop: 50, marginBottom: 50, width: "90%" }}
+        />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignContent: "center",
+            alignItems: "center",
+            marginBottom: 10,
+            width: "90%",
+            margin: "auto",
+          }}
+        >
+          <Image
+            src={accessibility}
+            alt="Accessibility"
+            width={400}
+            height={400}
+            style={{ borderRadius: 20, marginRight: 20 }}
+          />
+          <Box>
             <Typography
-            variant="h5"
-            sx={{
-              mb: 4,
-              fontFamily: "monospace",
-              fontWeight: 700,
-            }}
-          >
-            2. Accessibility
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              mb: 4,
-              maxWidth: 600,
-              // textAlign: "center",
-              fontFamily: "monospace",
-            }}
-          >
-            Problem: Current CO2 monitoring systems use satellites which require technical expertise which many countries do not have. Furthermore, satellites have low resolution when monitoring CO2 and cannot monitor at exact times of the day due to their orbit pattern.
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              mb: 4,
-              maxWidth: 600,
-              // textAlign: "center",
-              fontFamily: "monospace",
-            }}
-          >
-            Our solution: A drone system will solve these issues as it doesn’t require as much technical expertise to operate and can monitor at any time with an easy and efficient retrieval of the data.
-
-          </Typography>
-          
+              variant="h5"
+              sx={{
+                mb: 4,
+                fontFamily: "monospace",
+                fontWeight: 700,
+              }}
+            >
+              2. Accessibility
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                mb: 4,
+                maxWidth: 600,
+                // textAlign: "center",
+                fontFamily: "monospace",
+              }}
+            >
+              Problem: Current CO2 monitoring systems use satellites which
+              require technical expertise which many countries do not have.
+              Furthermore, satellites have low resolution when monitoring CO2
+              and cannot monitor at exact times of the day due to their orbit
+              pattern.
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                mb: 4,
+                maxWidth: 600,
+                // textAlign: "center",
+                fontFamily: "monospace",
+              }}
+            >
+              Our solution: A drone system will solve these issues as it doesn’t
+              require as much technical expertise to operate and can monitor at
+              any time with an easy and efficient retrieval of the data.
+            </Typography>
           </Box>
-          
         </Box>
       </Grid2>
     </Grid2>

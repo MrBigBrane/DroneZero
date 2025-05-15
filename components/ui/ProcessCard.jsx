@@ -10,9 +10,10 @@ export default function ProcessCard({ title, description, image }) {
       sx={{
         width: "70%",
         justifySelf: "center",
+        height: "100%",
       }}
     >
-      <CardActionArea>
+      <CardActionArea >
         <CardMedia
           component="img"
           height="140"
