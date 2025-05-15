@@ -451,29 +451,36 @@ export default function ProcessPage() {
         >
           6. Website Visualization
         </Typography>
+        <Typography
+          variant="h6"
+          textAlign={"center"}
+          fontFamily={"monospace"}
+          margin={5}
+          border={1}
+          padding={2}
+          borderRadius={2}
+        >
+          <b>Web-app Production:</b> Softwares used to produce the website
+          visualization.
+        </Typography>
         <Grid2 container spacing={2} alignItems={"stretch"} marginBottom={5}>
           <Grid2 size={{ sm: 12, md: 4, lg: 4 }}>
             <ProcessCard
               title={"Next.js"}
               description={
                 <>
-                  <Typography variant="body1" fontFamily={"monospace"}>
-                    <b>React.js Framework: </b>Next.js builds on React.js, an
-                    HTML + JavaScript language, and includes various
-                    optimizations that simplify and improve the coding and user
-                    experience.
-                  </Typography>
+                  <b>React.js Framework: </b>Next.js builds on React.js, an HTML
+                  + JavaScript language, and includes various optimizations that
+                  simplify and improve the coding and user experience.
                   <br />
-                  <Typography variant="body1" fontFamily={"monospace"}>
-                    <b>Frontend: </b>As a frontend development point, Next.js
-                    supports native React.js features and provides quick routing
-                    features that enhance usability of the website.
-                  </Typography>
                   <br />
-                  <Typography variant="body1" fontFamily={"monospace"}>
-                    <b>Backend: </b>Next.js uniquely supports a seamless backend
-                    integration with SSR and pre-fetching of data.
-                  </Typography>
+                  <b>Frontend: </b>As a frontend development point, Next.js
+                  supports native React.js features and provides quick routing
+                  features that enhance usability of the website.
+                  <br />
+                  <br />
+                  <b>Backend: </b>Next.js uniquely supports a seamless backend
+                  integration with SSR and pre-fetching of data.
                 </>
               }
               image="/images/nextjs.webp"
@@ -484,23 +491,18 @@ export default function ProcessPage() {
               title={"Leaflet.js"}
               description={
                 <>
-                  <Typography variant="body1" fontFamily={"monospace"}>
-                    <b>Maps API: </b>Leaflet.js, a React.js package, uses
-                    OpenStreetView’s maps API for integration with websites.
-                  </Typography>
+                  <b>Maps API: </b>Leaflet.js, a React.js package, uses
+                  OpenStreetView’s maps API for integration with websites.
                   <br />
-                  <Typography variant="body1" fontFamily={"monospace"}>
-                    <b>Geospatial Data: </b>Once a user uploads the .csv file,
-                    Leaflet uses the GPS coordinates of each CO2 datapoint to
-                    plot the flight path of the drone. Leaflet also allows color coding of
-                    CO2 points based on the bracket of risk associated with the
-                    CO2 concentration.
-                  </Typography>
                   <br />
-                  <Typography variant="body1" fontFamily={"monospace"}>
-                    <b>Flight Comparison: </b>Users can upload multiple maps to
-                    be compared at the same time.
-                  </Typography>
+                  <b>Geospatial Data: </b>Once a user uploads the .csv file,
+                  Leaflet uses the GPS coordinates of each CO2 datapoint to plot
+                  the flight path of the drone. Leaflet also allows color coding
+                  of CO2 points based on the bracket of risk associated with the
+                  CO2 concentration.
+                  <br /> <br />
+                  <b>Flight Comparison: </b>Users can upload multiple maps to be
+                  compared at the same time.
                 </>
               }
               image="/images/leafletjs.jpg"
@@ -511,27 +513,39 @@ export default function ProcessPage() {
               title={"Supabase"}
               description={
                 <>
-                  <Typography variant="body1" fontFamily={"monospace"}>
-                    <b>Database: </b> Supabase is a free to use PostgreSQL database hosted
-                    remotely, allowing for synchronization across devices.
-                  </Typography>
-                  <br />
-                  <Typography variant="body1" fontFamily={"monospace"}>
-                    <b>Data Prep: </b>The frontend application converts the csv file
-                    to a javascript object, stored in the .json format.
-                  </Typography>
-                  <br />
-                  <Typography variant="body1" fontFamily={"monospace"}>
-                    <b>Saving Data: </b>The user saves data, sending an asynchronous
-                    request to the supabase API, storing data and binding it to
-                    the user.
-                  </Typography>
+                  <b>Database: </b> Supabase is a free to use PostgreSQL
+                  database hosted remotely, allowing for synchronization across
+                  devices.
+                  <br /> <br />
+                  <b>Data Prep: </b>The frontend application converts the csv
+                  file to a javascript object, stored in the .json format.
+                  <br /> <br />
+                  <b>Saving Data: </b>The user saves data, sending an
+                  asynchronous request to the supabase API, storing data and
+                  binding it to the user.
                 </>
               }
               image="/images/supabase.webp"
             />
           </Grid2>
         </Grid2>
+        <Typography
+          variant="body1"
+          textAlign={"center"}
+          fontFamily={"monospace"}
+          margin={5}
+        >
+          To view the project on GitHub, click{" "}
+          <a
+            href="https://github.com/MrBigBrane/DroneZero"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "blue" }}
+          >
+            here
+          </a>
+          .
+        </Typography>
       </Box>
     </Grid2>
   );
