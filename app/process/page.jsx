@@ -20,7 +20,7 @@ export default function ProcessPage() {
     <Grid2 container marginTop={10}>
       <Box sx={{ width: "100%", margin: 1 }}>
         <Typography
-          variant="h3"
+          variant="h4"
           textAlign={"center"}
           fontFamily={"monospace"}
           fontWeight={700}
@@ -28,7 +28,7 @@ export default function ProcessPage() {
           Our Process
         </Typography>
         <Typography
-          variant="h4"
+          variant="h5"
           textAlign={"left"}
           fontFamily={"monospace"}
           margin={2}
@@ -36,7 +36,7 @@ export default function ProcessPage() {
           1. Researching Components <br />
         </Typography>
         <Typography
-          variant="h5"
+          variant="h6"
           textAlign={"center"}
           fontFamily={"monospace"}
           margin={5}
@@ -52,10 +52,8 @@ export default function ProcessPage() {
         <Grid2 container spacing={2} sx={{ alignItems: "center" }}>
           <Grid2 size={{ xs: 12, md: 4 }}>
             <ProcessCard
-              title={"Raspberry Pi 2W"}
-              description={
-                "The Raspberry Pi is a small single board computer that processes all of the GPS and CO2 data and inputs them into a CSV"
-              }
+              title={"Companion Computer"}
+              description={`The Raspberry Pi 2W is a small single board computer that processes all of the GPS and CO2 data and inputs them into a CSV. This file can later be extracted for further analysis.`}
               image="/images/rpi.png"
             />
           </Grid2>
@@ -85,7 +83,7 @@ export default function ProcessPage() {
           </Grid2>
         </Grid2>
         <Typography
-          variant="h5"
+          variant="h6"
           textAlign={"center"}
           fontFamily={"monospace"}
           margin={5}
@@ -175,7 +173,7 @@ export default function ProcessPage() {
           </Grid2>
         </Grid2>
         <Typography
-          variant="h4"
+          variant="h5"
           textAlign={"left"}
           fontFamily={"monospace"}
           margin={5}
@@ -265,7 +263,7 @@ export default function ProcessPage() {
           </Typography>
         </Paper>
         <Typography
-          variant="h4"
+          variant="h5"
           textAlign={"left"}
           fontFamily={"monospace"}
           margin={5}
@@ -286,7 +284,7 @@ export default function ProcessPage() {
           important to place the components in a way that optimizes wiring.
         </Typography>
         <Typography
-          variant="h4"
+          variant="h5"
           textAlign={"left"}
           fontFamily={"monospace"}
           margin={5}
@@ -294,50 +292,64 @@ export default function ProcessPage() {
         >
           4. Flight Issues
         </Typography>
-        <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
-          <Grid2 size={{ md: 12, lg: 6 }} >
+        <Grid2 container spacing={2} alignItems={"stretch"} margin={2}>
+          <Grid2 size={{ md: 12, lg: 6 }}>
             <IssueCard
               title={"Drone Flipping"}
               description={`
-            In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
+            On the first takeoff attempt, the drone did not seem to be ready to ascend.
+             Rather, it was tilting to one side and with an increase in throttle, it flipped.
             `}
               image={droneflip}
               title2={"Changing Frame Type"}
               description2={`
-              In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
+              Such an issue could be ascribed to the motors. Modern drone control algorithms allow for a significant portion of the control of the drone to be offloaded onto the flight controller.
+              For example, in the stabilize mode, the flight controller controls the roll and pitch of the drone, ensuring that the drone does not tilt to one side. In this case, because the motors
+              were mapped incorrectly to their corresponding position on the drone, the flight controller was controlling the wrong motors for 
+              making adjustments to the roll and pitch. In almost all other drone frame configurations, motors 1 and 2 and 3 and 4 are diagonal to each other. In this configuration,
+              the order of the motors (through QGC testing) was determined to fit the Betaflight X configuration, where motors 1 and 2 and 3 and 4 are parallel to each other.
               `}
               image2={betaflightx}
             />
           </Grid2>
-          <Grid2 size={{ md: 12, lg: 6 }} >
+          <Grid2 size={{ md: 12, lg: 6 }}>
             <IssueCard
-              title={"Oscillations in Flight"}
+              title={"Vibrations in Flight"}
               description={`
-            In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
+            During subsequent flights, the drone successfully ascended, but appeared to have very high frequency vibrations in all axes.
+
             `}
               image={vibration}
               title2={"Gyro Filtration"}
               description2={`
-              In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
+              Similar to the surface-level cause of the motor mismatch, the PID loop that provides feedback to the flight controller was resulting in unintended oscillations.
+               The PID loop used to control the drone operates based on the error between the desired and actual position of the drone. In this case, the PID loop was too sensitive
+               to subtle changes in the position of the drone, determined by the gyro. Thus in an attempt to correct the position of the drone, the PID loop was overcorrecting to the point
+               where oscillations/vibrations occurred. In understanding this issue, the logical solution was to filter out the noise from the gyro, increasing the noise it filters from 20 Hz to 80 Hz. 
               `}
               image2={gyro}
             />
           </Grid2>
-          <Grid2 size={{ sm: 12, md: 12, lg: 6 }} >
+          <Grid2 size={{ sm: 12, md: 12 }}>
             <IssueCard
               title={"Hovering Instability"}
               description={`
-            In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
+            As the drone became more and more stable, a new symptom appeared: hovering instability. In manual modes, even when putting the throttle at 50%,
+            the drone would slowly begin to either ascend or descend and when corrected, the drone would begin to move in the opposite direction, creating a cycle of up and down. In semi-autonomous modes like altitude hold or loiter, the drone would replicate the same behavior
+            to a large degree.
             `}
               image={hoveroscillation}
               title2={"Dynamic Hover Learning + Tuning"}
               description2={`
-              In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
+              In order to address the issue of hovering at mid throttle in manual modes, the drone was flown in a semi-autonomous mode for 30 sec - 1 min where the
+              ArduPilot software assigns the drone a hover value. The hover value is determined through adaptive learning and allows the hover value to be modified easily
+              with changes in payload and weight distribution. Moreover, for alleviating the issue of hovering oscillations in semi-autonomous modes, the PID loop was
+              tuned through trial and error. The default settings of the PID loop were not meant for a drone as powerful as our drone and thus, required rigorous testing.
               `}
               image2={pid}
             />
           </Grid2>
-          <Grid2 size={{ md: 12, lg: 6 }} >
+          {/* <Grid2 size={{ md: 12, lg: 6 }}>
             <IssueCard
               title={"Drone Flipping"}
               description={`
@@ -350,24 +362,45 @@ export default function ProcessPage() {
               `}
               image2={betaflightx}
             />
-          </Grid2>
-          <Grid2 size={{ md: 12 }} >
+          </Grid2> */}
+          <Grid2 size={{ md: 12 }}>
             <IssueCard
               title={"Barometer Malfunction"}
               description={`
-            In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
+            During a test flight in the autonomous mode, about 30 seconds into the flight, the drone began to slowly ascend. At first,
+            this seemed to be part of the normal behavior of the drone as ArduPilot advertises an expected margin of error of +/- 10 m from the desired altitude.
+            However, the drone did not descend at any point and reached above 100 ft (desired altitude was about 10 feet). In looking over the logs, it was found that 
+            the altitude the onboard barometer was reporting did not match the altitude the GPS triangulated. In fact, there were several sudden jumps in altitude while
+            the GPS barometer gradually increased in altitude, suggesting that the barometer was not working properly. Even more, the barometer signaled errors at multiple points
+            during the flight which seemed to be resolved almost instantaneously. Finally, the barometer's temperature readings ranged from below 0 degrees celsius to above 90 degrees, at which
+            point it was determined that the barometer must be malfunctioning/defective.
             `}
               image={barometerissue}
               title2={"GPS + Alternate Barometer"}
-              description2={`
-              In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
-              `}
+              description2={
+                <>
+                  The barometer onboard the flight controller was not working properly, but, because the GPS included a barometer, the next course of action was to try and use that barometer.
+                  Unfortunately, the process of using the GPS barometer was not as simple as the process of using the onboard barometer. The GPS barometer was not being detected by the ArduPilot software
+                  and thus, to the flight controller it was as if it didn't exist. To read more about the process of detecting the GPS barometer, click{" "}
+                  <a
+                    href="https://discuss.ardupilot.org/t/unable-to-connect-to-external-dps310-barometer/131125"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "blue" }}
+                  >
+                    here
+                  </a>.
+                  The flight controller was suffering a lack of memory space due to the various extraneous features present in the stable version of ArduPilot. By removing any features unnecessary
+                  to our project, the custom firmware was able to detect the GPS barometer and function properly. Ultimately, a GPS altitude-control method was used as the main method of altitude control, but 
+                  due to the possibility of having a loss of signal, the GPS barometer was assigned as a failsafe.
+                </>
+              }
               image2={gpsaltitude}
             />
           </Grid2>
         </Grid2>
         <Typography
-          variant="h4"
+          variant="h5"
           textAlign={"left"}
           fontFamily={"monospace"}
           margin={5}
@@ -384,10 +417,11 @@ export default function ProcessPage() {
           padding={2}
           borderRadius={2}
         >
-          <b>Software Algorithm:</b> Code developed to collect and log both CO2 data and geospatial data which is vital to the success of the project.
+          <b>Software Algorithm:</b> Code developed to collect and log both CO2
+          data and geospatial data which is vital to the success of the project.
         </Typography>
         <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
-          <Grid2 size={{ md: 12 }} >
+          <Grid2 size={{ md: 12 }}>
             <RPICard
               title={"Raspberry Pi"}
               description={`
@@ -396,8 +430,16 @@ export default function ProcessPage() {
               image="/images/code1.jpg"
             />
           </Grid2>
-          
         </Grid2>
+        <Typography
+          variant="h5"
+          textAlign={"left"}
+          fontFamily={"monospace"}
+          margin={5}
+          marginTop={10}
+        >
+          6. Website Visualization
+        </Typography>
       </Box>
     </Grid2>
   );

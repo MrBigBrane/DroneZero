@@ -486,24 +486,64 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
   };
 
   return (
-
     <Box sx={{ display: "flex" }}>
       <Steps
         ref={stepsRef}
         enabled={tutorialStart}
         initialStep={0}
         steps={[
-          { element: ".map", intro: "Welcome to the Map View. Here you can visualize the data collected by the drone." }, // 0
-          { element: ".drawer", intro: "This toolbar allows you to navigate between New Map, Flight Stats, and Previous Logs." }, // 1
-          { element: ".csvbutton", intro: "This is where you upload the CSV file. Make sure your CSV file has five columns labeled Time,	CO2 Measurement (PPM),	Longitude (degrees E),	Latitude (degrees N),	and Altitude (m)." }, // 2
-          { element: ".upload", intro: "After uploading a CSV, it will be displayed here and the map will automatically zoom in on the data." }, // 3
-          { element: ".save", intro: "The save button allows you to save the csv into the Previous Logs tab. You will need to reload the page after saving the CSV to see it in Previous Logs."}, // 4
-          { element: ".flightstats", intro: "The Flight Stats tab summarizes the data on the CSV." }, // 5
-          { element: ".previouslogs", intro: "Clicking on the Previous Logs button allows you to view previous logs that were saved." }, // 6
-          { element: ".previouslogs2", intro: "Here is the popup that displays the saved CSV files." }, // 7
-          { element: ".previouslogs3", intro: "You can rename and delete files using these buttons." }, // 8
-          { element: ".previouslogs4", intro: "You can select multiple files here to be displayed on the map at the same time."}, // 9
-          { element: ".mappoint", intro: "Hovering over data points allows you to see their stats. The points are also color coded according to their CO2 level." }, // 10
+          {
+            element: ".map",
+            intro:
+              "Welcome to the Map View. Here you can visualize the data collected by the drone.",
+          }, // 0
+          {
+            element: ".drawer",
+            intro:
+              "This toolbar allows you to navigate between New Map, Flight Stats, and Previous Logs.",
+          }, // 1
+          {
+            element: ".csvbutton",
+            intro:
+              "This is where you upload the CSV file. Make sure your CSV file has five columns labeled Time,	CO2 Measurement (PPM),	Longitude (degrees E),	Latitude (degrees N),	and Altitude (m).",
+          }, // 2
+          {
+            element: ".upload",
+            intro:
+              "After uploading a CSV, it will be displayed here and the map will automatically zoom in on the data.",
+          }, // 3
+          {
+            element: ".save",
+            intro:
+              "The save button allows you to save the csv into the Previous Logs tab. You will need to reload the page after saving the CSV to see it in Previous Logs.",
+          }, // 4
+          {
+            element: ".flightstats",
+            intro: "The Flight Stats tab summarizes the data on the CSV.",
+          }, // 5
+          {
+            element: ".previouslogs",
+            intro:
+              "Clicking on the Previous Logs button allows you to view previous logs that were saved.",
+          }, // 6
+          {
+            element: ".previouslogs2",
+            intro: "Here is the popup that displays the saved CSV files.",
+          }, // 7
+          {
+            element: ".previouslogs3",
+            intro: "You can rename and delete files using these buttons.",
+          }, // 8
+          {
+            element: ".previouslogs4",
+            intro:
+              "You can select multiple files here to be displayed on the map at the same time.",
+          }, // 9
+          {
+            element: ".mappoint",
+            intro:
+              "Hovering over data points allows you to see their stats. The points are also color coded according to their CO2 level.",
+          }, // 10
           { element: ".end", intro: "This is the end of the map tutorial." },
         ]}
         onBeforeChange={async (nextStepIndex) => {
@@ -524,13 +564,13 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
             }
           }
           if (nextStepIndex === 7 || nextStepIndex === 9) {
-            if(forward){
-            setOpened((prev) => !prev);
-            setForward(false);
+            if (forward) {
+              setOpened((prev) => !prev);
+              setForward(false);
             }
           }
-          if(nextStepIndex === 10){
-            if(!forward){
+          if (nextStepIndex === 10) {
+            if (!forward) {
               setOpened((prev) => !prev);
               setForward(true);
             }
@@ -546,7 +586,9 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
       />
 
       <CssBaseline />
-      <AppBar
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+
+         <AppBar
         position="fixed"
         signOut={signOut}
         user={user}
@@ -570,7 +612,22 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
         }
         open={open}
       />
-      <Drawer variant="permanent" open={open}>
+      <div
+        style={{
+          display: 'flex',
+          flexGrow: 1,
+          height: `calc(100vh - 64px)`, // assuming navbar height = 64px
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            width: drawerWidth,
+            transition: 'width 0.3s',
+            overflowY: 'auto',
+          }}
+        >
+          <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
@@ -580,9 +637,22 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
             )}
           </IconButton>
         </DrawerHeader>
-        <Divider />
-        <Box sx={{ flex: 1, flexDirection: "row", display: "flex" }}>
-          <Box>
+        <Divider style={{ width: "100%" }} />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            height: "100%", // make sure it stretches
+            // overflow: "hidden", // prevents bleed
+          }}
+        >
+          <Box
+            sx={{
+              width: 65, // or whatever you were using for maxWidth in your ListItemButton
+              flexShrink: 0, // prevents it from shrinking when right content grows
+              // overflowY: "auto", // allows scrolling if needed
+            }}
+          >
             <List className="drawer">
               {tabs.map((text, index) => (
                 <ListItem key={text} disablePadding sx={{ display: "block" }}>
@@ -634,9 +704,9 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
               ))}
             </List>
           </Box>
-          <Box sx={{ margin: 1, minWidth: 150, maxWidth: 150 }}>
+          <Box sx={{ paddingRight: 2, margin: 1 }}>
             {tab === 0 ? (
-              <div>
+              <Box>
                 <DropFileButton
                   className="csvbutton"
                   setData={setData}
@@ -652,10 +722,17 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                     setSaved={setSaved}
                   />
                 )}
-              </div>
+              </Box>
             ) : tab === 1 ? (
-              <div className="flightstats">
-                <p style={{ textAlign: "center", fontFamily: "monospace"}}>
+              <Box
+                className="flightstats"
+                sx={{
+                  // flexGrow: 1,
+                  fontFamily: "monospace",
+                  fontSize: 13
+                }}
+              >
+                <p style={{ textAlign: "center", fontSize: 18 }}>
                   <b>Flight Stats</b>
                 </p>
                 <br />
@@ -666,48 +743,45 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                       style={{
                         border: "1px solid black",
                         borderRadius: "10px",
-                        padding: 5,
                         marginBottom: 10,
                       }}
                     >
                       <div
                         key={index}
                         style={{
-                          border: "1px solid black",
-                          borderRadius: "10px",
                           padding: 5,
                           marginBottom: 10,
                         }}
                         className="flightstats2"
                       >
-                        <Typography variant="h6" style={{ fontFamily: "monospace"}}>
+                        <Typography variant="h6" marginBottom={1} fontFamily={"monospace"}>
                           <b>{item.filename}</b>
                         </Typography>
-                        <p style={{ fontFamily: "monospace"}}>
+                        <p style={{ fontFamily: "monospace" }}>
                           <b>CO2 Stats:</b>
                         </p>
-                        <p style={{ fontFamily: "monospace"}}>
+                        <p style={{ fontFamily: "monospace" }}>
                           Avg:{" "}
                           {Math.round(
                             average(item.data.map((item) => item.co2_ppm))
                           )}{" "}
                           ppm
                         </p>
-                        <p style={{ fontFamily: "monospace"}}>
+                        <p style={{ fontFamily: "monospace" }}>
                           Max:{" "}
                           {Math.max(...item.data.map((item) => item.co2_ppm))}{" "}
                           ppm
                         </p>
-                        <p style={{ fontFamily: "monospace"}}>
+                        <p style={{ fontFamily: "monospace" }}>
                           Min:{" "}
                           {Math.min(...item.data.map((item) => item.co2_ppm))}{" "}
                           ppm
                         </p>
                         <br />
-                        <p style={{ fontFamily: "monospace"}}>
+                        <p style={{ fontFamily: "monospace" }}>
                           <b>Risk Assessment:</b>
                         </p>
-                        <p style={{ color: "red", fontFamily: "monospace"}}>
+                        <p style={{ color: "red", fontFamily: "monospace" }}>
                           High Risk:{" "}
                           {countGreaterThan(
                             item.data.map((item) => item.co2_ppm),
@@ -734,41 +808,44 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                           )}{" "}
                           pts
                         </p>
-                        <p style={{fontFamily: "monospace" }}>Total: {item.data.length} pts</p>
+                        <p style={{ fontFamily: "monospace" }}>
+                          Total: {item.data.length} pts
+                        </p>
                         <br />
-                        <p style={{fontFamily: "monospace" }}>
+                        <p style={{ fontFamily: "monospace" }}>
                           <b>Altitude Stats:</b>
                           <br />
                         </p>
-                        <p style={{fontFamily: "monospace" }}>
+                        <p style={{ fontFamily: "monospace" }}>
                           Avg:{" "}
                           {Math.round(
                             average(item.data.map((item) => item.altitude))
                           )}{" "}
-                          ft
+                          m
                         </p>
-                        <p style={{fontFamily: "monospace" }}>
+                        <p style={{ fontFamily: "monospace" }}>
                           Max:{" "}
                           {Math.max(...item.data.map((item) => item.altitude))}{" "}
-                          ft
+                          m
                         </p>
-                        <p style={{fontFamily: "monospace" }}>
+                        <p style={{ fontFamily: "monospace" }}>
                           Min:{" "}
                           {Math.min(...item.data.map((item) => item.altitude))}{" "}
-                          ft
+                          m
                         </p>
                         <br />
                       </div>
                     </Box>
                   ))
                 ) : (
-                  <p style={{fontFamily: "monospace" }}>
-                    Upload Data for Flight <br /> Stats
+                  <p style={{ fontFamily: "monospace" }}>
+                    Upload Data for <br />
+                    Flight Stats
                   </p>
                 )}
-              </div>
+              </Box>
             ) : tutorial || user ? (
-              <div className={"previouslogs"}>
+              <div className={"previouslogs"} style={{ justifyContent: "center"}}>
                 <PreviousLogs
                   totalData={
                     tutorial
@@ -778,7 +855,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                               data: defaultFile,
                               filename: "test.csv",
                               id: "2dad2f07-993e-4619-9004-aa98a47da248",
-                              created_at: '2025-03-27 18:21:36.615369+00',
+                              created_at: "2025-03-27 18:21:36.615369+00",
                             },
                             ...prevData,
                           ]
@@ -787,7 +864,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                               data: defaultFile,
                               filename: "test.csv",
                               id: "2dad2f07-993e-4619-9004-aa98a47da248",
-                              created_at: '2025-03-27 18:21:36.615369+00',
+                              created_at: "2025-03-27 18:21:36.615369+00",
                             },
                           ]
                       : prevData
@@ -800,24 +877,44 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                 />
               </div>
             ) : (
-              <Typography variant="h6" style={{fontFamily: "monospace" }}>Log In to View <br />Previous Logs</Typography>
+              <Typography variant="h6" style={{ fontFamily: "monospace" }}>
+                Log In to View <br />
+                Previous Logs
+              </Typography>
             )}
           </Box>
         </Box>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1 }}>
+        </div>
+      </div>
+      <div style={{ flexGrow: 1, position: 'relative' }}>
+        <Box component="main" sx={{ flexGrow: 1 }}>
         <Snackbar open={saved === true} autoHideDuration={6000}>
-          <Alert severity="success" variant="filled" sx={{ width: "100%" }} style={{fontFamily: "monospace" }}>
+          <Alert
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+            style={{ fontFamily: "monospace" }}
+          >
             Saved successfully!
           </Alert>
         </Snackbar>
         <Snackbar open={saved === 2} autoHideDuration={6000}>
-          <Alert severity="success" variant="filled" sx={{ width: "100%" }} style={{fontFamily: "monospace" }}>
+          <Alert
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+            style={{ fontFamily: "monospace" }}
+          >
             Deleted successfully!
           </Alert>
         </Snackbar>
         <LazyLoadingMap data={data} className="map" />
       </Box>
+      </div>
+      
+      </div>
+     
     </Box>
   );
 }

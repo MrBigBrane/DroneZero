@@ -130,7 +130,7 @@ export default function AboutUs() {
                 variant="subtitle1"
                 style={{ textAlign: "center", fontFamily: "monospace" }}
               >
-                Ryan is a student at Saratoga High School. He mainly worked on
+                Ryan is a student at Saratoga High School. He focused on
                 getting the project "off the ground," setting up the drone's
                 software and diving deep into ArduPilot's firmware, building a
                 custom version at one point. He also set up the Raspberry Pi 2W,

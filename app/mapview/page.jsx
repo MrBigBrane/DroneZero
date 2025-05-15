@@ -5,6 +5,7 @@ import MapDrawer from "../../components/navigation/MapDrawer";
 import { signOutAction } from "../actions";
 
 export default async function MapView({ searchParams }) {
+  const { tutorial } = await searchParams
   const supabase = await createClient();
 
   const {
@@ -18,7 +19,7 @@ export default async function MapView({ searchParams }) {
 
   return (
     <>
-      <MapDrawer prevData={data} signOut={signOutAction} user={user?.id} tutorial={searchParams?.tutorial}/>
+      <MapDrawer prevData={data} signOut={signOutAction} user={user?.id} tutorial={tutorial}/>
     </>
   );
 }

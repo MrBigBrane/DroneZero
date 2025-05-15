@@ -86,7 +86,6 @@ export default function CSVReader({ setFile, file, setData, uploadData, setUploa
   return (
     <CSVReader
       onUploadAccepted={(results, file) => {
-
         setZoneHover(false);
 
         if (results.data.length > 1) {
@@ -110,8 +109,11 @@ export default function CSVReader({ setFile, file, setData, uploadData, setUploa
               };
               return obj;
             });
-            console.log(file)
-          setData((prevData) => [...prevData, { data: extractedData, filename: file.name }]);
+          console.log(file);
+          setData((prevData) => [
+            ...prevData,
+            { data: extractedData, filename: file.name },
+          ]);
           setUploadData({ data: extractedData, filename: file.name });
           setFile(file);
         }
@@ -138,9 +140,7 @@ export default function CSVReader({ setFile, file, setData, uploadData, setUploa
           {file ? (
             <div style={styles.file} className="upload">
               <div style={styles.info}>
-                <span style={styles.size}>
-                  {formatFileSize(file.size)}
-                </span>
+                <span style={styles.size}>{formatFileSize(file.size)}</span>
                 <span style={styles.name}>{file.name}</span>
               </div>
               <div style={styles.progressBar}>
@@ -155,15 +155,18 @@ export default function CSVReader({ setFile, file, setData, uploadData, setUploa
                 onMouseLeave={() =>
                   setRemoveHoverColor(DEFAULT_REMOVE_HOVER_COLOR)
                 }
-                 onClick={(e) => {
+                onClick={(e) => {
                   getRemoveFileProps().onClick(e);
                   e.stopPropagation(); // Prevent triggering parent click event
-              
+
                   // Remove this file's parsed data from setData
                   setData((prevData) =>
-                    prevData.filter((item) => JSON.stringify(item) !== JSON.stringify(uploadData))
+                    prevData.filter(
+                      (item) =>
+                        JSON.stringify(item) !== JSON.stringify(uploadData)
+                    )
                   );
-              
+
                   // Clear current file
                   setFile(null);
                   setUploadData([]);
@@ -173,7 +176,17 @@ export default function CSVReader({ setFile, file, setData, uploadData, setUploa
               </div>
             </div>
           ) : (
-            <p>Drop CSV file here <br /> or click to upload</p>
+            <p
+              style={{
+                textAlign: "center",
+                fontFamily: "monospace",
+                fontSize: 13,
+              }}
+            >
+              Drop CSV file <br />
+              here or click
+              <br /> to upload
+            </p>
           )}
         </div>
       )}
