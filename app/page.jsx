@@ -50,10 +50,10 @@ export default function Home({ searchParams }) {
             fontSize: 20,
           }}
         >
-          <b>Our Mission</b>: Each year there is a rise in CO₂ emissions
-          globally and the seemingly distant worry of climate change becomes
-          increasingly real. To effectively tackle this issue, we must first
-          understand where emissions are coming from. <br />
+          <b>Our Mission</b>: Each year, as global CO₂ emissions
+          rise, the seemingly distant worry of climate change becomes
+          increasingly real. To effectively tackle this growing concern, we must first
+          understand the root of the issue: the sources of emissions. <br />
           <br />
           Our product, DroneZero, collects precise CO₂ measurements in both
           rural and urban areas, providing users access to real-time, relevant
