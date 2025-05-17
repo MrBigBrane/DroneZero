@@ -877,7 +877,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                 />
               </div>
             ) : (
-              <Typography variant="h6" style={{ fontFamily: "monospace" }}>
+              <Typography variant="body1" style={{ fontFamily: "monospace" }}>
                 Log In to View <br />
                 Previous Logs
               </Typography>
