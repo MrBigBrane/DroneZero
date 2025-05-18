@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardContent, Typography, Box, CardMedia } from '@mui/material';
+import { Card, CardContent, Typography, Box, CardMedia, Grid2 } from '@mui/material';
 
 export default function RPICard ({ title, description, image }) {
     return (
@@ -9,11 +9,43 @@ export default function RPICard ({ title, description, image }) {
                 display: "flex",
                 p: 2,
                 boxShadow: 3,
-                borderRadius: 2,
-                margin: 2
+                borderRadius: 4,
+                margin: 5
             }}
         >
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
+
+            <Grid2 container spacing={2}>
+                <Grid2 size={6}>
+                    <CardMedia
+                        component="img"
+                        // height="140"
+                        image={image}
+                        alt={title}
+                        sx={{ width: "100%" }}
+                    />
+                </Grid2>
+                <Grid2 size={6}>
+                    <CardContent>
+                        <Typography
+                            gutterBottom
+                            variant="h6"
+                            component="div"
+                            fontFamily={"monospace"}
+                        >
+                            {title}
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            sx={{ color: "text.secondary" }}
+                            fontFamily={"monospace"}
+                        >
+                            {description}
+                        </Typography>
+                    </CardContent>
+                </Grid2>
+            </Grid2>
+        
+            {/* <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <CardMedia
                     component="img"
                     // height="140"
@@ -38,7 +70,7 @@ export default function RPICard ({ title, description, image }) {
                 >
                     {description}
                 </Typography>
-            </CardContent>
+            </CardContent> */}
             
         </Card>
     )

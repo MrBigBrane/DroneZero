@@ -434,11 +434,48 @@ export default function ProcessPage() {
         <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Raspberry Pi"}
+              title={"Retrieving Flight Data"}
               description={`
-            In order to ensure smooth flight, 3 blade 5 inch propellers were chosen.
-            `}
+                For users to see CO2 levels at specific locations, 
+                the computer must be able to access geospatial data, 
+                which would have to be retrieved from the drone’s flight 
+                log. We can actively retrieve this geospatial data from the 
+                drone by using a Python library called PyMavlink. PyMavlink 
+                is a Python library that allows users to request specific types 
+                of data from the drone’s flight log through Mavlink Telemetry. 
+                We then modify this process by telling the computer to request data 
+                in a specified interval.
+              `}
               image="/images/code1.jpg"
+            />
+          </Grid2>
+          <Grid2 size={{ md: 12 }}>
+            <RPICard
+              title={"Retrieving CO2 Data"}
+              description={`
+                We use another Python library called adafruit_scd4x that 
+                allows users to retrieve CO2 concentration levels read by 
+                the sensor our drone has equipped. Adafruit_scd4x is a special 
+                library made by the sensor’s developer, Adafruit, specifically 
+                for the sensor we use, the SCD40, and the SCD41, which is its 
+                sister component.
+            `}
+              image="/images/code2.jpg"
+            />
+          </Grid2>
+          <Grid2 size={{ md: 12 }}>
+            <RPICard
+              title={"Writing Geospatial Data and CO2 Data to Spreadsheet for Extraction"}
+              description={`
+                We take both the geospatial data collected from our drone and the CO2 concentration 
+                data collected from the SCD40, the CO2 sensor, and then write to a .csv file. 
+                A .csv file is basically a spreadsheet file and can be thought of as similar 
+                to Excel. We format the data with a column for time, CO2 concentration, 
+                longitude, latitude, and finally, altitude. The file is then created after 
+                the drone is de-armed and manually extracted to be visualized on your personal 
+                computer.
+            `}
+              image="/images/code3.jpg"
             />
           </Grid2>
         </Grid2>
