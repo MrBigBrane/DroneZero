@@ -24,7 +24,7 @@ export default function PreviousLogs({ totalData, data, setData, setSaved, class
 
   return (
     <>
-      <Button variant="outlined" onClick={handleClickOpen} className={className}>
+      <Button variant="outlined" onClick={handleClickOpen} className={className} sx={{fontFamily: "monospace"}}>
         Previous Logs
       </Button>
       <Dialog
@@ -33,7 +33,7 @@ export default function PreviousLogs({ totalData, data, setData, setSaved, class
         
       >
         <div className='previouslogs2'> 
-          <DialogTitle >Select Previous Logs to Display</DialogTitle>
+          <DialogTitle sx={{fontFamily: "monospace"}}>Select Previous Logs to Display</DialogTitle>
         <DialogContent>
           <Box sx={{ maxHeight: "50vh", overflowY: "scroll", width: "100%" }}>
             {fullData.length > 0 &&
@@ -45,7 +45,7 @@ export default function PreviousLogs({ totalData, data, setData, setSaved, class
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Exit</Button>
+          <Button onClick={handleClose} sx={{fontFamily: "monospace"}}>Exit</Button>
         </DialogActions>
         </div>
         
