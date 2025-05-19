@@ -4,16 +4,18 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 
-export default function ProcessCard({ title, description, image }) {
+export default function ProcessCard({ title, description, image, link }) {
   return (
     <Card
       sx={{
         width: "70%",
+        boxShadow: 2,
+        borderRadius: 2, 
         justifySelf: "center",
         height: "100%",
       }}
     >
-      <CardActionArea >
+      <CardActionArea href={link}>
         <CardMedia
           component="img"
           height="140"

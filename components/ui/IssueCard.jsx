@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function IssueCard({ title, description, image, title2, description2, image2 }) {
   return (
-    <Card sx={{ width: "100%", p: 2, boxShadow: 3, borderRadius: 2, height: "100%", display: "flex", flexDirection: "column" }}>
+    <Card sx={{ width: "100%", p: 2, boxShadow: 2, borderRadius: 2, height: "100%", display: "flex", flexDirection: "column" }}>
       <Box
         sx={{
           display: "flex",

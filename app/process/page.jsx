@@ -55,6 +55,7 @@ export default function ProcessPage() {
               title={"Companion Computer"}
               description={`The Raspberry Pi 2W is a small single board computer that processes all of the GPS and CO2 data and inputs them into a CSV. This file can later be extracted for further analysis.`}
               image="/images/rpi.png"
+              link="https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/"
             />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 4 }}>
@@ -67,6 +68,7 @@ export default function ProcessPage() {
                 concentrations
                 `}
               image="/images/co2sensor.jpg"
+              link="https://www.adafruit.com/product/5187"
             />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 4 }}>
@@ -79,6 +81,7 @@ export default function ProcessPage() {
                 altitude.
                 `}
               image="/images/gps.png"
+              link="https://www.aliexpress.us/item/3256805761930658.html?src=google&pdp_npi=4%40dis%21USD%2122.49%2117.54%21%21%21%21%21%40%2112000034981055342%21ppc%21%21%21&src=google&albch=shopping&acnt=708-803-3821&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&albagn=888888&ds_e_adid=&ds_e_matchtype=&ds_e_device=c&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=en3256805761930658&ds_e_product_merchant_id=101088766&ds_e_product_country=US&ds_e_product_language=en&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=19108282527&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gclid=Cj0KCQiA7NO7BhDsARIsADg_hIbVtIZQsV8s9iz60pe5rwsbGEuJ4-pEsyVOBkxkxNL_LoBsBdp61DQaAjH2EALw_wcB&gatewayAdapt=glo2usa"
             />
           </Grid2>
         </Grid2>
@@ -104,6 +107,7 @@ export default function ProcessPage() {
                 motors and ESCs.
                 `}
               image="/images/flightcontroller.jpg"
+              link="https://www.amazon.com/SpeedyBee-F405-Flight-Controller-Stack/dp/B0CX89LZQF/ref=sr_1_1?crid=OPFAWMKQ069D&dib=eyJ2IjoiMSJ9.m3Sp7pLUIqWelYht77Ox1BAfbrJoCewKpdbZrNY-sOmamCmMX0FOq2ikSlMAXgCl1emX5vMXrC1qtWYXW4y-srZYKn9CsvBvU7dn4jKYMmYknHESVwY_f9dE8YV5xpM7EBByfKo3sOHkD_-TmVNDxpVmUimucbqpQ8WbOQCLccgo-lzWC-T9ngphmgpAUZwj19eKN6f2rC_kXie10IakUaepgIjNcQ5uzFncm1I3SIl0LxFVeHxkDfuV7iYvMqsCOcOB0h4VSD6TtBfwNKxtvhfhMxCBpC4unNxijgKDzm0.3ztvLCKwOmJpazUoTqrUh3mnmDjAnJ65qrQIcRJZdzo&dib_tag=se&keywords=speedybee+f405+v4&qid=1747629904&s=toys-and-games&sprefix=speedy%2Ctoys-and-games%2C157&sr=1-1"
             />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 4 }}>
@@ -116,6 +120,7 @@ export default function ProcessPage() {
                 the SpeedyBee F405 V4 4-in-1 ESC with a 55 Amp rating was used.
                 `}
               image="/images/esc.webp"
+              link="https://www.amazon.com/SpeedyBee-F405-Flight-Controller-Stack/dp/B0CX89LZQF/ref=sr_1_1?crid=OPFAWMKQ069D&dib=eyJ2IjoiMSJ9.m3Sp7pLUIqWelYht77Ox1BAfbrJoCewKpdbZrNY-sOmamCmMX0FOq2ikSlMAXgCl1emX5vMXrC1qtWYXW4y-srZYKn9CsvBvU7dn4jKYMmYknHESVwY_f9dE8YV5xpM7EBByfKo3sOHkD_-TmVNDxpVmUimucbqpQ8WbOQCLccgo-lzWC-T9ngphmgpAUZwj19eKN6f2rC_kXie10IakUaepgIjNcQ5uzFncm1I3SIl0LxFVeHxkDfuV7iYvMqsCOcOB0h4VSD6TtBfwNKxtvhfhMxCBpC4unNxijgKDzm0.3ztvLCKwOmJpazUoTqrUh3mnmDjAnJ65qrQIcRJZdzo&dib_tag=se&keywords=speedybee+f405+v4&qid=1747629904&s=toys-and-games&sprefix=speedy%2Ctoys-and-games%2C157&sr=1-1"
             />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 4 }}>
@@ -127,6 +132,7 @@ export default function ProcessPage() {
                 of the ESC, the 2550KV T-Motor Velox V2306 V3 was chosen.
                 `}
               image="/images/motor.png"
+              link="https://www.aliexpress.us/item/3256805639898807.html?spm=a2g0o.productlist.main.3.332261fd1wL9DB&algo_pvid=72af29e2-b1e1-4a80-a645-3138c2d9f9b8&algo_exp_id=72af29e2-b1e1-4a80-a645-3138c2d9f9b8-1&pdp_npi=4%40dis!USD!20.93!5.81!!!20.93!5.81!%402103205117357836385202880ee790!12000034489088948!sea!US!0!ABX&curPageLogUid=NX7dtmXUuOpv&utparam-url=scene%3Asearch%7Cquery_from%3A&_gl=1*h9jv5d*_gcl_aw*R0NMLjE3MzU1MDY3OTIuQ2p3S0NBaUFnOFM3QmhBVEVpd0FPMi1SNnV5eDBzWUp0QTBOTGNuUGxIYjlVX3hNaFpQUnRfcWFTa1BpM0NvalF2N0o3MEJHTzR5QTVob0NFazBRQXZEX0J3RQ..*_gcl_dc*R0NMLjE3MzU1MDY3OTIuQ2p3S0NBaUFnOFM3QmhBVEVpd0FPMi1SNnV5eDBzWUp0QTBOTGNuUGxIYjlVX3hNaFpQUnRfcWFTa1BpM0NvalF2N0o3MEJHTzR5QTVob0NFazBRQXZEX0J3RQ..*_gcl_au*MTE5MzUwMzg1LjE3MzQxMjAzMzc.*_ga*NjcxODM0MzI1MTU3MDE4LjE3MzQxMjAzMzQ3MzE.*_ga_VED1YSGNC7*MTczNTc4MzY0MS41LjEuMTczNTc4MzY4Ny4xNC4wLjA"
             />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 4 }}>
@@ -138,6 +144,7 @@ export default function ProcessPage() {
                 and financial constraint, a 1500 mAh 4S LiPo battery was chosen.
                 `}
               image="/images/dronebattery.png"
+              link="https://www.amazon.com/dp/B07V1TYR3P?ref=cm_sw_r_cp_ud_dp_59VGMMKB0R3EP0280CBN&ref_=cm_sw_r_cp_ud_dp_59VGMMKB0R3EP0280CBN&social_share=cm_sw_r_cp_ud_dp_59VGMMKB0R3EP0280CBN&_encoding=UTF8&newOGT=1&th=1"
             />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 4 }}>
@@ -149,6 +156,7 @@ export default function ProcessPage() {
                 supporting up to 10 channels.
                 `}
               image="/images/receiver.png"
+              link="https://www.amazon.com/FLYSKY-Transmitter-Controller-Receiver-Upgrade/dp/B07Z8VCB45/ref=sr_1_3?crid=2RJO4QUJYLQ9X&dib=eyJ2IjoiMSJ9.RE0-WjvtVpeM48YKpHwJynD1Dxaj_ailylH4HNc182fBVwaKEoj_6JohMxdzjHcw3T1tKhF04GQLlrtSY7CkUcL_xw-t9QB8NB3oUmBhnUFAITGGd7G9OfeNiwv2cx436HE5d5HqbBuwfGnsHXNn-H-oVJo4hIOg03j9NqS47FN5Bap14F50fHZbPu1BExi43fIQzChTlX-ndjL-Md396l4-sbBb26NPC0spGxRy_UL19nCYI5rOZw8x1_N7OuYUjXCgAN3CM6XPQ8npNcgr8dfpspm2ilYsdIaiDjGF8XyxenNmkRwxqFGtpplfOJksUcUfA9YsHnBpvYhsgrsiTCLZj9cSPcdwTTIwconBLXQ.Sas2wCaxWKf69bSXYB5DwutPDKLusrJXl0I1qlNR9JQ&dib_tag=se&keywords=10+channel+drone+transmitter&qid=1735871094&s=toys-and-games&sprefix=10+channel+drone+transmitt%2Ctoys-and-games%2C155&sr=1-3"
             />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 4 }}>
@@ -159,6 +167,7 @@ export default function ProcessPage() {
               In order to ensure smooth flight, 3 blade 5 inch propellers were chosen. 
               `}
               image="/images/propellers.jpg"
+              link="https://www.aliexpress.us/item/3256807353456077.html?spm=a2g0o.productlist.main.1.11285d15bEfaqI&algo_pvid=92b43ca2-1d3e-47e3-952a-0f3caaef163c&algo_exp_id=92b43ca2-1d3e-47e3-952a-0f3caaef163c-0&pdp_npi=4%40dis!USD!8.13!0.99!!!59.12!7.17!%40210318ec17357858759537027ee5e0!12000041212246450!sea!US!0!ABX&curPageLogUid=0LT5Jrulz0T7&utparam-url=scene%3Asearch%7Cquery_from%3A"
             />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 4 }}>
@@ -169,6 +178,7 @@ export default function ProcessPage() {
               In order to ensure stability and strength, a lightweight carbon fiber frame was chosen.
               `}
               image="/images/droneframe.jpg"
+              link="https://www.amazon.com/SpeedyFPV-ZMR250-250mm-Carbon-Racing/dp/B0CCQBFHTN/ref=sr_1_3?crid=1HWIYWQ1XRQ44&dib=eyJ2IjoiMSJ9.sC2MoEW-0sOtunhqhbIYvDfuplwEg6JRkBgsZ2eT3JH2PHmZWqtXWOnMPdXre01tvDUgbj4Gc6sATaItsBKcSb3NDzowHUplMCDkgDrextPcgKxiu6JGDkk8cGu-NgwFkizaGjY_QYgd6hfMplCUiKbigAORQf9DU6PjVdf5BxQUKNq_G2ikGrbL7lFoh3ofDymEREwiNeKh4Qzu9l5SUNGeS2bCtc6eOOB_rWYGxYMQ73OvDSITby2bDMNpVOhnMEM5FxRnwzpHkBHlTuETz-wW5aPuI-_wPXFsT4HnPi4KP8aIxJPq7baX4MITZx0yPCbrtde3IzYXVMhdb5x2_1Q_mMyDHHUr87OHdHs_52E.nE9TnACQ4TQGk2hSFpeUGQbmeaQ6vu4MFdeO3VA3Zps&dib_tag=se&keywords=250mm+drone+frame&qid=1735502210&s=toys-and-games&sprefix=250mm+drone+franme%2Ctoys-and-games%2C123&sr=1-3"
             />
           </Grid2>
         </Grid2>
@@ -435,17 +445,19 @@ export default function ProcessPage() {
           <Grid2 size={{ md: 12 }}>
             <RPICard
               title={"Retrieving Flight Data"}
-              description={`
-                For users to see CO2 levels at specific locations, 
+              description={
+                <>
+                  For users to see CO2 levels at specific locations, 
                 the computer must be able to access geospatial data, 
                 which would have to be retrieved from the drone’s flight 
                 log. We can actively retrieve this geospatial data from the 
-                drone by using a Python library called PyMavlink. PyMavlink 
+                drone by using a Python library called PyMavlink. <b>PyMavlink </b>
                 is a Python library that allows users to request specific types 
                 of data from the drone’s flight log through Mavlink Telemetry. 
                 We then modify this process by telling the computer to request data 
                 in a specified interval.
-              `}
+                </>
+              }
               image="/images/code1.jpg"
             />
           </Grid2>

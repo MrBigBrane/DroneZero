@@ -8,7 +8,7 @@ export default function RPICard ({ title, description, image }) {
             sx={{
                 display: "flex",
                 p: 2,
-                boxShadow: 3,
+                boxShadow: 2,
                 borderRadius: 4,
                 margin: 5
             }}
