@@ -9,14 +9,14 @@ export default function DroneTutorial() {
             <Box sx={{ display: 'flex', marginTop: '10vh', width: '120vh' }}>
                 <Container maxWidth="100%">
                     <Paper elevation={3} sx={{ padding: 4, margin: 'auto', maxWidth: '100%' }}>
-                        <Typography variant="h4" gutterBottom>
+                        <Typography variant="h4" gutterBottom sx={{fontFamily: "monospace"}}>
                             Drone Tutorial
                         </Typography>
                         <Divider />
                         <Stack spacing={2}>
                             <Stack direction="row" spacing={1}>
                                 <MemoryIcon />
-                                <Typography variant="body1" gutterBottom>
+                                <Typography variant="body1" gutterBottom sx={{fontFamily: "monospace"}}>
                                     Autonomous Data Collection
                                 </Typography>
                             </Stack>
@@ -24,7 +24,7 @@ export default function DroneTutorial() {
                                 <Stack spacing={2}>
                                     <Stack direction="row" spacing={1}>
                                         <MemoryIcon />
-                                        <Typography variant="body1" gutterBottom>
+                                        <Typography variant="body1" gutterBottom sx={{fontFamily: "monospace"}}>
                                             Build and upload a Flight Path on QGroundControl (Note: You need a ground control station to be able to use autonomous flight, and there are other options like Mission Planner or APM Planner 2.0)
                                         </Typography>
                                     </Stack>
@@ -32,19 +32,19 @@ export default function DroneTutorial() {
                                         <Stack spacing={2}>
                                             <Stack direction="row" spacing={1}>
                                                 <MemoryIcon />
-                                                <Typography variant="body1" gutterBottom>
+                                                <Typography variant="body1" gutterBottom sx={{fontFamily: "monospace"}}>
                                                     Arm the drone in STABILIZE mode (Note: This mode is not dependent on peripheral sensor malfunctions, meaning control of the drone can be regained in such a case)
                                                 </Typography>
                                             </Stack>
                                             <Stack direction="row" spacing={1}>
                                                 <MemoryIcon />
-                                                <Typography variant="body1" gutterBottom>
+                                                <Typography variant="body1" gutterBottom sx={{fontFamily: "monospace"}}>
                                                     Throttle up to slightly under the threshold of thrust needed for the drone to ascend
                                                 </Typography>
                                             </Stack>
                                             <Stack direction="row" spacing={1}>
                                                 <MemoryIcon />
-                                                <Typography variant="body1" gutterBottom>
+                                                <Typography variant="body1" gutterBottom sx={{fontFamily: "monospace"}}>
                                                     Set the drone to AUTO mode with drone switch B
                                                 </Typography>
                                             </Stack>
@@ -52,7 +52,7 @@ export default function DroneTutorial() {
                                                 <Stack spacing={2}>
                                                     <Stack direction="row" spacing={1}>
                                                         <MemoryIcon />
-                                                        <Typography variant="body1" gutterBottom>
+                                                        <Typography variant="body1" gutterBottom sx={{fontFamily: "monospace"}}>
                                                             The drone will autonomously run the previously loaded mission created according to the user’s specific needs
                                                         </Typography>
                                                     </Stack>
@@ -74,7 +74,7 @@ export default function DroneTutorial() {
                             </Container>
                             <Stack direction="row" spacing={1}>
                                 <MemoryIcon />
-                                <Typography variant="body1" gutterBottom>
+                                <Typography variant="body1" gutterBottom sx={{fontFamily: "monospace"}}>
                                     At the end of data collection, a file will be created combining CO2 ppm readings with their respective GPS positions:
                                 </Typography>
                             </Stack>
@@ -88,7 +88,7 @@ export default function DroneTutorial() {
                             </Container>
                             <Stack direction="row" spacing={1}>
                                 <MemoryIcon />
-                                <Typography variant="body1" gutterBottom>
+                                <Typography variant="body1" gutterBottom sx={{fontFamily: "monospace"}}>
                                     The onboard Raspberry Pi can be connected to a computer via USB to load the .csv file into the website
                                 </Typography>
                             </Stack>
