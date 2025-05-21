@@ -17,13 +17,12 @@ export default function Home({ searchParams }) {
       container
       sx={{
         display: "flex",
-        width: "95%",
+        width: "85%",
         flexGrow: 1,
         justifyContent: "center",
         justifyItems: "center",
         alignContent: "center",
         marginTop: 8,
-        // flexDirection: "column",
       }}
     >
       <Grid2 item sx={{ height: "100%" }}>
