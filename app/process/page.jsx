@@ -438,24 +438,44 @@ export default function ProcessPage() {
           padding={2}
           borderRadius={2}
         >
-          <b>Software Algorithm:</b> Code developed to collect and log both CO2
+          <b>Software Algorithm:</b> Code developed to collect and log both CO₂
           data and geospatial data which is vital to the success of the project.
         </Typography>
         <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
+        <Grid2 size={{ md: 12 }}>
+            <RPICard
+              title={"Linking Sensor and Drone to RPI"}
+              description={
+                <>
+                  The line master = mavutil.mavlink_connection('/dev/serial0', buad=921600) is the establishinig 
+                  the initial connection between FC and RPI. The following the line does the same thing but just 
+                  with the CO₂ sensor through I2C.
+                  <br></br>
+                  <br></br>
+                  <b>I2C: </b>I2c is a little bitch.
+              
+                </>
+              }
+              image="/images/code4.jpg"
+            />
+          </Grid2>
           <Grid2 size={{ md: 12 }}>
             <RPICard
               title={"Retrieving Flight Data"}
               description={
                 <>
-                  For users to see CO2 levels at specific locations, 
-                the computer must be able to access geospatial data, 
-                which would have to be retrieved from the drone’s flight 
-                log. We can actively retrieve this geospatial data from the 
-                drone by using a Python library called PyMavlink. <b>PyMavlink </b>
-                is a Python library that allows users to request specific types 
-                of data from the drone’s flight log through Mavlink Telemetry. 
-                We then modify this process by telling the computer to request data 
-                in a specified interval.
+                  For users to see CO₂ levels at specific locations, the RPI 
+                  must be able to access geospatial data, which would have 
+                  to be requested and sent from the drone’s flight controller. 
+                  We can actively retrieve this GPS data from the drone by 
+                  using a Python library called Pymavlink. We initialize this 
+                  process by specifying the frequency at which the RPI should 
+                  request data.
+                  <br></br>
+                  <br></br>
+                  <b>PyMavlink </b>
+                  is a Python library that allows users to request specific types 
+                  of data from the drone’s flight controller through MAVLink telemetry.
                 </>
               }
               image="/images/code1.jpg"
@@ -463,30 +483,77 @@ export default function ProcessPage() {
           </Grid2>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Retrieving CO2 Data"}
-              description={`
-                We use another Python library called adafruit_scd4x that 
-                allows users to retrieve CO2 concentration levels read by 
-                the sensor our drone has equipped. Adafruit_scd4x is a special 
-                library made by the sensor’s developer, Adafruit, specifically 
-                for the sensor we use, the SCD40, and the SCD41, which is its 
-                sister component.
-            `}
+              title={"Arming the Drone"}
+              description={
+                <>
+                  needs description
+                </>
+              }
+              image="/images/code5.jpg"
+            />
+          </Grid2>
+          <Grid2 size={{ md: 12 }}>
+            <RPICard
+              title={"Syncing GPS and CO2"}
+              description={
+                <>
+                  By using the if statement, we can ensure that 
+                  the GPS data sent by the flight controller and 
+                  the CO₂ concentration readings collected by the 
+                  sensor are synced. This essentially means that times 
+                  when each data was collected are the same therefore 
+                  allowing for maximum data reliability.
+                </>
+              }
+              image="/images/code5.jpg"
+            />
+          </Grid2>
+          <Grid2 size={{ md: 12 }}>
+            <RPICard
+              title={"Retrieving CO₂ Data"}
+              description={
+                <>
+                  We use another Python library called <b>adafruit_scd4x</b> that allows 
+                  users to retrieve CO₂ concentration levels, every 5 seconds read 
+                  by the onboard sensor. 
+                  <br></br>
+                  <br></br>
+                  <b>Adafruit_scd4x </b> is a special library made 
+                  by the sensor’s developer, Adafruit, specifically for the sensor 
+                  we use, the SCD40.
+                </>
+              }
               image="/images/code2.jpg"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Writing Geospatial Data and CO2 Data to Spreadsheet for Extraction"}
-              description={`
-                We take both the geospatial data collected from our drone and the CO2 concentration 
-                data collected from the SCD40, the CO2 sensor, and then write to a .csv file. 
-                A .csv file is basically a spreadsheet file and can be thought of as similar 
-                to Excel. We format the data with a column for time, CO2 concentration, 
-                longitude, latitude, and finally, altitude. The file is then created after 
-                the drone is de-armed and manually extracted to be visualized on your personal 
-                computer.
-            `}
+              title={"Ending the Code"}
+              description={
+                <>
+                  By using the if statement, we can ensure that 
+                  the GPS data sent by the flight controller and 
+                  the CO₂ concentration readings collected by the 
+                  sensor are synced. This essentially means that times 
+                  when each data was collected are the same therefore 
+                  allowing for maximum data reliability.
+                </>
+              }
+              image="/images/code5.jpg"
+            />
+          </Grid2>
+          <Grid2 size={{ md: 12 }}>
+            <RPICard
+              title={"Writing Geospatial Data and CO₂ Data to Spreadsheet for Extraction"}
+              description={
+                <>
+                  We write the GPS data and the CO₂ concentration data to a .csv file.We format the data with a column for time, CO₂ concentration, longitude, latitude, and altitude. After the drone is disarmed, the .csv file is created and can be exported through WiFi or USB to a personal computer for further analysis on our visualization software
+                  <br></br>
+                  <br></br>
+                  A .csv file is essentially a spreadsheet file and can be thought of as similar to Excel. 
+
+                </>
+              }
               image="/images/code3.jpg"
             />
           </Grid2>
