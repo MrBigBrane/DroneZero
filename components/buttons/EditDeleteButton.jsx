@@ -40,8 +40,8 @@ export default function EditDeleteButton({ data, setData, item, setSaved, setFul
         
         {!editing ? (
           <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <Typography>{filename} </Typography>
-              <Typography variant='caption'>Date: {item.created_at.substring(0, 10)}</Typography>
+              <Typography sx={{fontFamily: "monospace"}}>{filename} </Typography>
+              <Typography variant='caption' sx={{fontFamily: "monospace"}}>Date: {item.created_at.substring(0, 10)}</Typography>
           </Box>
         ) : (
           <TextField

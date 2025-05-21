@@ -131,7 +131,7 @@ export default function NavBar({ menu, signOut, user, ...props }) {
                     }}
                     key={"Logout"}
                   >
-                    <Typography sx={{ textAlign: "center" }}>Logout</Typography>
+                    <Typography sx={{ textAlign: "center"}}>Logout</Typography>
                   </MenuItem>,
                 ]}
           </Menu>
@@ -174,7 +174,7 @@ export default function NavBar({ menu, signOut, user, ...props }) {
                 <Button
                   key={page}
                   // onClick={handleCloseNavMenu}
-                  sx={{ color: "white", display: "block" }}
+                  sx={{ color: "white", display: "block", fontFamily: "monospace", fontSize: 17}}
                 >
                   {page}
                 </Button>
@@ -185,18 +185,18 @@ export default function NavBar({ menu, signOut, user, ...props }) {
         {!user ? (
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Link href="/sign-in">
-              <Button size="sm" variant="outline">
+              <Button size="sm" variant="outline" sx={{fontFamily: "monospace", fontSize: 17}}>
                 Sign in
               </Button>
             </Link>
             <Link href="/sign-up">
-              <Button size="sm" variant="outline">
+              <Button size="sm" variant="outline" sx={{fontFamily: "monospace", fontSize: 17}}>
                 Sign up
               </Button>
             </Link>
           </Box>
         ) : (
-          <Button size="sm" variant="outline" onClick={signOut}>
+          <Button size="sm" variant="outline" onClick={signOut} sx={{fontFamily: "monospace", fontSize: 17}}>
             Logout
           </Button>
         )}
