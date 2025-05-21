@@ -14,6 +14,11 @@ import hoveroscillation from "../images/hoveroscillation.png"
 import barometerissue from "../images/barometerissue.png"
 import gpsaltitude from "../images/gpsaltitude.webp"
 import RPICard from "../../components/ui/RPICard";
+import soldering from "../images/soldering.jpg"
+import bullet from "../images/BulletConnectors.jpg"
+import attach from "../images/AttachingComponents.jpg"
+import LegAttach from "../images/DroneLegAttached.webp"
+
 
 export default function ProcessPage() {
   return (
@@ -181,6 +186,16 @@ export default function ProcessPage() {
               link="https://www.amazon.com/SpeedyFPV-ZMR250-250mm-Carbon-Racing/dp/B0CCQBFHTN/ref=sr_1_3?crid=1HWIYWQ1XRQ44&dib=eyJ2IjoiMSJ9.sC2MoEW-0sOtunhqhbIYvDfuplwEg6JRkBgsZ2eT3JH2PHmZWqtXWOnMPdXre01tvDUgbj4Gc6sATaItsBKcSb3NDzowHUplMCDkgDrextPcgKxiu6JGDkk8cGu-NgwFkizaGjY_QYgd6hfMplCUiKbigAORQf9DU6PjVdf5BxQUKNq_G2ikGrbL7lFoh3ofDymEREwiNeKh4Qzu9l5SUNGeS2bCtc6eOOB_rWYGxYMQ73OvDSITby2bDMNpVOhnMEM5FxRnwzpHkBHlTuETz-wW5aPuI-_wPXFsT4HnPi4KP8aIxJPq7baX4MITZx0yPCbrtde3IzYXVMhdb5x2_1Q_mMyDHHUr87OHdHs_52E.nE9TnACQ4TQGk2hSFpeUGQbmeaQ6vu4MFdeO3VA3Zps&dib_tag=se&keywords=250mm+drone+frame&qid=1735502210&s=toys-and-games&sprefix=250mm+drone+franme%2Ctoys-and-games%2C123&sr=1-3"
             />
           </Grid2>
+          <Grid2 size={{ xs: 16, md: 4 }}>
+            <ProcessCard
+              title={"Drone Legs"}
+              description={`
+                     We CAD designed drone legs using Onshape and 3D printed them to protect the bottom of the drone as it lands.
+                `}
+              image="/images/DroneLeg.png"
+              link="https://drive.google.com/file/d/1ViLO1JhJ00epcEyFDETBy0DItAlhSIUi/view?usp=sharing"
+            />
+          </Grid2>
         </Grid2>
         <Typography
           variant="h5"
@@ -290,9 +305,101 @@ export default function ProcessPage() {
           padding={2}
           borderRadius={2}
         >
-          <b>Component Placement:</b> In order to have an effective build, it is
-          important to place the components in a way that optimizes wiring.
-        </Typography>
+          <b>Drone Assembly:</b> To assemble the components, we had to use various soldering and CAD designing skills.
+        </Typography>{" "}
+        
+        <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
+          <Grid2 size={{ xs: 12, md: 6 }}>
+            <Image
+              src={soldering}
+              alt="Soldering"
+              height={400}
+              style={{ justifySelf: "center", marginBottom: 20 }}
+            />
+            <Typography
+              variant="body1"
+              textAlign={"center"}
+              fontFamily={"monospace"}
+              marginLeft={5}
+              marginRight={5}
+            >
+              <b>Soldering Components: </b>While soldering and crimping wires for the SpeedyBee and other components,
+               we encountered multiple issues such as a burnt pad and solder bridges. To fix the burnt pads, we removed
+                the copper pad and directly soldered onto the metal surface with a finer tip at a lower temperature. To
+                identify solder bridges, we used a multimeter to test the continuity between adjacent plates. We then used
+                alchohol to remove the solder bridges.
+               
+            </Typography>
+          </Grid2>
+          <Grid2 size={{ xs: 12, md: 6 }}>
+            <Image
+              src={bullet}
+              alt="Bullet Connectors"
+              height={400}
+              style={{ justifySelf: "center", marginBottom: 20 }}
+            />
+            <Typography
+              variant="body1"
+              textAlign={"center"}
+              fontFamily={"monospace"}
+              marginLeft={5}
+              marginRight={5}
+            >
+              <b>Bullet connectors: </b>We used bullet connectors for the motors because using them allowed
+              for an easier and faster soldering process. It also allowed us to easily connect and disconnect the motors
+               from the ESC. To use it, simply fill one end of a bullet connector with solder and inseert the wire which results in a secure connection.
+               Then use heat shrink to cover the metal surface of the bullet connector.
+               
+            </Typography>
+          </Grid2>
+        </Grid2>
+        <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
+          <Grid2 size={{ xs: 12, md: 6 }}>
+            <Image
+              src={LegAttach}
+              alt="Securing the legs"
+              height={400}
+              style={{ justifySelf: "center", marginBottom: 20 }}
+            />
+            <Typography
+              variant="body1"
+              textAlign={"center"}
+              fontFamily={"monospace"}
+              marginLeft={5}
+              marginRight={5}
+            >
+              <b>Attaching the legs: </b>Initially, we used thin M3 screws to attach the drone legs to the frame, but
+              after a few test flights, the drone legs started to split into top and bottom parts. Thus, we used longer screws
+              and increased the infil density to 30% to resolve this issue.
+               
+            </Typography>
+          </Grid2>
+          <Grid2 size={{ xs: 12, md: 6 }}>
+            <Image
+              src={attach}
+              alt="Securing components"
+              height={400}
+              style={{ justifySelf: "center", marginBottom: 20 }}
+            />
+            <Typography
+              variant="body1"
+              textAlign={"center"}
+              fontFamily={"monospace"}
+              marginLeft={5}
+              marginRight={5}
+            >
+              <b>Securing components: </b>To secure all of the components to the drone frame, we used screws, zip ties, double
+              sided tape, foam, and a battery strap. The tape was used to secure the receiver, GPS module, co2 sensor, and
+              Raspberry Pi. Screws were used for the motors, propellers, drone legs, and the SpeedyBee Flight Controller + ESC.
+              The battery was secured with foam surrounding it and a battery strap to ensure a safe and secure hold while allowing
+              the battery to be removed for charging. Zip ties were used to organize the wires and ensure that they would not impede
+              the propellers.
+               
+            </Typography>
+          </Grid2>
+        </Grid2>
+
+
         <Typography
           variant="h5"
           textAlign={"left"}
