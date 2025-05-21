@@ -23,7 +23,6 @@ const menuPages = ["Map View", "Our Process", "About Us", "Sign In", "Sign Up", 
 export default function NavBar({ menu, signOut, user, ...props }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
-/*************  ✨ Windsurf Command ⭐  *************/
 /**
  * Opens the navigation menu by setting the anchor element.
  * 
@@ -31,7 +30,6 @@ export default function NavBar({ menu, signOut, user, ...props }) {
  *                          Used to determine the current target element.
  */
 
-/*******  b6390984-a00a-444f-a84c-3699691c503f  *******/
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };

@@ -15,7 +15,7 @@ export default function ProcessCard({ title, description, image, link }) {
         height: "100%",
       }}
     >
-      <CardActionArea href={link}>
+      <CardActionArea href={link} style={{ height: "100%" }}>
         <CardMedia
           component="img"
           height="140"

@@ -442,18 +442,18 @@ export default function ProcessPage() {
           data and geospatial data which is vital to the success of the project.
         </Typography>
         <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
-        <Grid2 size={{ md: 12 }}>
+          <Grid2 size={{ md: 12 }}>
             <RPICard
               title={"Linking Sensor and Drone to RPI"}
               description={
                 <>
-                  The line master = mavutil.mavlink_connection('/dev/serial0', buad=921600) is the establishinig 
-                  the initial connection between FC and RPI. The following the line does the same thing but just 
-                  with the CO₂ sensor through I2C.
+                  The line master = mavutil.mavlink_connection('/dev/serial0',
+                  buad=921600) is the establishinig the initial connection
+                  between FC and RPI. The following the line does the same thing
+                  but just with the CO₂ sensor through I2C.
                   <br></br>
                   <br></br>
-                  <b>I2C: </b>I2c is a little bitch.
-              
+                  <b>I2C: </b> description
                 </>
               }
               image="/images/code4.jpg"
@@ -464,18 +464,18 @@ export default function ProcessPage() {
               title={"Retrieving Flight Data"}
               description={
                 <>
-                  For users to see CO₂ levels at specific locations, the RPI 
-                  must be able to access geospatial data, which would have 
-                  to be requested and sent from the drone’s flight controller. 
-                  We can actively retrieve this GPS data from the drone by 
-                  using a Python library called Pymavlink. We initialize this 
-                  process by specifying the frequency at which the RPI should 
-                  request data.
+                  For users to see CO₂ levels at specific locations, the RPI
+                  must be able to access geospatial data, which would have to be
+                  requested and sent from the drone’s flight controller. We can
+                  actively retrieve this GPS data from the drone by using a
+                  Python library called Pymavlink. We initialize this process by
+                  specifying the frequency at which the RPI should request data.
                   <br></br>
                   <br></br>
                   <b>PyMavlink </b>
-                  is a Python library that allows users to request specific types 
-                  of data from the drone’s flight controller through MAVLink telemetry.
+                  is a Python library that allows users to request specific
+                  types of data from the drone’s flight controller through
+                  MAVLink telemetry.
                 </>
               }
               image="/images/code1.jpg"
@@ -486,7 +486,21 @@ export default function ProcessPage() {
               title={"Arming the Drone"}
               description={
                 <>
-                  needs description
+                  In order to minimize memory consumption by the RPI and enhance
+                  the relevancy of the data exported, we first check the armed
+                  status of the drone <b>(*)</b>. This prevents the RPI from continuously
+                  logging data to the .csv file even if the drone is not
+                  armed/not in flight. The RPI checks the arming state in a loop
+                  until the drone is armed, at which point data logging begins.
+                  <br /><br />
+                  <b>(*)</b> If the drone is connected to a ground control station, the RPI
+                  ends up receiving a heartbeat message from both the flight
+                  controller and the ground control station. To ensure that the
+                  armed status the RPI receives is that of the flight
+                  controller, the script first checks if the id of the heartbeat
+                  message matches that of the flight controller. This filters
+                  out any extraneous heartbeat messages and checks the arming
+                  status of the correct message.
                 </>
               }
               image="/images/code5.jpg"
@@ -497,12 +511,11 @@ export default function ProcessPage() {
               title={"Syncing GPS and CO2"}
               description={
                 <>
-                  By using the if statement, we can ensure that 
-                  the GPS data sent by the flight controller and 
-                  the CO₂ concentration readings collected by the 
-                  sensor are synced. This essentially means that times 
-                  when each data was collected are the same therefore 
-                  allowing for maximum data reliability.
+                  By using the if statement, we can ensure that the GPS data
+                  sent by the flight controller and the CO₂ concentration
+                  readings collected by the sensor are synced. This essentially
+                  means that times when each data was collected are the same
+                  therefore allowing for maximum data reliability.
                 </>
               }
               image="/images/code5.jpg"
@@ -513,14 +526,14 @@ export default function ProcessPage() {
               title={"Retrieving CO₂ Data"}
               description={
                 <>
-                  We use another Python library called <b>adafruit_scd4x</b> that allows 
-                  users to retrieve CO₂ concentration levels, every 5 seconds read 
-                  by the onboard sensor. 
+                  We use another Python library called <b>adafruit_scd4x</b>{" "}
+                  that allows users to retrieve CO₂ concentration levels, every
+                  5 seconds read by the onboard sensor.
                   <br></br>
                   <br></br>
-                  <b>Adafruit_scd4x </b> is a special library made 
-                  by the sensor’s developer, Adafruit, specifically for the sensor 
-                  we use, the SCD40.
+                  <b>Adafruit_scd4x </b> is a special library made by the
+                  sensor’s developer, Adafruit, specifically for the sensor we
+                  use, the SCD40.
                 </>
               }
               image="/images/code2.jpg"
@@ -528,15 +541,11 @@ export default function ProcessPage() {
           </Grid2>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Ending the Code"}
+              title={"Terminating the Logging Process"}
               description={
                 <>
-                  By using the if statement, we can ensure that 
-                  the GPS data sent by the flight controller and 
-                  the CO₂ concentration readings collected by the 
-                  sensor are synced. This essentially means that times 
-                  when each data was collected are the same therefore 
-                  allowing for maximum data reliability.
+                  Similar to the initial arming check, during each iteration of the logging process the RPI checks the armed status.
+                  Once the drone is disarmed, the RPI exits the logging loop and the final .csv file is ready to be exported.
                 </>
               }
               image="/images/code5.jpg"
@@ -544,14 +553,20 @@ export default function ProcessPage() {
           </Grid2>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Writing Geospatial Data and CO₂ Data to Spreadsheet for Extraction"}
+              title={
+                "Writing Geospatial Data and CO₂ Data to Spreadsheet for Extraction"
+              }
               description={
                 <>
-                  We write the GPS data and the CO₂ concentration data to a .csv file.We format the data with a column for time, CO₂ concentration, longitude, latitude, and altitude. After the drone is disarmed, the .csv file is created and can be exported through WiFi or USB to a personal computer for further analysis on our visualization software
+                  We write the GPS data and the CO₂ concentration data to a .csv
+                  file.We format the data with a column for time, CO₂
+                  concentration, longitude, latitude, and altitude. After the
+                  drone is disarmed, the .csv file is created and can be
+                  exported through WiFi or USB to a personal computer for
+                  further analysis on our visualization software
                   <br></br>
-                  <br></br>
-                  A .csv file is essentially a spreadsheet file and can be thought of as similar to Excel. 
-
+                  <br></br>A .csv file is essentially a spreadsheet file and can
+                  be thought of as similar to Excel.
                 </>
               }
               image="/images/code3.jpg"
@@ -600,6 +615,7 @@ export default function ProcessPage() {
                 </>
               }
               image="/images/nextjs.webp"
+              link={"https://nextjs.org/"}
             />
           </Grid2>
           <Grid2 size={{ sm: 12, md: 4, lg: 4 }}>
@@ -622,6 +638,7 @@ export default function ProcessPage() {
                 </>
               }
               image="/images/leafletjs.jpg"
+              link={"https://leafletjs.com/"}
             />
           </Grid2>
           <Grid2 size={{ sm: 12, md: 4, lg: 4 }}>
@@ -642,6 +659,7 @@ export default function ProcessPage() {
                 </>
               }
               image="/images/supabase.webp"
+              link={"https://supabase.com/"}
             />
           </Grid2>
         </Grid2>
