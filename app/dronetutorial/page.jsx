@@ -6,14 +6,14 @@ import Data from '../images/Data.png'
 export default function DroneTutorial() {
     return (
         <>
-            <Box sx={{ display: 'flex', marginTop: '10vh', width: '120vh' }}>
+            <Box sx={{ display: 'flex', marginTop: '10vh', width: '120vh', marginBottom: '10vh' }}>
                 <Container maxWidth="100%">
                     <Paper elevation={3} sx={{ padding: 4, margin: 'auto', maxWidth: '100%' }}>
                         <Typography variant="h4" gutterBottom>
                             Drone Tutorial
                         </Typography>
                         <Divider />
-                        <Stack spacing={2}>
+                        <Stack spacing={2} sx={{ marginTop: 2 }}>
                             <Stack direction="row" spacing={1}>
                                 <MemoryIcon />
                                 <Typography variant="body1" gutterBottom>
