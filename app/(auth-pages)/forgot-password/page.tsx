@@ -5,33 +5,60 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { SmtpMessage } from "../smtp-message";
+import { TextField, Typography } from "@mui/material";
 
 export default async function ForgotPassword(props: {
   searchParams: Promise<Message>;
 }) {
   const searchParams = await props.searchParams;
   return (
-    <>
-      <form className="flex-1 flex flex-col w-full gap-2 text-foreground [&>input]:mb-6 min-w-64 max-w-64 mx-auto">
+    <div className="w-full max-w-xl px-4">
+      <form className="flex flex-col w-full mt-24">
         <div>
-          <h1 className="text-2xl font-medium">Reset Password</h1>
-          <p className="text-sm text-secondary-foreground">
+          <Typography variant="h5" style={{ fontFamily: "monospace" }}>
+            Reset Password
+          </Typography>
+          <Typography
+            variant="body2"
+            style={{
+              color: "text-secondary-foreground",
+              fontFamily: "monospace",
+            }}
+          >
             Already have an account?{" "}
             <Link className="text-primary underline" href="/sign-in">
               Sign in
             </Link>
-          </p>
+          </Typography>
         </div>
-        <div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
-          <Label htmlFor="email">Email</Label>
-          <Input name="email" placeholder="you@example.com" required />
+        <div
+          style={{
+            marginTop: "2rem",
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+          }}
+        >
+          <Typography variant="body2" style={{ fontFamily: "monospace", fontWeight: "bold" }}>Email</Typography>
+          <TextField
+            required
+            // margin="dense"
+            id="name"
+            name="email"
+            // type="email"
+            fullWidth
+            placeholder="you@example.com"
+            variant="standard"
+            style={{ marginBottom: "1rem" }}
+          />
           <SubmitButton formAction={forgotPasswordAction}>
             Reset Password
           </SubmitButton>
+          <br />
           <FormMessage message={searchParams} />
         </div>
       </form>
       <SmtpMessage />
-    </>
+    </div>
   );
 }

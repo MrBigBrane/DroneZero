@@ -21,7 +21,7 @@ export default function SaveModal({ data, file, setSaved }) {
 
   return (
     <>
-      <Button variant="outlined" onClick={handleClickOpen} style={{ width: "100%"}} className='save'>
+      <Button variant="outlined" onClick={handleClickOpen} style={{ width: "100%", marginTop: "10px", marginBottom: "10px", fontFamily: "monospace"}} className='save'>
         Save
       </Button>
       <Dialog
