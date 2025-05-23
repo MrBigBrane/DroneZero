@@ -324,10 +324,13 @@ export default function ProcessPage() {
               marginRight={5}
             >
               <b>Soldering Components: </b>While soldering and crimping wires for the SpeedyBee and other components,
-               we encountered multiple issues such as a burnt pad and solder bridges. To fix the burnt pads, we removed
-                the copper pad and directly soldered onto the metal surface with a finer tip at a lower temperature. To
-                identify solder bridges, we used a multimeter to test the continuity between adjacent plates. We then used
-                alchohol to remove the solder bridges.
+               we encountered multiple issues such as a burnt pad and small solder bridges. Solder pads are thin layers
+               of copper which allows the soldering tin to adhere to the pad surface easily. To fix the burnt pads, we
+               removed the copper pad and directly soldered onto the metal surface with a finer tip at a lower
+               temperature. Solder bridges are formed when too much solder is used and a blob of solder connects two or
+               more copper pads. To identify solder bridges, we used a multimeter to test the continuity between adjacent
+               plates. We then used isopropyl alcohol to clean the soldering sites which successfully removed the solder
+               bridges.
                
             </Typography>
           </Grid2>
@@ -345,10 +348,11 @@ export default function ProcessPage() {
               marginLeft={5}
               marginRight={5}
             >
-              <b>Bullet connectors: </b>We used bullet connectors for the motors because using them allowed
-              for an easier and faster soldering process. It also allowed us to easily connect and disconnect the motors
-               from the ESC. To use it, simply fill one end of a bullet connector with solder and inseert the wire which results in a secure connection.
-               Then use heat shrink to cover the metal surface of the bullet connector.
+              <b>Bullet connectors: </b>We used bullet connectors to connect the motors to the ESC because they allowed
+               for an easier and faster soldering process. To use them, we filled one end of each bullet connector with
+               soldering tin and inserted the motor/ESC wire into the tin filled cavity in a secure connection. Then we
+               used a heat shrink to cover the metal surface of the bullet connector, preventing any short-circuits between
+               motor wires.
                
             </Typography>
           </Grid2>
@@ -368,9 +372,9 @@ export default function ProcessPage() {
               marginLeft={5}
               marginRight={5}
             >
-              <b>Attaching the legs: </b>Initially, we used thin M3 screws to attach the drone legs to the frame, but
-              after a few test flights, the drone legs started to split into top and bottom parts. Thus, we used longer screws
-              and increased the infil density to 30% to resolve this issue.
+              <b>Attaching the legs: </b>Initially, we used thin M3 screws to attach the drone legs to the frame.
+               After a few test flights, two of the drone legs split into two parts. Thus, we used longer screws
+               and increased the infill density by 30% to resolve this issue.
                
             </Typography>
           </Grid2>
@@ -388,12 +392,12 @@ export default function ProcessPage() {
               marginLeft={5}
               marginRight={5}
             >
-              <b>Securing components: </b>To secure all of the components to the drone frame, we used screws, zip ties, double
-              sided tape, foam, and a battery strap. The tape was used to secure the receiver, GPS module, co2 sensor, and
-              Raspberry Pi. Screws were used for the motors, propellers, drone legs, and the SpeedyBee Flight Controller + ESC.
-              The battery was secured with foam surrounding it and a battery strap to ensure a safe and secure hold while allowing
-              the battery to be removed for charging. Zip ties were used to organize the wires and ensure that they would not impede
-              the propellers.
+              <b>Securing components: </b>To secure all of the components to the drone frame, we used screws, zip ties,
+               double-sided tape, foam, and a battery strap. The tape was used to secure the receiver, GPS module,
+               CO2 sensor, and RPI. Screws were used for the motors, propellers, drone legs, and the flight controller
+               + ESC stack. The battery was secured with foam surrounding it and a battery strap to ensure a safe and
+               secure hold while allowing the battery to be removed for charging. Zip ties were used to organize the wires
+               and ensure that they would not impede the propellers.
                
             </Typography>
           </Grid2>

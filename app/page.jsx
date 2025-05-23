@@ -132,8 +132,9 @@ export default function Home({ searchParams }) {
             >
               Problem: The cost of CO2 monitoring systems is too high (over 250M
               USD for one satellite) and technological challenges with creating
-              CO2 monitoring systems have caused underdeveloped countries to
-              forgo CO2 monitoring systems. According to a 2022 Clean Air Fund
+              them have caused underdeveloped countries to
+              forgo developing their own CO2 monitoring network and instead rely on
+              international datasets or local monitoring efforts. According to a 2022 Clean Air Fund
               survey, about one-third of 119 countries could not establish CO2
               monitoring networks due to financial and technical expertise
               restrictions.
@@ -149,8 +150,8 @@ export default function Home({ searchParams }) {
             >
               Our solution: To lower the cost of CO2 monitoring systems, we
               created a low-cost drone that can monitor CO2. This drone is easy
-              to operate and provides accurate data at low cost and a fleet of
-              these drones can be used in place of the satellite CO2 monitoring
+              to operate and provides accurate data at low cost. A fleet of
+              these drones can be used in place of or complement satellite CO2 monitoring
               systems.
             </Typography>
           </Box>
@@ -207,8 +208,7 @@ export default function Home({ searchParams }) {
               Problem: Current CO2 monitoring systems use satellites which
               require technical expertise which many countries do not have.
               Furthermore, satellites have low resolution when monitoring CO2
-              and cannot monitor at exact times of the day due to their orbit
-              pattern.
+              and cannot provide real time CO2 monitoring data.
             </Typography>
             <Typography
               variant="body1"
