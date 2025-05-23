@@ -4,6 +4,8 @@
 
 https://github.com/user-attachments/assets/9942b758-5d15-49f5-a636-e3e2335c7cca
 
+Full Video Here → [CO₂ Monitoring Drone](https://www.youtube.com/watch?v=lSWDK9mu1hs)
+
 
 ## Our Mission
 Each year, as global CO₂ emissions rise, the seemingly distant worry of climate change becomes increasingly real. To effectively tackle this growing concern, we must first understand the root of the issue: the sources of emissions.
