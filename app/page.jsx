@@ -8,7 +8,7 @@ import { ArrowRight } from "@mui/icons-material";
 import Image from "next/image";
 
 import cost from "../app/images/cost.png";
-import accessibility from "../app/images/accessibility.jpg";
+import accessibility from "../app/images/accessibility.png";
 
 
 export default function Home({ searchParams }) {

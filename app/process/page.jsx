@@ -452,11 +452,12 @@ export default function ProcessPage() {
                   with the CO₂ sensor through I2C.
                   <br></br>
                   <br></br>
-                  <b>I2C: </b>I2c is a little bitch.
+                  <b>I2C: </b>
+                  Inter-Integrated Circuit is a system of interconnection between components on a circuit board.
               
                 </>
               }
-              image="/images/code4.jpg"
+              image="/images/code1.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
@@ -478,7 +479,7 @@ export default function ProcessPage() {
                   of data from the drone’s flight controller through MAVLink telemetry.
                 </>
               }
-              image="/images/code1.jpg"
+              image="/images/code2.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
@@ -489,7 +490,7 @@ export default function ProcessPage() {
                   needs description
                 </>
               }
-              image="/images/code5.jpg"
+              image="/images/code3.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
@@ -505,7 +506,7 @@ export default function ProcessPage() {
                   allowing for maximum data reliability.
                 </>
               }
-              image="/images/code5.jpg"
+              image="/images/code4.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
@@ -523,23 +524,7 @@ export default function ProcessPage() {
                   we use, the SCD40.
                 </>
               }
-              image="/images/code2.jpg"
-            />
-          </Grid2>
-          <Grid2 size={{ md: 12 }}>
-            <RPICard
-              title={"Ending the Code"}
-              description={
-                <>
-                  By using the if statement, we can ensure that 
-                  the GPS data sent by the flight controller and 
-                  the CO₂ concentration readings collected by the 
-                  sensor are synced. This essentially means that times 
-                  when each data was collected are the same therefore 
-                  allowing for maximum data reliability.
-                </>
-              }
-              image="/images/code5.jpg"
+              image="/images/code5.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
@@ -550,13 +535,25 @@ export default function ProcessPage() {
                   We write the GPS data and the CO₂ concentration data to a .csv file.We format the data with a column for time, CO₂ concentration, longitude, latitude, and altitude. After the drone is disarmed, the .csv file is created and can be exported through WiFi or USB to a personal computer for further analysis on our visualization software
                   <br></br>
                   <br></br>
-                  A .csv file is essentially a spreadsheet file and can be thought of as similar to Excel. 
+                  A <b>.csv</b> file is essentially a spreadsheet file and can be thought of as similar to Excel. 
 
                 </>
               }
-              image="/images/code3.jpg"
+              image="/images/code7.png"
             />
           </Grid2>
+          <Grid2 size={{ md: 12 }}>
+            <RPICard
+              title={"Ending the Code"}
+              description={
+                <>
+                  As part of the de-arming process, the RPI can end the program ensuring that when the drone's flight path is completed and is de-armed the data recording logic breaks. This protects the reliablity and accuracy of our data as no excess or unwanted datapoints are written to our .csv file.
+                </>
+              }
+              image="/images/code6.png"
+            />
+          </Grid2>
+          
         </Grid2>
         <Typography
           variant="h5"
