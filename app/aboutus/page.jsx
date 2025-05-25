@@ -32,6 +32,64 @@ export default function AboutUs() {
           width={"100%"}
           marginBottom={4}
         >
+          <Grid item xs={12} md={6} lg={3}>
+            <Paper style={{ padding: 16, textAlign: "center", margin: "auto" }}>
+              <IconButton>
+                <Avatar sx={{ width: 200, height: 200 }}>
+                  <Image src={ryan} alt={"Ryan Modafe"} layout="fill" />
+                </Avatar>
+              </IconButton>
+              <Typography
+                variant="h5"
+                style={{ textAlign: "center", fontFamily: "monospace" }}
+              >
+                <b>Ryan Modafe</b>
+              </Typography>
+              <Typography
+                variant="body2"
+                style={{
+                  textAlign: "center",
+                  marginBottom: 10,
+                  fontFamily: "monospace",
+                }}
+              >
+                Project Lead
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                style={{ textAlign: "center", fontFamily: "monospace" }}
+              >
+                Ryan is a student at Saratoga High School. He focused on getting
+                the project "off the ground," setting up the drone's software
+                and diving deep into ArduPilot's firmware, building a custom
+                version at one point. He also set up the Raspberry Pi 2W, using
+                the RPI lite OS, developed the arming check and GPS data
+                collection scripts used for the drone, and created the
+                visualization used for CO2 data on this website. In his free
+                time, Ryan likes to learn more about deep learning, play piano,
+                and watch movies.
+              </Typography>
+              <Box
+                marginTop={2}
+                display={"flex"}
+                justifyContent={"space-evenly"}
+              >
+                <Box>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100080897269560"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-blue-500"
+                  >
+                    <FacebookIcon
+                      style={{ marginRight: 5, color: "DodgerBlue" }}
+                    />
+                    <span style={{ color: "DodgerBlue" }}>Facebook</span>
+                  </a>
+                </Box>
+              </Box>
+            </Paper>
+          </Grid>
           <Grid item xs={12} md={6} lg={3} width={"100%"}>
             <Paper style={{ padding: 16, textAlign: "center", margin: "auto" }}>
               <IconButton>
@@ -59,15 +117,14 @@ export default function AboutUs() {
                 variant="subtitle1"
                 style={{ textAlign: "center", fontFamily: "monospace" }}
               >
-                Varun is an excellent high school student at Saratoga 
-                High School located in Saratoga, California. He mainly 
-                worked on constructing and configuring the drone with 
-                Ryan, as well as developing the software used to collect 
-                CO2 concentration data from the Adafruit sensor. He 
-                additionally helped with the development of both this 
-                website and the GPS data collection script. In his free 
-                time, Varun likes to watch anime, play video games, and 
-                work out.
+                Varun is an excellent high school student at Saratoga High
+                School located in Saratoga, California. He mainly worked on
+                constructing and configuring the drone with Ryan, as well as
+                developing the software used to collect CO2 concentration data
+                from the Adafruit sensor. He additionally helped with the
+                development of both this website and the GPS data collection
+                script. In his free time, Varun likes to watch anime, play video
+                games, and work out.
               </Typography>
               <Box
                 marginTop={2}
@@ -103,64 +160,7 @@ export default function AboutUs() {
               </Box>
             </Paper>
           </Grid>
-          <Grid item xs={12} md={6} lg={3}>
-            <Paper style={{ padding: 16, textAlign: "center", margin: "auto" }}>
-              <IconButton>
-                <Avatar sx={{ width: 200, height: 200 }}>
-                  <Image src={ryan} alt={"Ryan Modafe"} layout="fill" />
-                </Avatar>
-              </IconButton>
-              <Typography
-                variant="h5"
-                style={{ textAlign: "center", fontFamily: "monospace" }}
-              >
-                <b>Ryan Modafe</b>
-              </Typography>
-              <Typography
-                variant="body2"
-                style={{
-                  textAlign: "center",
-                  marginBottom: 10,
-                  fontFamily: "monospace",
-                }}
-              >
-                Project Lead
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                style={{ textAlign: "center", fontFamily: "monospace" }}
-              >
-                Ryan is a student at Saratoga High School. He focused on
-                getting the project "off the ground," setting up the drone's
-                software and diving deep into ArduPilot's firmware, building a
-                custom version at one point. He also set up the Raspberry Pi 2W,
-                using the RPI lite OS, developed the arming check and GPS data
-                collection scripts used for the drone, and created the
-                visualization used for CO2 data on this website. In his free
-                time, Ryan likes to learn more about deep learning, play piano,
-                and watch movies.
-              </Typography>
-              <Box
-                marginTop={2}
-                display={"flex"}
-                justifyContent={"space-evenly"}
-              >
-                <Box>
-                  <a
-                    href="https://www.facebook.com/profile.php?id=100080897269560"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-blue-500"
-                  >
-                    <FacebookIcon
-                      style={{ marginRight: 5, color: "DodgerBlue" }}
-                    />
-                    <span style={{ color: "DodgerBlue" }}>Facebook</span>
-                  </a>
-                </Box>
-              </Box>
-            </Paper>
-          </Grid>
+
           <Grid item xs={12} md={6} lg={3} width={"100%"}>
             <Paper style={{ padding: 16, textAlign: "center", margin: "auto" }}>
               <IconButton>

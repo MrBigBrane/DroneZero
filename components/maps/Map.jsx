@@ -50,9 +50,9 @@ export default function Map({ data }) {
               >
                 <Tooltip>
                   Time: {item.time} <br />
-                  CO2: {item.co2_ppm}
+                  CO₂: {item.co2_ppm} ppm
                   <br />
-                  Altitude: {item.altitude}
+                  Altitude: {item.altitude} m
                 </Tooltip>
               </Circle>
             );
@@ -66,10 +66,10 @@ export default function Map({ data }) {
                   radius={2}
                 >
                   <Tooltip>
-                    Time: {item.time} <br />
-                    CO2: {item.co2_ppm}
+                    Time: {item.time.substring(0, 19)} <br />
+                    CO₂: {item.co2_ppm} ppm
                     <br />
-                    Altitude: {item.altitude}
+                    Altitude: {item.altitude} m
                   </Tooltip>
                 </Circle>
               );}})

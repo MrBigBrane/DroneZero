@@ -90,36 +90,37 @@ export default function NavBar({ menu, signOut, user, ...props }) {
             sx={{ display: { xs: "block", md: "none" } }}
           >
             {pages.map((page) => (
-              <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Link
-                  href={
-                    page === "Map View"
-                      ? "/mapview"
-                      : page === "About Us"
-                        ? "/aboutus"
-                        : "/process"
-                  }
-                >
+              <Link
+                key={page}
+                href={
+                  page === "Map View"
+                    ? "/mapview"
+                    : page === "About Us"
+                      ? "/aboutus"
+                      : "/process"
+                }
+              >
+                <MenuItem onClick={handleCloseNavMenu}>
                   <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-                </Link>
-              </MenuItem>
+                </MenuItem>{" "}
+              </Link>
             ))}
             {!user
               ? [
-                  <MenuItem onClick={handleCloseNavMenu} key={"Sign In"}>
-                    <Link href="/sign-in">
+                  <Link href="/sign-in" key={"Sign In"}>
+                    <MenuItem onClick={handleCloseNavMenu} key={"Sign In"}>
                       <Typography sx={{ textAlign: "center" }}>
                         Sign In
                       </Typography>
-                    </Link>
-                  </MenuItem>,
-                  <MenuItem onClick={handleCloseNavMenu} key={"Sign Up"}>
-                    <Link href="/sign-up">
+                    </MenuItem>{" "}
+                  </Link>,
+                  <Link href="/sign-up" key={"Sign Up"}>
+                    <MenuItem onClick={handleCloseNavMenu} key={"Sign Up"}>
                       <Typography sx={{ textAlign: "center" }}>
                         Sign Up
                       </Typography>
-                    </Link>
-                  </MenuItem>,
+                    </MenuItem>
+                  </Link>,
                 ]
               : [
                   <MenuItem
@@ -129,7 +130,7 @@ export default function NavBar({ menu, signOut, user, ...props }) {
                     }}
                     key={"Logout"}
                   >
-                    <Typography sx={{ textAlign: "center"}}>Logout</Typography>
+                    <Typography sx={{ textAlign: "center" }}>Logout</Typography>
                   </MenuItem>,
                 ]}
           </Menu>
@@ -172,7 +173,12 @@ export default function NavBar({ menu, signOut, user, ...props }) {
                 <Button
                   key={page}
                   // onClick={handleCloseNavMenu}
-                  sx={{ color: "white", display: "block", fontFamily: "monospace", fontSize: 17}}
+                  sx={{
+                    color: "white",
+                    display: "block",
+                    fontFamily: "monospace",
+                    fontSize: 17,
+                  }}
                 >
                   {page}
                 </Button>
@@ -180,24 +186,39 @@ export default function NavBar({ menu, signOut, user, ...props }) {
             );
           })}
         </Box>
-        {!user ? (
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Link href="/sign-in">
-              <Button size="sm" variant="outline" sx={{fontFamily: "monospace", fontSize: 17}}>
-                Sign in
-              </Button>
-            </Link>
-            <Link href="/sign-up">
-              <Button size="sm" variant="outline" sx={{fontFamily: "monospace", fontSize: 17}}>
-                Sign up
-              </Button>
-            </Link>
-          </Box>
-        ) : (
-          <Button size="sm" variant="outline" onClick={signOut} sx={{fontFamily: "monospace", fontSize: 17}}>
-            Logout
-          </Button>
-        )}
+        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          {!user ? (
+            <>
+              <Link href="/sign-in">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  sx={{ fontFamily: "monospace", fontSize: 17 }}
+                >
+                  Sign in
+                </Button>
+              </Link>
+              <Link href="/sign-up">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  sx={{ fontFamily: "monospace", fontSize: 17 }}
+                >
+                  Sign up
+                </Button>
+              </Link>
+            </>
+          ) : (
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={signOut}
+              sx={{ fontFamily: "monospace", fontSize: 17 }}
+            >
+              Logout
+            </Button>
+          )}{" "}
+        </Box>
       </Toolbar>
 
       {/* </Container> */}
