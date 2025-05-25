@@ -154,6 +154,7 @@ export default function Home({ searchParams }) {
               systems.
             </Typography>
           </Box>
+          <Box sx={{ display: { xs: "none", lg: "flex" } }}>
           <Image
             src={cost}
             alt="Cost"
@@ -161,6 +162,7 @@ export default function Home({ searchParams }) {
             height={400}
             style={{ borderRadius: 20 }}
           />
+          </Box>
         </Box>
         <Divider
           variant="inset"
@@ -177,6 +179,7 @@ export default function Home({ searchParams }) {
             margin: "auto",
           }}
         >
+          <Box sx={{ display: { xs: "none", lg: "flex" } }}>
           <Image
             src={accessibility}
             alt="Accessibility"
@@ -184,6 +187,7 @@ export default function Home({ searchParams }) {
             height={400}
             style={{ borderRadius: 20, marginRight: 20 }}
           />
+          </Box>
           <Box>
             <Typography
               variant="h5"

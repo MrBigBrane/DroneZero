@@ -22,7 +22,7 @@ export default async function Signup(props: {
 
   return (
     <div className="w-full max-w-xl px-4">
-      <form className="flex flex-col w-full mt-24">
+      <form className="flex flex-col w-full mt-24 mb-4">
         <Typography variant="h5" style={{ fontFamily: "monospace" }}>
           Sign up
         </Typography>

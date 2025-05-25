@@ -54,7 +54,7 @@ export default function ProcessPage() {
           objective: creating a CO2 monitoring system that uses GPS and a CO2
           sensor to monitor a drone's CO2 levels. <br />
         </Typography>
-        <Grid2 container spacing={2} sx={{ alignItems: "center" }}>
+        <Grid2 container spacing={2} sx={{ alignItems: "center", justifyContent: "center", justifyItems: "center", justifySelf: "center" }}>
           <Grid2 size={{ xs: 12, md: 4 }}>
             <ProcessCard
               title={"Companion Computer"}

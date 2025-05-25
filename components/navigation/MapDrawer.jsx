@@ -28,6 +28,7 @@ import DropFileButton from '../buttons/DropFileButton';
 import SaveModal from '../buttons/SaveModal';
 import 'intro.js/introjs.css';
 import { Steps, Hints } from 'intro.js-react';
+import HelpModal from "../buttons/HelpModal";
 
 const drawerWidth = 240;
 
@@ -542,7 +543,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
           {
             element: ".mappoint",
             intro:
-              "Hovering over data points allows you to see their stats. The points are also color coded according to their CO2 level.",
+              "Hovering over data points allows you to see their stats. The points are also color coded according to their CO₂ level.",
           }, // 10
           { element: ".end", intro: "This is the end of the map tutorial." },
         ]}
@@ -732,9 +733,13 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                   fontSize: 13
                 }}
               >
-                <p style={{ textAlign: "center", fontSize: 18 }}>
+                <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", alignItems: "center" }}>
+
+                <p style={{ textAlign: "center", fontSize: 16 }}>
                   <b>Flight Stats</b>
                 </p>
+                <HelpModal />
+                </Box>
                 <br />
                 {data.length > 0 ? (
                   data.map((item, index) => (
@@ -758,7 +763,7 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                           <b>{item.filename}</b>
                         </Typography>
                         <p style={{ fontFamily: "monospace" }}>
-                          <b>CO2 Stats:</b>
+                          <b>CO₂ Stats:</b>
                         </p>
                         <p style={{ fontFamily: "monospace" }}>
                           Avg:{" "}
@@ -782,31 +787,31 @@ export default function MapDrawer({ prevData, signOut, user, tutorial }) {
                           <b>Risk Assessment:</b>
                         </p>
                         <p style={{ color: "red", fontFamily: "monospace" }}>
-                          High Risk:{" "}
+                          High:{" "}
                           {countGreaterThan(
                             item.data.map((item) => item.co2_ppm),
                             1500,
                             10000
                           )}{" "}
-                          pts
+                          pts ({countGreaterThan(item.data.map((item) => item.co2_ppm), 1500, 10000) * 100 / item.data.length}%)
                         </p>
                         <p style={{ color: "orange", fontFamily: "monospace" }}>
-                          Medium Risk:{" "}
+                          Medium:{" "}
                           {countGreaterThan(
                             item.data.map((item) => item.co2_ppm),
                             1000,
                             1500
                           )}{" "}
-                          pts
+                          pts ({countGreaterThan(item.data.map((item) => item.co2_ppm), 1000, 1500) * 100 / item.data.length}%)
                         </p>
                         <p style={{ color: "green", fontFamily: "monospace" }}>
-                          Low Risk:{" "}
+                          Low:{" "}
                           {countGreaterThan(
                             item.data.map((item) => item.co2_ppm),
                             0,
                             1000
                           )}{" "}
-                          pts
+                          pts ({countGreaterThan(item.data.map((item) => item.co2_ppm), 0, 1000) * 100 / item.data.length}%)
                         </p>
                         <p style={{ fontFamily: "monospace" }}>
                           Total: {item.data.length} pts

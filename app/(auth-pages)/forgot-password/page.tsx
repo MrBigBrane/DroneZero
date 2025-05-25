@@ -13,7 +13,7 @@ export default async function ForgotPassword(props: {
   const searchParams = await props.searchParams;
   return (
     <div className="w-full max-w-xl px-4">
-      <form className="flex flex-col w-full mt-24">
+      <form className="flex flex-col w-full mt-24 mb-4">
         <div>
           <Typography variant="h5" style={{ fontFamily: "monospace" }}>
             Reset Password
