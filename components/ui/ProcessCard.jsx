@@ -8,11 +8,13 @@ export default function ProcessCard({ title, description, image, link }) {
   return (
     <Card
       sx={{
-        width: "70%",
         boxShadow: 2,
-        borderRadius: 2, 
+        borderRadius: 2,
         justifySelf: "center",
         height: "100%",
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 2,
       }}
     >
       <CardActionArea href={link} style={{ height: "100%" }}>
