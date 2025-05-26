@@ -54,7 +54,7 @@ export default function ProcessPage() {
           objective: creating a CO2 monitoring system that uses GPS and a CO2
           sensor to monitor a drone's CO2 levels. <br />
         </Typography>
-        <Grid2 container spacing={2} sx={{ alignItems: "center", justifyContent: "center", justifyItems: "center", justifySelf: "center" }}>
+        <Grid2 container spacing={2} sx={{ alignItems: "center", alignContent: "center" }}>
           <Grid2 size={{ xs: 12, md: 4 }}>
             <ProcessCard
               title={"Companion Computer"}
@@ -224,7 +224,10 @@ export default function ProcessPage() {
               src={componentplacement}
               alt="Component Placement"
               height={500}
-              style={{ justifySelf: "center", marginBottom: 20 }}
+              style={{
+                display: "block",
+                margin: "0 auto 20px auto",
+              }}
             />
             <Typography
               variant="body1"
@@ -244,7 +247,10 @@ export default function ProcessPage() {
               src={componentplacement2}
               alt="Component Placement"
               height={500}
-              style={{ justifySelf: "center", marginBottom: 20 }}
+              style={{
+                display: "block",
+                margin: "0 auto 20px auto",
+              }}
             />
             <Typography
               variant="body1"
@@ -276,7 +282,10 @@ export default function ProcessPage() {
             src={wiring}
             alt="Component Placement"
             height={500}
-            style={{ justifySelf: "center", marginBottom: 20 }}
+            style={{
+              display: "block",
+              margin: "0 auto 20px auto",
+            }}
           />
           <Typography
             variant="body1"
@@ -314,7 +323,10 @@ export default function ProcessPage() {
               src={soldering}
               alt="Soldering"
               height={400}
-              style={{ justifySelf: "center", marginBottom: 20 }}
+              style={{
+                display: "block",
+                margin: "0 auto 20px auto",
+              }}
             />
             <Typography
               variant="body1"
@@ -336,7 +348,10 @@ export default function ProcessPage() {
               src={bullet}
               alt="Bullet Connectors"
               height={400}
-              style={{ justifySelf: "center", marginBottom: 20 }}
+              style={{
+                display: "block",
+                margin: "0 auto 20px auto",
+              }}
             />
             <Typography
               variant="body1"
@@ -359,7 +374,10 @@ export default function ProcessPage() {
               src={LegAttach}
               alt="Securing the legs"
               height={400}
-              style={{ justifySelf: "center", marginBottom: 20 }}
+              style={{
+                display: "block",
+                margin: "0 auto 20px auto",
+              }}
             />
             <Typography
               variant="body1"
@@ -379,7 +397,10 @@ export default function ProcessPage() {
               src={attach}
               alt="Securing components"
               height={400}
-              style={{ justifySelf: "center", marginBottom: 20 }}
+              style={{
+                display: "block",
+                margin: "0 auto 20px auto",
+              }}
             />
             <Typography
               variant="body1"
