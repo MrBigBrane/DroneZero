@@ -8,7 +8,7 @@ import { ArrowRight } from "@mui/icons-material";
 import Image from "next/image";
 
 import cost from "../app/images/cost.png";
-import accessibility from "../app/images/accessibility.jpg";
+import accessibility from "../app/images/accessibility.png";
 
 
 export default function Home({ searchParams }) {
@@ -23,6 +23,7 @@ export default function Home({ searchParams }) {
         justifyItems: "center",
         alignContent: "center",
         marginTop: 8,
+        marginBottom: 8
       }}
     >
       <Grid2 item sx={{ height: "100%" }}>
@@ -125,7 +126,8 @@ export default function Home({ searchParams }) {
               variant="body1"
               sx={{
                 mb: 4,
-                maxWidth: 600,
+                maxWidth: { xs: 600, lg: 550, xl: 600 },
+                
                 // textAlign: "center",
                 fontFamily: "monospace",
               }}
@@ -143,7 +145,7 @@ export default function Home({ searchParams }) {
               variant="body1"
               sx={{
                 mb: 4,
-                maxWidth: 600,
+                maxWidth: { xs: 600, lg: 550, xl: 600 },
                 // textAlign: "center",
                 fontFamily: "monospace",
               }}
@@ -204,7 +206,7 @@ export default function Home({ searchParams }) {
               variant="body1"
               sx={{
                 mb: 4,
-                maxWidth: 600,
+                maxWidth: { xs: 600, lg: 550, xl: 600 },
                 // textAlign: "center",
                 fontFamily: "monospace",
               }}
@@ -218,7 +220,7 @@ export default function Home({ searchParams }) {
               variant="body1"
               sx={{
                 mb: 4,
-                maxWidth: 600,
+                maxWidth: { xs: 600, lg: 550, xl: 600 },
                 // textAlign: "center",
                 fontFamily: "monospace",
               }}
