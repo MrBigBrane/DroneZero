@@ -86,7 +86,7 @@ export default function ProcessPage() {
                 altitude.
                 `}
               image="/images/gps.png"
-              link="https://www.aliexpress.us/item/3256805761930658.html?src=google&pdp_npi=4%40dis%21USD%2122.49%2117.54%21%21%21%21%21%40%2112000034981055342%21ppc%21%21%21&src=google&albch=shopping&acnt=708-803-3821&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&albagn=888888&ds_e_adid=&ds_e_matchtype=&ds_e_device=c&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=en3256805761930658&ds_e_product_merchant_id=101088766&ds_e_product_country=US&ds_e_product_language=en&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=19108282527&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gclid=Cj0KCQiA7NO7BhDsARIsADg_hIbVtIZQsV8s9iz60pe5rwsbGEuJ4-pEsyVOBkxkxNL_LoBsBdp61DQaAjH2EALw_wcB&gatewayAdapt=glo2usa"
+              link="https://geprc.com/product/gep-m10-series-gps-module/"
             />
           </Grid2>
         </Grid2>
