@@ -36,7 +36,7 @@ https://github.com/user-attachments/assets/9942b758-5d15-49f5-a636-e3e2335c7cca
 Full Video Here → [CO₂ Monitoring Drone](https://www.youtube.com/watch?v=lSWDK9mu1hs)
 
 <br></br>
-Looking at the CO₂ column of the CSV file (a data spreadsheet similar to Excel or Google Sheets), we can see the concentration levels and judge whether our environment is safe.. Here are the concentration levels to help you judge the safety of your environment:
+Looking at the CO₂ column of the CSV file (a data spreadsheet similar to Excel or Google Sheets), we can see the concentration levels and judge whether our environment is safe. Here are the concentration levels to help you judge the safety of your environment:
 
 1. 350-450 ppm: Considered normal outdoor air levels. 
 2. 400-1,000 ppm: Safe and typical for indoor spaces with good ventilation. 
@@ -47,7 +47,7 @@ With the list above, we can judge the safety of our environment from example dat
 ![Screenshot 2025-04-04 at 9 09 03 AM (1)](https://github.com/user-attachments/assets/00da8f11-fa41-4713-b4da-1882ba0bb2b1)
 
 
-Since the CO₂ concentrations are between 390 and 480 ppm, we can conclude that our school’s CO2 levels are healthy ✅!
+Since the CO₂ concentrations are between 390 and 480 ppm, we can conclude that our school’s CO₂ levels are healthy ✅!
 
 ## 3. Website Tutorial
 
@@ -61,5 +61,5 @@ If you want to check out our website and understand how it works, or learn more 
 
 <figure>
   <img src="https://github.com/user-attachments/assets/54cc45a1-71e3-46d7-9f60-cc8c4e46796e">
-  <figcaption>A screenshot of the geospatial visualization of CO2 data on the website, showing the flight path and risk assessment.</figcaption>
+  <figcaption>A screenshot of the geospatial visualization of CO₂ data on the website, showing the flight path and risk assessment.</figcaption>
 </figure>
