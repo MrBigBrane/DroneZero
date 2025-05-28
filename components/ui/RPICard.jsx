@@ -21,7 +21,7 @@ export default function RPICard ({ title, description, image }) {
                         // height="140"
                         image={image}
                         alt={title}
-                        sx={{ width: "100%" }}
+                        sx={{ width: "100%", padding: 5 }}
                     />
                 </Grid2>
                 <Grid2 size={6}>
