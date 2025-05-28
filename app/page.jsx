@@ -23,7 +23,7 @@ export default function Home({ searchParams }) {
         justifyItems: "center",
         alignContent: "center",
         marginTop: 8,
-        marginBottom: 8
+        marginBottom: 8,
       }}
     >
       <Grid2 item sx={{ height: "100%" }}>
@@ -50,10 +50,10 @@ export default function Home({ searchParams }) {
             fontSize: 20,
           }}
         >
-          <b>Our Mission</b>: Each year, as global CO₂ emissions
-          rise, the seemingly distant worry of climate change becomes
-          increasingly real. To effectively tackle this growing concern, we must first
-          understand the root of the issue: the sources of emissions. <br />
+          <b>Our Mission</b>: Each year, as global CO₂ emissions rise, the
+          seemingly distant worry of climate change becomes increasingly real.
+          To effectively tackle this growing concern, we must first understand
+          the root of the issue: the sources of emissions. <br />
           <br />
           Our product, DroneZero, collects precise CO₂ measurements in both
           rural and urban areas, providing users access to real-time, relevant
@@ -63,8 +63,8 @@ export default function Home({ searchParams }) {
           local scale. <br />
           <br />
           <b>
-            But DroneZero is more than just a tool - it's a step towards regaining
-            control over our planet.
+            But DroneZero is more than just a tool - it's a step towards
+            regaining control over our planet.
           </b>
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 6 }}>
@@ -127,19 +127,20 @@ export default function Home({ searchParams }) {
               sx={{
                 mb: 4,
                 maxWidth: { xs: 600, lg: 550, xl: 600 },
-                
+
                 // textAlign: "center",
                 fontFamily: "monospace",
               }}
             >
-              Problem: The cost of CO2 monitoring systems is too high (over 250M
+              Problem: The cost of CO₂ monitoring systems is too high (over 250M
               USD for one satellite) and technological challenges with creating
-              them have caused underdeveloped countries to
-              forgo developing their own CO2 monitoring network and instead rely on
-              international datasets or local monitoring efforts. According to a 2022 Clean Air Fund
-              survey, about one-third of 119 countries could not establish CO2
-              monitoring networks due to financial and technical expertise
-              restrictions.
+              them have caused underdeveloped countries to forgo developing
+              their own CO₂ monitoring network and instead rely on international
+              datasets or local monitoring efforts. restrictions. Commercially
+              available CO₂ monitoring <b>drone</b> systems are also often too
+              expensive to be used in developing countries, being anywhere from
+              $4,000 for research level drones to $10,000+ for commercial level
+              drones.
             </Typography>
             <Typography
               variant="body1"
@@ -150,21 +151,23 @@ export default function Home({ searchParams }) {
                 fontFamily: "monospace",
               }}
             >
-              Our solution: To lower the cost of CO2 monitoring systems, we
-              created a low-cost drone that can monitor CO2. This drone is easy
-              to operate and provides accurate data at low cost. A fleet of
-              these drones can be used in place of or complement satellite CO2 monitoring
+              Our solution: To lower the cost of these systems, we chose to
+              incorporate cost-efficient but reliable components to create our
+              drone. Moreover, unlike satellites, this drone is easy to operate
+              and provides data at a smaller scope, making it more relevant to
+              understanding local emission trends. A fleet of these drones can
+              be used in place of or complement satellite CO₂ monitoring
               systems.
             </Typography>
           </Box>
           <Box sx={{ display: { xs: "none", lg: "flex" } }}>
-          <Image
-            src={cost}
-            alt="Cost"
-            width={400}
-            height={400}
-            style={{ borderRadius: 20 }}
-          />
+            <Image
+              src={cost}
+              alt="Cost"
+              width={400}
+              height={400}
+              style={{ borderRadius: 20 }}
+            />
           </Box>
         </Box>
         <Divider
@@ -183,13 +186,13 @@ export default function Home({ searchParams }) {
           }}
         >
           <Box sx={{ display: { xs: "none", lg: "flex" } }}>
-          <Image
-            src={accessibility}
-            alt="Accessibility"
-            width={400}
-            height={400}
-            style={{ borderRadius: 20, marginRight: 20 }}
-          />
+            <Image
+              src={accessibility}
+              alt="Accessibility"
+              width={400}
+              height={400}
+              style={{ borderRadius: 20, marginRight: 20 }}
+            />
           </Box>
           <Box>
             <Typography
@@ -211,10 +214,13 @@ export default function Home({ searchParams }) {
                 fontFamily: "monospace",
               }}
             >
-              Problem: Current CO2 monitoring systems use satellites which
+              Problem: Current CO₂ monitoring systems use satellites which
               require technical expertise which many countries do not have.
-              Furthermore, satellites have low resolution when monitoring CO2
-              and cannot provide real time CO2 monitoring data.
+              According to a 2022 Clean Air Fund survey, about one-third of 119
+              countries could not establish CO₂ monitoring networks due to
+              financial and technical expertise. Furthermore, satellites are not
+              well equipped for localised monitoring as they have low resolution
+              and cannot provide real-time data.
             </Typography>
             <Typography
               variant="body1"
@@ -225,8 +231,8 @@ export default function Home({ searchParams }) {
                 fontFamily: "monospace",
               }}
             >
-              Our solution: A drone system will solve these issues as it doesn’t
-              require as much technical expertise to operate and can monitor at
+              Our solution: A drone system solves these issues, not
+              requiring as much technical expertise to operate. It can also monitor at
               any time with an easy and efficient retrieval of the data.
             </Typography>
           </Box>

@@ -54,7 +54,11 @@ export default function ProcessPage() {
           objective: creating a CO2 monitoring system that uses GPS and a CO2
           sensor to monitor a drone's CO2 levels. <br />
         </Typography>
-        <Grid2 container spacing={2} sx={{ alignItems: "center", alignContent: "center" }}>
+        <Grid2
+          container
+          spacing={2}
+          sx={{ alignItems: "center", alignContent: "center" }}
+        >
           <Grid2 size={{ xs: 12, md: 4 }}>
             <ProcessCard
               title={"Companion Computer"}
@@ -190,7 +194,7 @@ export default function ProcessPage() {
             <ProcessCard
               title={"Drone Legs"}
               description={`
-                     We CAD designed drone legs using Onshape and 3D printed them to protect the bottom of the drone as it lands.
+                     The drone legs are responsible for for protecting the bottom of the drone. In terrain with rough surfaces and obstacles, the legs can help the drone land safely.
                 `}
               image="/images/DroneLeg.png"
               link="https://drive.google.com/file/d/1ViLO1JhJ00epcEyFDETBy0DItAlhSIUi/view?usp=sharing"
@@ -314,9 +318,9 @@ export default function ProcessPage() {
           padding={2}
           borderRadius={2}
         >
-          <b>Drone Assembly:</b> To assemble the components, we had to use various soldering and CAD designing skills.
+          <b>Drone Assembly:</b> To assemble the components, we had to use
+          various soldering and CAD designing skills.
         </Typography>{" "}
-        
         <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
           <Grid2 size={{ xs: 12, md: 6 }}>
             <Image
@@ -335,15 +339,18 @@ export default function ProcessPage() {
               marginLeft={5}
               marginRight={5}
             >
-              <b>Soldering Components: </b>While soldering and crimping wires for the SpeedyBee and other components,
-               we encountered multiple issues such as a burnt pad and small solder bridges. Solder pads are thin layers
-               of copper which allows the soldering tin to adhere to the pad surface easily. To fix the burnt pads, we
-               removed the copper pad and directly soldered onto the metal surface with a finer tip at a lower
-               temperature. Solder bridges are formed when too much solder is used and a blob of solder connects two or
-               more copper pads. To identify solder bridges, we used a multimeter to test the continuity between adjacent
-               plates. We then used isopropyl alcohol to clean the soldering sites which successfully removed the solder
-               bridges.
-               
+              <b>Soldering Components: </b>While soldering and crimping wires
+              for the flight controller and other components, we encountered
+              multiple issues such as a burnt pad and small solder bridges.
+              Solder pads are thin layers of copper that allow the soldering tin
+              to adhere to the pad surface easily. To fix the burnt pads, we
+              removed the outer copper layer and directly soldered onto the
+              copper surface beneathwith a finer tip at a lower temperature. We
+              also encountered solder bridges, which are formed when too much
+              solder is used, connecting two or more copper pads. To identify
+              solder bridges, we used a multimeter to test the continuity
+              between adjacent plates. We then used isopropyl alcohol to clean
+              the soldering sites which successfully removed the solder bridges.
             </Typography>
           </Grid2>
           <Grid2 size={{ xs: 12, md: 6 }}>
@@ -363,12 +370,13 @@ export default function ProcessPage() {
               marginLeft={5}
               marginRight={5}
             >
-              <b>Bullet connectors: </b>We used bullet connectors to connect the motors to the ESC because they allowed
-               for an easier and faster soldering process. To use them, we filled one end of each bullet connector with
-               soldering tin and inserted the motor/ESC wire into the tin filled cavity in a secure connection. Then we
-               used a heat shrink to cover the metal surface of the bullet connector, preventing any short-circuits between
-               motor wires.
-               
+              <b>Bullet connectors: </b>We used bullet connectors to connect the
+              motors to the ESC because they allowed for an easier and faster
+              soldering process. To use them, we filled one end of each bullet
+              connector with soldering tin and inserted the motor/ESC wire into
+              the tin filled cavity in a secure connection. Then we used a heat
+              shrink to cover the metal surface of the bullet connector,
+              preventing any short-circuits between motor wires.
             </Typography>
           </Grid2>
         </Grid2>
@@ -390,10 +398,11 @@ export default function ProcessPage() {
               marginLeft={5}
               marginRight={5}
             >
-              <b>Attaching the legs: </b>Initially, we used thin M3 screws to attach the drone legs to the frame.
-               After a few test flights, two of the drone legs split into two parts. Thus, we used longer screws
-               and increased the infill density by 30% to resolve this issue.
-               
+              <b>Attaching the legs: </b>Initially, we used thin M3 screws to
+              attach the drone legs to the frame. After a few test flights, two
+              of the drone legs split into two parts. Thus, we used longer
+              screws and increased the infill density by 30% to resolve this
+              issue.
             </Typography>
           </Grid2>
           <Grid2 size={{ xs: 12, md: 6 }}>
@@ -413,18 +422,18 @@ export default function ProcessPage() {
               marginLeft={5}
               marginRight={5}
             >
-              <b>Securing components: </b>To secure all of the components to the drone frame, we used screws, zip ties,
-               double-sided tape, foam, and a battery strap. The tape was used to secure the receiver, GPS module,
-               CO2 sensor, and RPI. Screws were used for the motors, propellers, drone legs, and the flight controller
-               + ESC stack. The battery was secured with foam surrounding it and a battery strap to ensure a safe and
-               secure hold while allowing the battery to be removed for charging. Zip ties were used to organize the wires
-               and ensure that they would not impede the propellers.
-               
+              <b>Securing components: </b>To secure all of the components to the
+              drone frame, we used screws, zip ties, double-sided tape, foam,
+              and a battery strap. The tape was used to secure the receiver, GPS
+              module, CO2 sensor, and RPI. Screws were used for the motors,
+              propellers, drone legs, and the flight controller + ESC stack. The
+              battery was secured with foam surrounding it and a battery strap
+              to ensure a safe and secure hold while allowing the battery to be
+              removed for charging. Zip ties were used to organize the wires and
+              ensure that they would not impede the propellers.
             </Typography>
           </Grid2>
         </Grid2>
-
-
         <Typography
           variant="h5"
           textAlign={"left"}
@@ -559,7 +568,7 @@ export default function ProcessPage() {
           margin={5}
           marginTop={10}
         >
-          5. RPI
+          5. Raspberry Pi Software
         </Typography>
         <Typography
           variant="h6"
@@ -570,105 +579,137 @@ export default function ProcessPage() {
           padding={2}
           borderRadius={2}
         >
-          <b>Software Algorithm:</b> Code developed to collect and log both CO₂
-          data and geospatial data which is vital to the success of the project.
+          <b>Software Algorithm:</b> Code developed to collect and log geospatial CO₂ data.
         </Typography>
         <Grid2 container spacing={2} alignItems={"center"} marginBottom={5}>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Linking Sensor and Drone to RPI"}
+              title={"Establishing Software Connection"}
               description={
                 <>
-                  The line master = mavutil.mavlink_connection('/dev/serial0',
-                  buad=921600) is the establishinig the initial connection
-                  between FC and RPI. The following the line does the same thing
-                  but just with the CO₂ sensor through I2C.
+                  To log CO₂ and GPS data, the RPI must be able to communicate
+                  with the flight controller and the CO₂ sensor. Thus, a
+                  software connection is established between the RPI and the
+                  peripheral components. For the flight controller, this process
+                  identifies its unique id, used in the later arming check. The
+                  baud rate is set to 921600 bits per second in line with
+                  standard MAVLink telemetry rates. For the CO₂ sensor, the RPI
+                  establishes a connection through I2C.
                   <br></br>
                   <br></br>
-                  <b>I2C: </b> description
+                  <b>(*) </b> I2C stands for inter-integrated circuit, a serial
+                  communication protocol mainly used for data transfer over
+                  short distances between electronic components.
                 </>
               }
-              image="/images/code4.jpg"
+              image="/images/code1.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Retrieving Flight Data"}
+              title={"Initializing Data Collection"}
               description={
                 <>
-                  For users to see CO₂ levels at specific locations, the RPI
-                  must be able to access geospatial data, which would have to be
-                  requested and sent from the drone’s flight controller. We can
-                  actively retrieve this GPS data from the drone by using a
-                  Python library called Pymavlink. We initialize this process by
-                  specifying the frequency at which the RPI should request data.
+                  To relate CO₂ levels to specific locations, the RPI must be
+                  able to access geospatial data through the GPS. First, a
+                  general function <b>(*)</b> is created using Pymavlink{" "}
+                  <b>(**)</b> to access the MAVLink telemetry streamed by the
+                  flight controller. When the function is called, the data
+                  stream is filtered to only include the data calculated by the
+                  GPS module in one second intervals. Similarly, the CO₂ sensor
+                  is called to begin collecting data in five second intervals
+                  using the Adafruit SCD4X library <b>(***)</b>.<br></br>
+                  <br></br>
+                  <b>(*) </b>
+                  Credit to{" "}
+                  <a href="https://discuss.bluerobotics.com/t/accessing-real-time-mavlink-messages-via-pymavlink/11355/2">
+                    this online forum thread
+                  </a>{" "}
+                  for the general function.
                   <br></br>
                   <br></br>
-                  <b>PyMavlink </b>
-                  is a Python library that allows users to request specific
-                  types of data from the drone’s flight controller through
-                  MAVLink telemetry.
+                  <b>(**) </b>
+                  Pymavlink is a Python library that allows users to interact
+                  with vehicles that support MAVLink telemetry.
+                  <br></br>
+                  <br></br>
+                  <b>(***) </b>
+                  Adafruit_scd4x is a special library made by the SCD40 sensor
+                  developer, Adafruit, to access the CO₂ sensor.
                 </>
               }
-              image="/images/code1.jpg"
+              image="/images/code2.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Arming the Drone"}
+              title={"Initiating Data Logging"}
               description={
                 <>
                   In order to minimize memory consumption by the RPI and enhance
                   the relevancy of the data exported, we first check the armed
-                  status of the drone <b>(*)</b>. This prevents the RPI from continuously
-                  logging data to the .csv file even if the drone is not
-                  armed/not in flight. The RPI checks the arming state in a loop
-                  until the drone is armed, at which point data logging begins.
-                  <br /><br />
-                  <b>(*)</b> If the drone is connected to a ground control station, the RPI
-                  ends up receiving a heartbeat message from both the flight
-                  controller and the ground control station. To ensure that the
-                  armed status the RPI receives is that of the flight
-                  controller, the script first checks if the id of the heartbeat
-                  message matches that of the flight controller. This filters
-                  out any extraneous heartbeat messages and checks the arming
-                  status of the correct message.
+                  status of the drone <b>(*)</b>. This prevents the RPI from
+                  continuously logging data to the .csv file even if the drone
+                  is not armed/not in flight. The RPI checks the arming state in
+                  a loop until the drone is armed, at which point data logging
+                  begins.
+                  <br />
+                  <br />
+                  <b>(*)</b> If the drone is connected to a ground control
+                  station, the RPI ends up receiving a heartbeat message from
+                  both the flight controller and the ground control station. To
+                  ensure that the armed status the RPI receives is that of the
+                  flight controller, the script first checks if the id of the
+                  heartbeat message matches that of the flight controller. This
+                  filters out any extraneous heartbeat messages and checks the
+                  arming status of the correct message.
                 </>
               }
-              image="/images/code5.jpg"
+              image="/images/code3.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Syncing GPS and CO2"}
+              title={"Syncing GPS and CO₂ Data"}
               description={
                 <>
-                  By using the if statement, we can ensure that the GPS data
-                  sent by the flight controller and the CO₂ concentration
-                  readings collected by the sensor are synced. This essentially
-                  means that times when each data was collected are the same
-                  therefore allowing for maximum data reliability.
+                  The GPS and CO₂ data are requested through distinctly separate
+                  processes (one being through MAVLink telemetry and the other
+                  being through the Adafruit_scd4x library). Because of this,
+                  time discrepancies between each CO₂ measurement and GPS
+                  coordinate can occur, interfering with the reliability of the
+                  monitoring system. By using the if statement, we can ensure
+                  that CO₂ readings are correctly linked with their
+                  corresponding GPS location, giving users the most accurate
+                  data possible.
                 </>
               }
-              image="/images/code5.jpg"
+              image="/images/code4.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
             <RPICard
-              title={"Retrieving CO₂ Data"}
+              title={
+                "Logging Data"
+              }
               description={
                 <>
-                  We use another Python library called <b>adafruit_scd4x</b>{" "}
-                  that allows users to retrieve CO₂ concentration levels, every
-                  5 seconds read by the onboard sensor.
+                  We log GPS and CO₂ concentration data to a .csv file,
+                  structured with columns for timestamp, CO₂ concentration,
+                  longitude, latitude, and altitude. Once the drone is disarmed,
+                  the .csv file <b>(*)</b> is automatically generated and can be
+                  transferred to a personal computer via WiFi or USB. This file
+                  serves as input for further analysis using our custom
+                  visualization software. 
                   <br></br>
                   <br></br>
-                  <b>Adafruit_scd4x </b> is a special library made by the
-                  sensor’s developer, Adafruit, specifically for the sensor we
-                  use, the SCD40.
+                  <b>(*) </b>A .csv (Comma-Separated Values) file
+                  is a widely used, spreadsheet-compatible format, similar in
+                  structure to Excel files but more lightweight and universally
+                  supported.
                 </>
               }
-              image="/images/code2.jpg"
+              image="/images/code5.png"
             />
           </Grid2>
           <Grid2 size={{ md: 12 }}>
@@ -676,35 +717,45 @@ export default function ProcessPage() {
               title={"Terminating the Logging Process"}
               description={
                 <>
-                  Similar to the initial arming check, during each iteration of the logging process the RPI checks the armed status.
-                  Once the drone is disarmed, the RPI exits the logging loop and the final .csv file is ready to be exported.
+                  Similar to the initial arming check, during each iteration of
+                  the logging process the RPI checks the armed status. Once the
+                  drone is disarmed, the RPI exits the logging loop and the
+                  final .csv file is ready to be exported.
                 </>
               }
-              image="/images/code5.jpg"
-            />
-          </Grid2>
-          <Grid2 size={{ md: 12 }}>
-            <RPICard
-              title={
-                "Writing Geospatial Data and CO₂ Data to Spreadsheet for Extraction"
-              }
-              description={
-                <>
-                  We write the GPS data and the CO₂ concentration data to a .csv
-                  file.We format the data with a column for time, CO₂
-                  concentration, longitude, latitude, and altitude. After the
-                  drone is disarmed, the .csv file is created and can be
-                  exported through WiFi or USB to a personal computer for
-                  further analysis on our visualization software
-                  <br></br>
-                  <br></br>A .csv file is essentially a spreadsheet file and can
-                  be thought of as similar to Excel.
-                </>
-              }
-              image="/images/code3.jpg"
+              image="/images/code6.png"
             />
           </Grid2>
         </Grid2>
+        <Typography
+          variant="h6"
+          textAlign={"center"}
+          fontFamily={"monospace"}
+          fontWeight={700}
+          margin={5}
+        >
+          Full Code:
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <Image
+            src="/images/fullcode1.png"
+            width={1000}
+            height={1000}
+            alt="Code"
+          />
+          <Image
+            src="/images/fullcode2.png"
+            width={1000}
+            height={1000}
+            alt="Code"
+          />
+        </Box>
         <Typography
           variant="h5"
           textAlign={"left"}
